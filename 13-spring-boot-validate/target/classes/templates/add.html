@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>添加用户</title>
+</head>
+<body>
+	<form th:action="@{/save}" method="post">
+		用户姓名：<input type="text" name="name"/><font color="red" th:errors="${aa.name}"></font><br/>
+		用户密码：<input type="password" name="password" /><font color="red" th:errors="${aa.password}"></font><br/>
+		用户年龄：<input type="text" name="age" /><font color="red" th:errors="${aa.age}"></font><br/>
+		用户邮箱：<input type="text" name="email" /><font color="red" th:errors="${aa.email}"></font><br/>
+		<input type="submit" value="OK"/>
+	</form>
+</body>
+</html>

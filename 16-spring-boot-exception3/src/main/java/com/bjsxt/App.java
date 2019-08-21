@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 
- *SpringBoot处理异常方式一：自定义错误页面
+ * SpringBoot处理异常方式三：全局异常处理类--可以对所有Controller中的异常作处理
  *
  */
 @SpringBootApplication

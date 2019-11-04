@@ -32,7 +32,7 @@ public class RabbitMQConfig {
 	@Bean
 	public ConnectionFactory connectionFactory(){
 		CachingConnectionFactory connectionFactory = new CachingConnectionFactory();
-		connectionFactory.setAddresses("192.168.11.76:5672");
+		connectionFactory.setAddresses("111.230.115.242:5672");
 		connectionFactory.setUsername("guest");
 		connectionFactory.setPassword("guest");
 		connectionFactory.setVirtualHost("/");
@@ -45,6 +45,8 @@ public class RabbitMQConfig {
 		rabbitAdmin.setAutoStartup(true);
 		return rabbitAdmin;
 	}
+
+
 	
     /**  
      * 针对消费者配置  

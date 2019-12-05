@@ -20,6 +20,14 @@
         </plugins>
     </build>
 
+    <modules>
+        <module>rabbitmq-api</module>
+        <module>rabbitmq-spring</module>
+        <module>rabbitmq-springboot-consumer</module>
+        <module>rabbitmq-springboot-producer</module>
+        <module>rabbitmq-springcloudstream-consumer</module>
+        <module>rabbitmq-springcloudstream-producer</module>
+    </modules>
 
     
 

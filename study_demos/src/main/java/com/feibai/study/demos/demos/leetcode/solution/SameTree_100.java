@@ -1,4 +1,7 @@
-package com.feibai.study.demos.demos.leetcode;
+package com.feibai.study.demos.demos.leetcode.solution;
+
+
+import com.feibai.study.demos.demos.leetcode.beans.TreeNode;
 
 public class SameTree_100 {
 

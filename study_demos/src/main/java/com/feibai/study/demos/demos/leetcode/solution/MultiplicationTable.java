@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.leetcode;
+package com.feibai.study.demos.demos.leetcode.solution;
 
 public class MultiplicationTable {
 

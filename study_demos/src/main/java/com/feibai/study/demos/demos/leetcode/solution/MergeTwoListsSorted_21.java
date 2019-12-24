@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.leetcode;
+package com.feibai.study.demos.demos.leetcode.solution;
 
 /**
  * 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 

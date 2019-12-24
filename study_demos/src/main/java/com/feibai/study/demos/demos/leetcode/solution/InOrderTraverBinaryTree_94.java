@@ -1,5 +1,6 @@
-package com.feibai.study.demos.demos.leetcode;
+package com.feibai.study.demos.demos.leetcode.solution;
 
+import com.feibai.study.demos.demos.leetcode.beans.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;

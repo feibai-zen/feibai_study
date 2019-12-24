@@ -1,4 +1,6 @@
-package com.feibai.study.demos.demos.leetcode;
+package com.feibai.study.demos.demos.leetcode.solution;
+
+import com.feibai.study.demos.demos.leetcode.beans.ListNode;
 
 public class MergeLinkedList {
 
@@ -11,14 +13,7 @@ public class MergeLinkedList {
 
 }
 
-class ListNode {
-	int val;
-	ListNode next;
 
-	ListNode(int x) {
-		val = x;
-	}
-}
 
 class Solution {
 	public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {

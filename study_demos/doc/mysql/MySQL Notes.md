@@ -1,10 +1,16 @@
-# 一千行MySQL笔记
+# MySQL Notes
 
 ### Windows服务
 - 启动MySQL
     net start mysql
 - 创建Windows服务
     sc create mysql binPath= mysqld_bin_path(注意：等号与值之间有空格)
+
+### Linux服务
+- 启动
+    service mysql start
+- 停止
+    service mysql stop
 
 ### 连接与断开服务器
 mysql -h 地址 -P 端口 -u 用户名 -p 密码
@@ -110,7 +116,6 @@ SHOW VARIABLES -- 显示系统变量信息
     ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] ...
 
 ### 数据操作
-
 - 增
     INSERT [INTO] 表名 [(字段列表)] VALUES (值列表)[, (值列表), ...]
         - 如果要插入的值列表包含所有字段并且顺序一致，则可以省略字段列表。
@@ -126,7 +131,7 @@ SHOW VARIABLES -- 显示系统变量信息
     DELETE FROM 表名[ 删除条件子句]
         没有条件子句，则会删除全部
 - 改
-    UPDATE 表名 SET 字段名=新值[, 字段名=新值] [更新条件]
+    UPDATE 表名 SET 字段名=新值[, 字段名=新值] [WHERE 更新条件]
 
 ### 字符集编码
 -- MySQL、数据库、表、字段均可设置编码

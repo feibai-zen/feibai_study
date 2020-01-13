@@ -1,4 +1,4 @@
-package com.feibai.study.demos.designpatterns.observer;
+package com.feibai.study.demos.designpatterns.observer.observer1;
 
 public class ObserverA implements Observer {
 

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.designpatterns.observer;
+package com.feibai.study.demos.designpatterns.observer.observer1;
 
 import java.util.ArrayList;
 import java.util.List;

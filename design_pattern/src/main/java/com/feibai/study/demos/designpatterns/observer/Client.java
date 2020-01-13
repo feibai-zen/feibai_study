@@ -24,8 +24,7 @@ public class Client {
 		System.out.println(obs3.getMyState());
 
 		// 改变subject的状态
-		subject.setState(30);
-		System.out.println("########################");
+		System.out.println("###subject.setState(30);#####################");
 		// 我们看看，观察者的状态是不是也发生了变化
 		System.out.println(obs1.getMyState());
 		System.out.println(obs2.getMyState());

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.workspace.utils;
+package com.feibai.study.demos.good_practice;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.workspace.utils;
+package com.feibai.study.demos.good_practice;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;

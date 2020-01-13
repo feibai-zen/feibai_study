@@ -1,4 +1,4 @@
-package com.feibai.study.demos.workspace.utils;
+package com.feibai.study.demos.good_practice;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

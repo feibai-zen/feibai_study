@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.adapter;
 /**
  * 被适配的类 (相当于例子中的，PS/2键盘)
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class Adaptee {

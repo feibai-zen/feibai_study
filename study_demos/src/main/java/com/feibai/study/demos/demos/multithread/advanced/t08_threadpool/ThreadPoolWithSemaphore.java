@@ -2,7 +2,7 @@ package com.feibai.study.demos.demos.multithread.advanced.t08_threadpool;
 
 import java.util.concurrent.Semaphore;
 
-import com.feibai.study.demos.good_practice.utils.ThreadPool;
+import com.feibai.study.demos.good_practice.ThreadPool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

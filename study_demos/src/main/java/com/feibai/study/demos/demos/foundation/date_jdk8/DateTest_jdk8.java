@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.date_jdk8;
+package com.feibai.study.demos.demos.foundation.date_jdk8;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -12,7 +12,8 @@ import java.time.temporal.ChronoUnit;
 
 public class DateTest_jdk8 {
     public static void main(String[] args) {
-        today();
+//        today();
+        other(3000000000000L);
     }
 
     private static void today() {
@@ -186,5 +187,9 @@ public class DateTest_jdk8 {
         LocalDate formatted = LocalDate.parse(dayAfterTommorrow,
                 DateTimeFormatter.BASIC_ISO_DATE);
         System.out.println(dayAfterTommorrow + "  格式化后的日期为:  " + formatted);
+    }
+
+    private static void other(long time){
+        System.out.println(Instant.ofEpochMilli(time).atZone(ZoneOffset.ofHours(8)).toLocalDate());
     }
 }

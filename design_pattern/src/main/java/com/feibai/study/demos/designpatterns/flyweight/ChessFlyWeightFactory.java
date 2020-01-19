@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * 享元工厂类
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class ChessFlyWeightFactory {

@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * 测试多线程环境下五种创建单例模式的效率。 效率测试结果：饿汉式>静态内部类>枚举单例>双重检查锁式>懒汉式
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class EfficientTest {

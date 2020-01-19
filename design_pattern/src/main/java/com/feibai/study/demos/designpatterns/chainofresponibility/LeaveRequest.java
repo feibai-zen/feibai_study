@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.chainofresponibility;
 /**
  * 封装请假的基本信息
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class LeaveRequest {

@@ -7,7 +7,7 @@ import java.lang.reflect.Proxy;
 /**
  * 动态代理解决了静态代理的两个缺点：1）只能为一个类提供代理能力；2）方法的膨胀问题
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月18日
  *

@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.composite;
 /**
  * 抽象组件
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public interface Component {

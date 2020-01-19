@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.builder;
 /**
  * 建造宇宙飞船
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class AirShip {

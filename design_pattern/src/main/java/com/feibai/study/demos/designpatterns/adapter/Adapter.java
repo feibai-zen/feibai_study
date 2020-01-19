@@ -3,7 +3,8 @@ package com.feibai.study.demos.designpatterns.adapter;
 /**
  * 适配器 (类适配器方式) (相当于usb和ps/2的转接器)
  * 
- * @author leeyuanlong
+ * @author feibai
+ *
  *
  */
 public class Adapter extends Adaptee implements Target {

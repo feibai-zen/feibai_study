@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.flyweight;
 /**
  * 外部状态UnSharedConcreteFlyWeight
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class Coordinate {

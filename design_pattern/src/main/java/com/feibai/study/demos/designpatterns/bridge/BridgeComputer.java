@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.bridge;
 /**
  * 电脑类型的维度
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class BridgeComputer {

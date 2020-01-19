@@ -10,7 +10,7 @@ import java.io.Serializable;
  * 不会发生并发访问的问题，因此synchronized关键字；
  * 2.缺点：如果只是加载本类，而不是要调用getInstance()，甚至永远没有调用，则会造成资源浪费。
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class SingletonHunger implements Serializable {

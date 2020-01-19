@@ -8,7 +8,7 @@ import java.io.ObjectOutputStream;
 /**
  * 模拟通过反射、反序列化破解单例模式
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class AttackSingleton {

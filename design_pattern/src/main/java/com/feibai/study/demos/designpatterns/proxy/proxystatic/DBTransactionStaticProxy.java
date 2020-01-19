@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.proxy.proxystatic;
 /**
  * 静态代理模式-static proxy
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class DBTransactionStaticProxy {

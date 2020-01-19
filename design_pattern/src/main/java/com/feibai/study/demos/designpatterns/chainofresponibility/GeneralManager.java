@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.chainofresponibility;
 /**
  * 总经理
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class GeneralManager extends Leader {

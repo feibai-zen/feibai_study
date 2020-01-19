@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.iterator;
 /**
  * 自定义的迭代器接口
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * 
  */

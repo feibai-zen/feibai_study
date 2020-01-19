@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.chainofresponibility;
 /**
  * 副总经理
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class ViceGeneralManager extends Leader {

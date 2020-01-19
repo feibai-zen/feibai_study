@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.chainofresponibility;
 /**
  * 可以使用有序容器组织责任链对象的关系
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class Client {

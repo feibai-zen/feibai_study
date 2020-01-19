@@ -7,7 +7,7 @@ package com.feibai.study.demos.designpatterns.singleton;
  * 
  * 缺点：无法延迟加载
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public enum SingletonEnum {

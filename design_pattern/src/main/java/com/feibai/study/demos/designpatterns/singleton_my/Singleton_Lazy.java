@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.singleton_my;
 /**
  * 单例模式---懒汉式
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月12日
  *

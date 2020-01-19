@@ -8,7 +8,7 @@ package com.feibai.study.demos.designpatterns.singleton;
  * 型，保证了内存中只有一个实例存在，而且只能被赋值一次，从而保证了线程安全性。 
  * 3.兼备了高效调用和延迟加载的优势。
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class SingletonInnerStaticClass {

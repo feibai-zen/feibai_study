@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.flyweight;
 /**
  * 享元类
  * 
- * @author leeyuanlong
+ * @author feibai
  * 
  *
  */

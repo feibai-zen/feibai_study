@@ -4,7 +4,7 @@ package com.feibai.study.demos.designpatterns.proxy.proxydynamic1;
  * 模拟动态生成的代理的结构
  * 在动态代理模式中没有使用这个类
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class ProxyStar implements Star {

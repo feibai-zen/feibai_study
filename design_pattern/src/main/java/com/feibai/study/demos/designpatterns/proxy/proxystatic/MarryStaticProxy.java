@@ -8,7 +8,7 @@ package com.feibai.study.demos.designpatterns.proxy.proxystatic;
  * 抽象的：结婚的人是一个群体，视为核心对象，做的动作是核心动作。 代理处理的是通用的事
  * 情，代理角色能力强大之后，也可能反客为主，成为重要的角色。
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class MarryStaticProxy {

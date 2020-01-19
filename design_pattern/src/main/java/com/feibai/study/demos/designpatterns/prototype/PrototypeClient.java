@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * 1）浅拷贝 2）深拷贝 3）通过序列化--反序列化实现深拷贝
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class PrototypeClient {

@@ -13,7 +13,7 @@ package com.feibai.study.demos.designpatterns.builder;
  * 
  * Builder：生产零件、子组件
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class BuilderClient {

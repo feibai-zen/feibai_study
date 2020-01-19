@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.builder;
 /**
  * 在Director中进行指导安装
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class AudiAirshipDirector implements AirShipDirector {

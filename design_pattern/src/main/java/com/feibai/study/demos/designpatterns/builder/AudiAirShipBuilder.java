@@ -3,7 +3,7 @@ package com.feibai.study.demos.designpatterns.builder;
 /**
  * 在Builder中进行零件生产，可以结合工厂模式、单例模式创建零件
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class AudiAirShipBuilder implements AirShipBuilder {

@@ -16,7 +16,7 @@ public class Producer {
 		
 		
 		ConnectionFactory connectionFactory = new ConnectionFactory();
-		connectionFactory.setHost("192.168.11.76");
+		connectionFactory.setHost("111.230.115.242");
 		connectionFactory.setPort(5672);
 		connectionFactory.setVirtualHost("/");
 		

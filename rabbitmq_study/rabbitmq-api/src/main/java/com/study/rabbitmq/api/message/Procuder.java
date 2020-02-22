@@ -30,10 +30,10 @@ public class Procuder {
 
 
     AMQP.BasicProperties properties = new AMQP.BasicProperties.Builder()
-            .deliveryMode(2)
-            .contentEncoding("UTF-8")
-            .expiration("10000")
-            .headers(headers)
+            .deliveryMode(2)//1:非持久化投递  2：持久化的投递，服务重启后,消息依然存在
+            .contentEncoding("UTF-8")//字符集
+            .expiration("10000")//过期时间(毫秒),超出过期时间还没有被消费,就会消失
+            .headers(headers)//增加自定义属性
             .build();
 
     //4 通过Channel发送数据

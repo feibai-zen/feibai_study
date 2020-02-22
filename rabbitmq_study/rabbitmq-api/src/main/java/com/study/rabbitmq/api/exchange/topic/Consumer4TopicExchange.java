@@ -26,7 +26,7 @@ public class Consumer4TopicExchange {
     String exchangeType = "topic";
     String queueName = "test_topic_queue";
     //String routingKey = "user.*";
-    String routingKey = "user.*";
+    String routingKey = "user.*";//消费端的routeKey可以进行模糊匹配.注意通配符* 与# 的区别
     // 1 声明交换机
     channel.exchangeDeclare(exchangeName, exchangeType, true, false, false, null);
     // 2 声明队列

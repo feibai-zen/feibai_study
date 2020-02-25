@@ -32,7 +32,7 @@ public class Consumer {
 
     QueueingConsumer queueingConsumer = new QueueingConsumer(channel);
 
-    channel.basicConsume(queueName, true, queueingConsumer);
+    channel.basicConsume(queueName, true, queueingConsumer);//para2: ackType
 
     while (true) {
 

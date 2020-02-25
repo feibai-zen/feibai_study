@@ -6,7 +6,6 @@ import com.rabbitmq.client.ConnectionFactory;
 
 public class Consumer {
 
-
   public static void main(String[] args) throws Exception {
     ConnectionFactory connectionFactory = new ConnectionFactory();
     connectionFactory.setHost("111.230.115.242");
@@ -25,11 +24,7 @@ public class Consumer {
     channel.queueBind(queueName, exchangeName, routingKey);
 
     //1 限流方式  第一件事就是 autoAck设置为 false
-
     channel.basicQos(0, 1, false);
-
     channel.basicConsume(queueName, false, new MyConsumer(channel));
-
-
   }
 }

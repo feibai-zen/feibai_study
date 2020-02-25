@@ -8,8 +8,6 @@ public class Consumer {
 
 
   public static void main(String[] args) throws Exception {
-
-
     ConnectionFactory connectionFactory = new ConnectionFactory();
     connectionFactory.setHost("111.230.115.242");
     connectionFactory.setPort(5672);
@@ -18,7 +16,6 @@ public class Consumer {
     connectionFactory.setVirtualHost("/");
     Connection connection = connectionFactory.newConnection();
     Channel channel = connection.createChannel();
-
 
     String exchangeName = "test_consumer_exchange";
     String routingKey = "consumer.#";
@@ -29,7 +26,5 @@ public class Consumer {
     channel.queueBind(queueName, exchangeName, routingKey);
 
     channel.basicConsume(queueName, true, new MyConsumer(channel));
-
-
   }
 }

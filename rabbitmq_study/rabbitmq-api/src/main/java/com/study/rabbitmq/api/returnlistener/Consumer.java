@@ -15,6 +15,8 @@ public class Consumer {
     ConnectionFactory connectionFactory = new ConnectionFactory();
     connectionFactory.setHost("111.230.115.242");
     connectionFactory.setPort(5672);
+    connectionFactory.setUsername("feibai");
+    connectionFactory.setPassword("123456");
     connectionFactory.setVirtualHost("/");
 
     Connection connection = connectionFactory.newConnection();
@@ -38,7 +40,6 @@ public class Consumer {
       String msg = new String(delivery.getBody());
       System.err.println("消费者: " + msg);
     }
-
 
   }
 }

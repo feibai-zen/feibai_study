@@ -2,17 +2,15 @@ package com.study.spring;
 
 import java.util.UUID;
 
+import com.rabbitmq.client.Channel;
 import com.study.spring.adapter.MessageDelegate;
 import com.study.spring.convert.ImageMessageConverter;
 import com.study.spring.convert.PDFMessageConverter;
 import com.study.spring.convert.TextMessageConverter;
-import org.springframework.amqp.core.AcknowledgeMode;
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.ChannelAwareMessageListener;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
@@ -115,35 +113,34 @@ public class RabbitMQConfig {
   public SimpleMessageListenerContainer messageContainer(ConnectionFactory connectionFactory) {
     SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
     container.setQueues(queue001(), queue002(), queue003(), queue_image(), queue_pdf());
-    container.setConcurrentConsumers(1);
-    container.setMaxConcurrentConsumers(5);
-    container.setDefaultRequeueRejected(false);
-    container.setAcknowledgeMode(AcknowledgeMode.AUTO);
-    container.setExposeListenerChannel(true);
-    container.setConsumerTagStrategy(new ConsumerTagStrategy() {
+    container.setConcurrentConsumers(1);//当前的消费者数量
+    container.setMaxConcurrentConsumers(5);//最大消费者数量
+    container.setDefaultRequeueRejected(false);//是否设置重回队列
+    container.setAcknowledgeMode(AcknowledgeMode.AUTO);//设置签收模式
+    container.setExposeListenerChannel(true);//Listener是否外露
+    container.setConsumerTagStrategy(new ConsumerTagStrategy() {//消费端生成标签策略
       @Override
       public String createConsumerTag(String queue) {
         return queue + "_" + UUID.randomUUID().toString();
       }
     });
-    /**
-     container.setMessageListener(new ChannelAwareMessageListener() {
-    @Override public void onMessage(Message message, Channel channel) throws Exception {
-    String msg = new String(message.getBody());
-    System.err.println("----------消费者: " + msg);
-    }
-    });
-     */
 
-    /**
-     * 1 适配器方式. 默认是有自己的方法名字的：handleMessage
+    container.setMessageListener(new ChannelAwareMessageListener() {// 添加监听消息的对象
+      @Override
+      public void onMessage(Message message, Channel channel) throws Exception {
+        String msg = new String(message.getBody());
+        System.err.println("----------消费者: " + msg);
+      }
+    });
+
+     /*
+     // 1 适配器方式. 默认是有自己的方法名字的：handleMessage
      // 可以自己指定一个方法的名字: consumeMessage
      // 也可以添加一个转换器: 从字节数组转换为String
      MessageListenerAdapter adapter = new MessageListenerAdapter(new MessageDelegate());
      adapter.setDefaultListenerMethod("consumeMessage");
      adapter.setMessageConverter(new TextMessageConverter());
-     container.setMessageListener(adapter);
-     */
+     container.setMessageListener(adapter);*/
 
     /**
      * 2 适配器方式: 我们的队列名称 和 方法名称 也可以进行一一的匹配

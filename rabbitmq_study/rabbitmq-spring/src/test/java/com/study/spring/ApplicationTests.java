@@ -115,7 +115,6 @@ public class ApplicationTests {
 
   @Test
   public void testSendJsonMessage() throws Exception {
-
     Order order = new Order();
     order.setId("001");
     order.setName("消息订单");
@@ -134,7 +133,6 @@ public class ApplicationTests {
 
   @Test
   public void testSendJavaMessage() throws Exception {
-
     Order order = new Order();
     order.setId("001");
     order.setName("订单消息");

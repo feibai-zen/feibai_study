@@ -23,11 +23,8 @@ public class Producer {
 		
 		String exchange = "test_ack_exchange";
 		String routingKey = "ack.save";
-		
-		
-		
+
 		for(int i =0; i<5; i ++){
-			
 			Map<String, Object> headers = new HashMap<String, Object>();
 			headers.put("num", i);
 			

@@ -9,7 +9,6 @@ public class Consumer {
 
   public static void main(String[] args) throws Exception {
 
-
     ConnectionFactory connectionFactory = new ConnectionFactory();
     connectionFactory.setHost("111.230.115.242");
     connectionFactory.setPort(5672);
@@ -17,7 +16,6 @@ public class Consumer {
 
     Connection connection = connectionFactory.newConnection();
     Channel channel = connection.createChannel();
-
 
     String exchangeName = "test_ack_exchange";
     String queueName = "test_ack_queue";

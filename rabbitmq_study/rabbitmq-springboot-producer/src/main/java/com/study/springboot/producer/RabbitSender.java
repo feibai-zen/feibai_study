@@ -1,7 +1,8 @@
-package com.bfxy.springboot.producer;
+package com.study.springboot.producer;
 
 import java.util.Map;
 
+import com.study.springboot.entity.Order;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.core.RabbitTemplate.ConfirmCallback;
 import org.springframework.amqp.rabbit.core.RabbitTemplate.ReturnCallback;
@@ -11,8 +12,6 @@ import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
-
-import com.bfxy.springboot.entity.Order;
 
 @Component
 public class RabbitSender {

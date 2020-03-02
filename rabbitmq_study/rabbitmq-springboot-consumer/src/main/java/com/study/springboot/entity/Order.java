@@ -1,4 +1,4 @@
-package com.bfxy.springboot.entity;
+package com.study.springboot.entity;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.bfxy.springboot;
+package com.study.springboot;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

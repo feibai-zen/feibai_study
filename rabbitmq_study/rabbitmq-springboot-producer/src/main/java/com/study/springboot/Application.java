@@ -1,4 +1,4 @@
-package com.bfxy.springboot;
+package com.study.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

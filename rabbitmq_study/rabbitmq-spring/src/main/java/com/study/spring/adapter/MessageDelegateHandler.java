@@ -7,7 +7,7 @@ import com.study.spring.entity.Order;
 import com.study.spring.entity.Packaged;
 
 
-public class MessageDelegate {
+public class MessageDelegateHandler {
 
 	public void handleMessage(byte[] messageBody) {
 		System.err.println("默认方法, 消息内容:" + new String(messageBody));

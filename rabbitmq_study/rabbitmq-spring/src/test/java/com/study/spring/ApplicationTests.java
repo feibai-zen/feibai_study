@@ -125,7 +125,7 @@ public class ApplicationTests {
 
     MessageProperties messageProperties = new MessageProperties();
     //这里注意一定要修改contentType为 application/json
-    messageProperties.setContentType("application/json");
+    messageProperties.setContentType("application/json");//
     Message message = new Message(json.getBytes(), messageProperties);
 
     rabbitTemplate.send("topic001", "spring.order", message);
@@ -144,7 +144,7 @@ public class ApplicationTests {
     MessageProperties messageProperties = new MessageProperties();
     //这里注意一定要修改contentType为 application/json
     messageProperties.setContentType("application/json");
-    messageProperties.getHeaders().put("__TypeId__", "com.bfxy.spring.entity.Order");
+    messageProperties.getHeaders().put("__TypeId__", "com.study.spring.entity.Order");
     Message message = new Message(json.getBytes(), messageProperties);
 
     rabbitTemplate.send("topic001", "spring.order", message);

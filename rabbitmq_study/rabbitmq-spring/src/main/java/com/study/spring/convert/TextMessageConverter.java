@@ -15,7 +15,7 @@ public class TextMessageConverter implements MessageConverter {
 
   @Override
   public Object fromMessage(Message message) throws MessageConversionException {
-    // message对象转换成java对象的方式
+    //消费者接收到消息后，调用该方法将message对象转换成java对象，再将转换后的结果给MessageListener.
     String contentType = message.getMessageProperties().getContentType();
     if (null != contentType && contentType.contains("text")) {
       return new String(message.getBody());

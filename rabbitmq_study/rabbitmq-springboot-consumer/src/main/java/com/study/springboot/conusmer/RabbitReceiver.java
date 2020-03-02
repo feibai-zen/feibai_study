@@ -1,7 +1,8 @@
-package com.bfxy.springboot.conusmer;
+package com.study.springboot.conusmer;
 
 import java.util.Map;
 
+import com.study.springboot.entity.Order;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.QueueBinding;
@@ -64,7 +65,7 @@ public class RabbitReceiver {
 			)
 	)
 	@RabbitHandler
-	public void onOrderMessage(@Payload com.bfxy.springboot.entity.Order order, 
+	public void onOrderMessage(@Payload Order order,
 			Channel channel, 
 			@Headers Map<String, Object> headers) throws Exception {
 		System.err.println("--------------------------------------");

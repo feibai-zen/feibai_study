@@ -3,8 +3,8 @@ package com.feibai.study.demos.demos.reflect;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 
-import com.feibai.study.demos.demos.reflect.annotation.SxtField;
-import com.feibai.study.demos.demos.reflect.annotation.SxtTable;
+import com.feibai.study.demos.demos.reflect.annotation.FeibaiStudyField;
+import com.feibai.study.demos.demos.reflect.annotation.FeibaiStudyTable;
 
 /**
  * 通过反射获取注解信息
@@ -26,13 +26,13 @@ public class Demo05 {
 				System.out.println(a);
 			}
 			// 获得类的指定的注解
-			SxtTable st = (SxtTable) clazz.getAnnotation(SxtTable.class);
+			FeibaiStudyTable st = (FeibaiStudyTable) clazz.getAnnotation(FeibaiStudyTable.class);
 			System.out.println(st.value());
 
 			// 获得类的属性的注解
 			Field f = clazz.getDeclaredField("studentName");
-			SxtField sxtField = f.getAnnotation(SxtField.class);
-			System.out.println(sxtField.columnName() + "--" + sxtField.type() + "--" + sxtField.length());
+			FeibaiStudyField feibaiStudyField = f.getAnnotation(FeibaiStudyField.class);
+			System.out.println(feibaiStudyField.columnName() + "--" + feibaiStudyField.type() + "--" + feibaiStudyField.length());
 
 			// 根据获得的表名、字段的信息，拼出DDL语句，然后，使用JDBC执行这个SQL，在数据库中生成相关的表
 

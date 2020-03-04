@@ -1,13 +1,13 @@
 package com.feibai.study.demos.demos.reflect.annotation;
 
-@SxtTable("tb_student")
-public class SxtStudent {
+@FeibaiStudyTable("tb_student")
+public class FeibaiStudyStudent {
 
-	@SxtField(columnName = "id", type = "int", length = 10)
+	@FeibaiStudyField(columnName = "id", type = "int", length = 10)
 	private int id;
-	@SxtField(columnName = "sname", type = "varchar", length = 10)
+	@FeibaiStudyField(columnName = "sname", type = "varchar", length = 10)
 	private String studentName;
-	@SxtField(columnName = "age", type = "int", length = 3)
+	@FeibaiStudyField(columnName = "age", type = "int", length = 3)
 	private int age;
 
 	public int getId() {

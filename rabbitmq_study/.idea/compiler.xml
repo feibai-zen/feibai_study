@@ -10,8 +10,9 @@
         <module name="03-spring-boot-filter" />
         <module name="study-demos" />
         <module name="spring-boot-security-cas" />
-        <module name="spring-boot-ignite" />
+        <module name="19-spring-boot-test" />
         <module name="dubbo-provider" />
+        <module name="spring-boot-mybatis" />
         <module name="spring-boot-task" />
         <module name="spring-boot-influxdb" />
         <module name="api" />
@@ -35,16 +36,15 @@
         <module name="spring-boot-logging-log4j2" />
         <module name="dubbo-api" />
         <module name="spring-boot-aspect" />
-        <module name="19-spring-boot-test" />
         <module name="spring-boot-security" />
         <module name="rabbitmq-spring" />
-        <module name="spring-boot-custom-schema" />
+        <module name="18-spring-boot-exception5" />
         <module name="04-spring-boot-Listener" />
         <module name="20-spring-boot-springloader" />
-        <module name="18-spring-boot-exception5" />
         <module name="spring-boot-elasticsearch" />
         <module name="spring-boot-mybatis-multidatasource" />
         <module name="07-spring-boot-fileupload" />
+        <module name="spring-boot-custom-schema" />
         <module name="dubbo-consumer" />
         <module name="13-spring-boot-validate" />
         <module name="spring-boot-disconf" />
@@ -61,7 +61,7 @@
         <module name="spring-boot-mockito" />
         <module name="spring-boot-hibernate-validation" />
         <module name="16-spring-boot-exception3" />
-        <module name="spring-boot-mybatis" />
+        <module name="spring-boot-ignite" />
         <module name="rabbitmq-springboot-consumer" />
         <module name="23-spring-boot-ehcache" />
         <module name="spring-boot-logging-log4j2-config" />
@@ -150,7 +150,7 @@
       <module name="spring-boot-web-bootstrap" target="1.8" />
       <module name="spring-boot-web-jsp" target="1.8" />
       <module name="spring-boot-web-thymeleaf" target="1.8" />
-      <module name="spring-study" target="1.5" />
+      <module name="spring-study" target="1.8" />
       <module name="study-demos" target="8" />
     </bytecodeTargetLevel>
   </component>

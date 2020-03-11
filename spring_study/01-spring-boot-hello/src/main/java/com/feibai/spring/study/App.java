@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * SpringBoot 启动类
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月19日
  *

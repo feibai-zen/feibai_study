@@ -6,6 +6,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../study_demos/pom.xml" />
         <option value="$PROJECT_DIR$/../design_pattern/pom.xml" />
+        <option value="$PROJECT_DIR$/../../spring-boot-learning-examples/pom.xml" />
+        <option value="$PROJECT_DIR$/../spring_study/pom.xml" />
       </list>
     </option>
   </component>

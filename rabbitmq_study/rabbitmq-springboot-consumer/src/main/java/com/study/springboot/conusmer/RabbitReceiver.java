@@ -25,7 +25,6 @@ public class RabbitReceiver {
           key = "springboot.*"
   )
   )
-
   @RabbitHandler
   public void onMessage(Message message, Channel channel) throws Exception {
     System.err.println("--------------------------------------");
@@ -35,16 +34,7 @@ public class RabbitReceiver {
     channel.basicAck(deliveryTag, false);
   }
 
-
   /**
-   * spring.rabbitmq.listener.order.queue.name=queue-2
-   * spring.rabbitmq.listener.order.queue.durable=true
-   * spring.rabbitmq.listener.order.exchange.name=exchange-1
-   * spring.rabbitmq.listener.order.exchange.durable=true
-   * spring.rabbitmq.listener.order.exchange.type=topic
-   * spring.rabbitmq.listener.order.exchange.ignoreDeclarationExceptions=true
-   * spring.rabbitmq.listener.order.key=springboot.*
-   *
    * @param order
    * @param channel
    * @param headers
@@ -70,6 +60,5 @@ public class RabbitReceiver {
     //手工ACK
     channel.basicAck(deliveryTag, false);
   }
-
 
 }

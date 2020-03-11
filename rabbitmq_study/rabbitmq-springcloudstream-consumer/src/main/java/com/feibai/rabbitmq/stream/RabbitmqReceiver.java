@@ -1,4 +1,4 @@
-package com.bfxy.rabbitmq.stream;
+package com.feibai.rabbitmq.stream;
 
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.cloud.stream.annotation.EnableBinding;

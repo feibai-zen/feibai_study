@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 
  * 目录名称必须要webapp,SpringBoot默认的也会去该目录进行查找
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 @SpringBootApplication

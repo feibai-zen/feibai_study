@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * SpringBoot结合junit进行单元测试
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月20日
  *

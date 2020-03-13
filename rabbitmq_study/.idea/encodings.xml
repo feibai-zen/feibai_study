@@ -41,44 +41,5 @@
     <file url="file://$PROJECT_DIR$/../spring_study/20-spring-boot-springloader/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../spring_study/23-spring-boot-ehcache/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../spring_study/23-spring-boot-ehcache/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-configuration/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-configuration/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-custom-schema/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-custom-schema/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-dubbo-annotation/dubbo-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-dubbo-annotation/dubbo-consumer/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-dubbo-annotation/dubbo-consumer/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-dubbo-annotation/dubbo-provider/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-dubbo-annotation/dubbo-provider/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-dubbo/api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-dubbo/consumer/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-dubbo/consumer/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-dubbo/provider/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-dubbo/provider/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-log4j2-integration/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-log4j2-integration/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-logging-log4j2-config/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-logging-log4j2-config/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-logging-log4j2/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-logging-log4j2/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-mybatis-annotation/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-mybatis-annotation/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-mybatis-multidatasource/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-mybatis-multidatasource/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-mybatis-sharding-jdbc-masterslave/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-mybatis-sharding-jdbc-masterslave/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-mybatis-sharding-jdbc/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-mybatis-sharding-jdbc/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-mybatis/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-mybatis/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-quickstart/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-rocketmq-starter/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-rocketmq-starter/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-rocketmq/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-rocketmq/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-starter-rest/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-starter-rest/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-starter/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../spring-boot-learning-examples/spring-boot-starter/src/main/resources" charset="UTF-8" />
   </component>
 </project>

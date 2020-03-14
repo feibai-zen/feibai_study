@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.10.RELEASE</version>
+    <version>2.1.7.RELEASE</version>
     <relativePath/>
   </parent>
 
@@ -103,6 +103,7 @@
     <module>26-spring-boot-scheduled</module>
     <module>27-quartz-demo</module>
     <module>28-spring-boot-quartz</module>
+    <module>29-spring-boot-aspect-log</module>
 
   </modules>
 

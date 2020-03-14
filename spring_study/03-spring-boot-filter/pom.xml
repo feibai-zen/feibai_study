@@ -10,7 +10,6 @@
   <artifactId>03-spring-boot-filter</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <!-- jdk1.7 -->
   <properties>
     <java.version>1.8</java.version>
   </properties>

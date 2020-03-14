@@ -20,13 +20,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author mazhq
- * @Title: DataSourceConfig
- * @ProjectName: zeus
- * @Description: TODO
- * @date 2019/8/1 17:07
- */
 @Configuration
 public class DataSourceConfig {
     @Autowired

@@ -12,13 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 import java.util.Random;
 
-/**
- * @author mazhq
- * @Title: UserAuthController
- * @ProjectName: zeus
- * @Description: TODO
- * @date 2019/8/1 17:18
- */
 @RestController
 @RequestMapping("/user")
 public class UserAuthController {

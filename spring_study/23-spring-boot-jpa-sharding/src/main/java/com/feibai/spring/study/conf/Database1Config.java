@@ -7,13 +7,6 @@ import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 
-/**
- * @author mazhq
- * @Title: Database0Config
- * @ProjectName: zeus
- * @Description: TODO
- * @date 2019/8/1 17:06
- */
 @Data
 @ConfigurationProperties(prefix = "database1")
 @Component

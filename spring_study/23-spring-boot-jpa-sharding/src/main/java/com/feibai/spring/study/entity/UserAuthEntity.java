@@ -6,13 +6,6 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author mazhq
- * @Title: UserAuthEntity
- * @ProjectName: zeus
- * @Description: TODO
- * @date 2019/7/30 16:41
- */
 @Entity
 @Data
 @Table(name = "USER_AUTH", uniqueConstraints = {@UniqueConstraint(name = "USER_AUTH_PHONE", columnNames = {"PHONE"}),

@@ -8,12 +8,14 @@ import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
 /**
  * 通过SimpleMappingExceptionResolver做全局异常处理
- * 
- * 缺点：无法在视图跳转是向页面传递异常对象
+ *
+ * 优点：可以在一个方法中添加所有的异常处理方式
+ *
+ * 缺点：无法在视图跳转的时候向页面传递异常对象
  *
  *
  */
-@Configuration
+@Configuration//springboot会对里面所有的@Bean创建对象
 public class GlobalException {
 	
 	/**

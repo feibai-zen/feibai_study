@@ -1,116 +1,139 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!--  <parent>-->
+  <!--    <groupId>org.springframework.boot</groupId>-->
+  <!--    <artifactId>spring-boot-starter-parent</artifactId>-->
+  <!--    <version>1.5.10.RELEASE</version>-->
+  <!--  </parent>-->
 
-	<groupId>com.feibai.study</groupId>
-    <artifactId>spring-study</artifactId>
-    <version>0.0.1</version>
-    <name>spring-study</name>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.6.RELEASE</version>
+    <relativePath/>
+  </parent>
 
-	<properties>
-		<java.version>1.8</java.version>
-		<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
-		<thymeleaf-layout-dialect.version>2.0.4</thymeleaf-layout-dialect.version>
-	</properties>
+  <groupId>com.feibai.study</groupId>
+  <artifactId>spring-study</artifactId>
+  <version>0.0.1</version>
+  <name>spring-study</name>
 
-    <distributionManagement>
-        <site>
-            <id>${project.artifactId}-site</id>
-            <url>${project.baseUri}</url>
-        </site>
-        <!-- use the following if you're not using a snapshot version. -->
-        <repository>
-            <id>artifactory</id>
-            <name>ximalaya-releases</name>
-            <url>http://artifactory.ximalaya.com/artifactory/ximalaya-releases/</url>
-        </repository>
-        <!-- use the following if you ARE using a snapshot version. -->
-        <snapshotRepository>
-            <id>artifactory</id>
-            <name>ximalaya-snapshots</name>
-            <url>http://artifactory.ximalaya.com/artifactory/ximalaya-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+  <properties>
+    <java.version>1.8</java.version>
+    <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
+    <thymeleaf-layout-dialect.version>2.0.4</thymeleaf-layout-dialect.version>
 
-    <build>
-        <sourceDirectory>src/main/java</sourceDirectory>
-        <testSourceDirectory>src/test/java</testSourceDirectory>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
-        <testResources>
-            <testResource>
-                <directory>src/test/resources</directory>
-            </testResource>
-        </testResources>
-        <outputDirectory>target/classes</outputDirectory>
-        <testOutputDirectory>target/test-classes</testOutputDirectory>
-        <directory>target</directory>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-            <plugins>
-                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
-                <plugin>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
-                </plugin>
-                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.0.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.22.1</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.0.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-install-plugin</artifactId>
-                    <version>2.5.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
-                </plugin>
-                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
-                <plugin>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>3.7.1</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>3.0.0</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+    <jedis.version>2.9.0</jedis.version>
+  </properties>
 
-     <modules>
-        <module>01-spring-boot-hello</module>
-        <module>02-spring-boot-servlet</module>
-        <module>03-spring-boot-filter</module>
-        <module>04-spring-boot-Listener</module>
-        <module>05-spring-boot-static-resources1</module>
-        <module>06-spring-boot-static-resources2</module>
-        <module>07-spring-boot-fileupload</module>
-        <module>12-spring-boot-springmvc-mybatis</module>
-        <module>13-spring-boot-validate</module>
-        <module>14-spring-boot-exception1</module>
-        <module>15-spring-boot-exception2</module>
-        <module>16-spring-boot-exception3</module>
-        <module>17-spring-boot-exception4</module>
-        <module>18-spring-boot-exception5</module>
-        <module>19-spring-boot-test</module>
-        <module>20-spring-boot-springloader</module>
-        <module>23-spring-boot-ehcache</module>
-    </modules>
+  <distributionManagement>
+    <site>
+      <id>${project.artifactId}-site</id>
+      <url>${project.baseUri}</url>
+    </site>
+    <!-- use the following if you're not using a snapshot version. -->
+    <repository>
+      <id>artifactory</id>
+      <name>ximalaya-releases</name>
+      <url>http://artifactory.ximalaya.com/artifactory/ximalaya-releases/</url>
+    </repository>
+    <!-- use the following if you ARE using a snapshot version. -->
+    <snapshotRepository>
+      <id>artifactory</id>
+      <name>ximalaya-snapshots</name>
+      <url>http://artifactory.ximalaya.com/artifactory/ximalaya-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <testSourceDirectory>src/test/java</testSourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+      </testResource>
+    </testResources>
+    <outputDirectory>target/classes</outputDirectory>
+    <testOutputDirectory>target/test-classes</testOutputDirectory>
+    <directory>target</directory>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <modules>
+    <module>01-spring-boot-hello</module>
+    <module>02-spring-boot-servlet</module>
+    <module>03-spring-boot-filter</module>
+    <module>04-spring-boot-Listener</module>
+    <module>05-spring-boot-static-resources1</module>
+    <module>06-spring-boot-static-resources2</module>
+    <module>07-spring-boot-fileupload</module>
+    <module>12-spring-boot-springmvc-mybatis</module>
+    <module>13-spring-boot-validate</module>
+    <module>14-spring-boot-exception1</module>
+    <module>15-spring-boot-exception2</module>
+    <module>16-spring-boot-exception3</module>
+    <module>17-spring-boot-exception4</module>
+    <module>18-spring-boot-exception5</module>
+    <module>19-spring-boot-test</module>
+    <module>20-spring-boot-springloader</module>
+    <module>21-spring-boot-devtools</module>
+    <module>22-spring-boot-jpa</module>
+    <module>23-spring-boot-jpa-sharding</module>
+    <module>24-spring-boot-ehcache</module>
+    <module>25-spring-boot-redis</module>
+    <module>26-spring-boot-scheduled</module>
+    <module>27-quartz-demo</module>
+    <module>28-spring-boot-quartz</module>
+
+
+  </modules>
 
 </project>

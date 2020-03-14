@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
  * SpringBoot处理异常方式二：定义ExceptionHandler，可以将我们关心的异常跳转到指定页面
  *
  *
+ * 这种方法虽然解决：不同异常跳转到不同的页面，但是要在方法上添加很多的注解。多个controller，就需要重复相同的工作，同时也会造成代码冗余。
  */
 @Controller
 public class DemoController {

@@ -9,6 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
  * 
  * 优点：对异常的处理可以复用
  *
+ * 确定：如果项目中要处理的异常非常多，这个类中需要定义许多中方法
+ *
  *
  */
 @ControllerAdvice

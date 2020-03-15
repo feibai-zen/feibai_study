@@ -15,8 +15,6 @@ import java.util.Arrays;
 public class LogAspect {
 
   private static final Logger LOG = LoggerFactory.getLogger(LogAspect.class);
-
-
   /**
    * 切入点表达式： execution(<修饰符模式>?<返回类型模式><方法名模式>(<参数模式>)<异常模式>?) 抽取可重用的切入点表达式;
    * 定义一个可重用的切入点表达式，以后的表达式直接引用;

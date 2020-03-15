@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- * spring Boot 整合Quartz案例
+ * 日志切面打印
  */
 @SpringBootApplication
 public class App {

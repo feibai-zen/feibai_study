@@ -105,6 +105,14 @@
     <module>28-spring-boot-quartz</module>
     <module>29-spring-boot-aspect-log</module>
 
+
+    <module>100-springmvc-quickstart</module>
+    <module>101-springmvc-response</module>
+    <module>102-springmvc-fileupload</module>
+    <module>103-springmvc-exception</module>
+    <module>104-springmvc-interceptor</module>
+    <module>105-springmvc-ssm-demo</module>
+
   </modules>
 
 </project>

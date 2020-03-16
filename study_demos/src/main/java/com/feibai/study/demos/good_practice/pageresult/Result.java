@@ -6,12 +6,21 @@ public class Result<T> {
   private String msg;
   private T data;
 
-  public static <T> Result<T> error(int code, String msg) {
-    return new Result(code, msg, null);
+  public static <T> Result<T> error(ErrorMsg errorMsg) {
+    return new Result(errorMsg);
   }
 
   public static <T> Result<T> success(int code, T data) {
     return new Result(code, "ok", data);
+  }
+
+  public Result(ErrorMsg errorMsg) {
+
+    if(null == errorMsg){
+      return;
+    }
+    this.code = errorMsg.getCode();
+    this.msg = errorMsg.getMsg();
   }
 
   private Result(int code, String msg, T data) {

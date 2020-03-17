@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 开启注解扫描 -->
-    <context:component-scan base-package="cn.itcast"/>
+    <context:component-scan base-package="com.feibai.spring.study"/>
 
     <!-- 视图解析器对象 -->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

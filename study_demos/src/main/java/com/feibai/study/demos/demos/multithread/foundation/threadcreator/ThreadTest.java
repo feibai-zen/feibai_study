@@ -11,7 +11,7 @@ package com.feibai.study.demos.demos.multithread.foundation.threadcreator;
  * 2.采用继承Thread类的方法创建多线程的优缺点： 劣势：因为线程类已经继承了Thread类，所以不能再继承其他父类。
  * 优势：编写简单，如果需要访问当前线程，则无须使用Thread.currentThread()方法，直接使用this即可获得当前线程。
  * 
- * @author liyuanlong
+ * @author feibai
  *
  */
 public class ThreadTest {

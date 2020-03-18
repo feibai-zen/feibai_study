@@ -20,7 +20,6 @@ public class Web12306 implements Runnable {
 			try {
 				Thread.sleep(2000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			System.out.println(Thread.currentThread().getName() + "购买一张后，还剩余张数. cnt: " + (ticket--));

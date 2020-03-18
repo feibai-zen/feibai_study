@@ -4,7 +4,7 @@ package com.feibai.study.demos.demos.multithread.foundation;
  * 
  * 通过设置标志位终止线程
  * 
- * @author liyuanlong
+ * @author feibai
  *
  */
 public class TerminatedTread implements Runnable {

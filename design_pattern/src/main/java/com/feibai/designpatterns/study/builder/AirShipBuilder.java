@@ -1,9 +1,9 @@
 package com.feibai.designpatterns.study.builder;
 
 public interface AirShipBuilder {
-	Engine builderEngine();
+  Engine builderEngine();
 
-	OrbitalModule builderOrbitalModule();
+  OrbitalModule builderOrbitalModule();
 
-	EscapeTower builderEscapeTower();
+  EscapeTower builderEscapeTower();
 }

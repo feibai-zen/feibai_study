@@ -5,18 +5,18 @@ import java.util.Observer;
 
 public class ObserverA implements Observer {
 
-	private int myState;
+  private int myState;
 
-	@Override
-	public void update(Observable o, Object arg) {
-	}
+  @Override
+  public void update(Observable o, Object arg) {
+  }
 
-	public int getMyState() {
-		return myState;
-	}
+  public int getMyState() {
+    return myState;
+  }
 
-	public void setMyState(int myState) {
-		this.myState = myState;
-	}
+  public void setMyState(int myState) {
+    this.myState = myState;
+  }
 
 }

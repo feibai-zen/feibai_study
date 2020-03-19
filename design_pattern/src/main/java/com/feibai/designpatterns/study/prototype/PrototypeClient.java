@@ -17,34 +17,33 @@ public class PrototypeClient {
     deepCopy();
 //		deepCopyWithSerialize();
 //		compareEfficient();
-
   }
 
   // 浅拷贝，内层对象还是相同
   public static void lowCopy() throws Exception {
     Date date = new Date(12312321331L);
-    Sheep s1 = new Sheep("少利", date);
-    System.out.println(s1);
-    System.out.println(s1.getSname());
-    System.out.println(s1.getBirthday());
+    SheepWhihLowCopy originalSheep = new SheepWhihLowCopy("少利", date);
+    System.out.println(originalSheep);
+    System.out.println(originalSheep.getSname());
+    System.out.println(originalSheep.getBirthday());
 
     date.setTime(23432432423L);
 
-    System.out.println(s1.getBirthday());
+    System.out.println(originalSheep.getBirthday());
 
-    Sheep s2 = (Sheep) s1.clone();
+    SheepWhihLowCopy s2 = (SheepWhihLowCopy) originalSheep.clone();
     s2.setSname("多利");
     System.out.println(s2);
     System.out.println(s2.getSname());
     System.out.println(s2.getBirthday());
-    System.out.println(s1.getSname());
+    System.out.println(originalSheep.getSname());
   }
 
   // 深拷贝，内层对象分离，完全是新的对象
   public static void deepCopy() throws CloneNotSupportedException {
     Date date = new Date(12312321331L);
-    Sheep2 s1 = new Sheep2("少利", date);
-    Sheep2 s2 = (Sheep2) s1.clone(); // 实现深复制。s2对象的birthday是一个新对象！
+    SheepWhitDeepCLone s1 = new SheepWhitDeepCLone("少利", date);
+    SheepWhitDeepCLone s2 = (SheepWhitDeepCLone) s1.clone(); // 实现深复制。s2对象的birthday是一个新对象！
 
     System.out.println(s1);
     System.out.println(s1.getSname());
@@ -64,26 +63,26 @@ public class PrototypeClient {
   // 原型模式(深复制,使用序列化和反序列化的方式实现深复制)
   public static void deepCopyWithSerialize() throws Exception {
     Date date = new Date(12312321331L);
-    Sheep s1 = new Sheep("少利", date);
-    System.out.println(s1);
-    System.out.println(s1.getSname());
-    System.out.println(s1.getBirthday());
+    SheepWhihLowCopy sheep = new SheepWhihLowCopy("少利", date);
+    System.out.println(sheep);
+    System.out.println(sheep.getSname());
+    System.out.println(sheep.getBirthday());
 
-//		使用序列化和反序列化实现深复制
+    // 使用序列化和反序列化实现深复制
     ByteArrayOutputStream bos = new ByteArrayOutputStream();
     ObjectOutputStream oos = new ObjectOutputStream(bos);
-    oos.writeObject(s1);
+    oos.writeObject(sheep);
     byte[] bytes = bos.toByteArray();
 
     ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
     ObjectInputStream ois = new ObjectInputStream(bis);
 
-    Sheep s2 = (Sheep) ois.readObject(); // 克隆好的对象！
+    SheepWhihLowCopy s2 = (SheepWhihLowCopy) ois.readObject(); // 克隆好的对象
 
     System.out.println("修改原型对象的属性值");
     date.setTime(23432432423L);
 
-    System.out.println(s1.getBirthday());
+    System.out.println(sheep.getBirthday());
 
     s2.setSname("多利");
     System.out.println(s2);
@@ -91,7 +90,7 @@ public class PrototypeClient {
     System.out.println(s2.getBirthday());
   }
 
-  // 测试普通new方式创建对象和clone方式创建对象的效率差异！ 如果需要短时间创建大量对象，并且new的过程比较耗时。则可以考虑使用原型模式！
+  // 测试普通new方式创建对象和clone方式创建对象的效率差异！ 如果需要短时间创建大量对象，并且new的过程比较耗时。则可以考虑使用原型模式
   public static void compareEfficient() throws Exception {
     testNew(1000);
     testClone(1000);

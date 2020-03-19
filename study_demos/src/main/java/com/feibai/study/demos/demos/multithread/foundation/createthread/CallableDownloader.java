@@ -34,8 +34,7 @@ public class CallableDownloader implements Callable<Boolean> {
     CallableDownloader cd3 = new CallableDownloader(
             "http://5b0988e595225.cdn.sohucs.com/images/20170830/d8b57e0dce0d4fa29bd5ef014be663d5.jpeg",
             "success.jpg");
-
-    // 创建执行服务
+        // 创建执行服务
     ExecutorService ser = Executors.newFixedThreadPool(3);
     Future<Boolean> result1 = ser.submit(cd1);
     Future<Boolean> result2 = ser.submit(cd2);

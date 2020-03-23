@@ -3,7 +3,7 @@ package com.feibai.study.demos.multithread.foundation.cooperation;
 /**
  * 协作模型:生产者消费者实现
  * 方式二:信号灯法 借助标志位
- *
+ * <p>
  * 生产者:player
  * 消费者:watcher
  *

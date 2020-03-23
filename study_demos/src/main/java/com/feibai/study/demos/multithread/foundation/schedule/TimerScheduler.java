@@ -10,15 +10,15 @@ import java.util.TimerTask;
  *
  * @author feibai
  */
-public class TimerScheduler_Test {
+public class TimerScheduler {
 
   public static void main(String[] args) {
     Timer timer = new Timer();
     // 执行安排
     // timer.schedule(new MyTask(), 1000); //执行任务一次
     // timer.schedule(new MyTask(), 1000,200); //执行多次
-    Calendar cal = new GregorianCalendar(2099999, 12, 31, 21, 53, 54);
-    timer.schedule(new MyTask(), cal.getTime(), 200); // 指定时间
+    Calendar cal = new GregorianCalendar(2019, 12, 31, 21, 53, 54);
+    timer.schedule(new MyTask(), cal.getTime(), 2000); // 指定时间
   }
 
 }

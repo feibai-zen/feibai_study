@@ -5,7 +5,7 @@ package com.feibai.study.demos.multithread.foundation;
  *
  * @author feibai
  */
-public class TerminatedTread implements Runnable {
+public class  TerminatedTread implements Runnable {
 
   private boolean flag = true;
 

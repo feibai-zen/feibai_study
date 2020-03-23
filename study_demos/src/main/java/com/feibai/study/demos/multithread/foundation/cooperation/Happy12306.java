@@ -8,7 +8,7 @@ package com.feibai.study.demos.multithread.foundation.cooperation;
 public class Happy12306 {
 
   public static void main(String[] args) {
-    Web12306 c = new Web12306(4, "happy sxt");
+    Web12306 c = new Web12306(4, "happy study");
     new Thread(new Passenger(c, "老高", 2)).start();
     new Thread(new Passenger(c, "老裴", 1)).start();
   }

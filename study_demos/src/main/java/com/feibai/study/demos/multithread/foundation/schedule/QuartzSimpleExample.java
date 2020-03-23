@@ -6,10 +6,7 @@ import static org.quartz.TriggerBuilder.newTrigger;
 
 import java.util.Date;
 
-import org.quartz.JobDetail;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerFactory;
-import org.quartz.Trigger;
+import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,10 +14,10 @@ import org.slf4j.LoggerFactory;
 /**
  * quartz
  */
-public class SimpleExample {
+public class QuartzSimpleExample {
 
   public void run() throws Exception {
-    Logger log = LoggerFactory.getLogger(SimpleExample.class);
+    Logger log = LoggerFactory.getLogger(QuartzSimpleExample.class);
 
     log.info("------- Initializing ----------------------");
 
@@ -68,8 +65,21 @@ public class SimpleExample {
   }
 
   public static void main(String[] args) throws Exception {
-    SimpleExample example = new SimpleExample();
+    QuartzSimpleExample example = new QuartzSimpleExample();
     example.run();
+  }
+
+}
+
+class HelloJob implements Job {
+  private static Logger logger = LoggerFactory.getLogger(HelloJob.class);
+
+  public HelloJob() {
+  }
+
+  @Override
+  public void execute(JobExecutionContext context) throws JobExecutionException {
+    logger.info("Hello World! - " + new Date());
   }
 
 }

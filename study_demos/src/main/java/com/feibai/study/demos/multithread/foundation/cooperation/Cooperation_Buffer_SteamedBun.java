@@ -1,7 +1,13 @@
 package com.feibai.study.demos.multithread.foundation.cooperation;
 
 /**
- * 协作模型:生产者消费者 实现方式一:管程法 借助缓冲区
+ * 协作模型:生产者消费者
+ *
+ * 实现方式一:管程法 借助缓冲区
+ *
+ * 优点：生产者与消费者之间解耦、提高效率
+ *
+ * 注意：notify()、notifyAll()方法只能够用在同步方法、同步块中，否则会抛出异常
  * 
  * @author feibai
  *

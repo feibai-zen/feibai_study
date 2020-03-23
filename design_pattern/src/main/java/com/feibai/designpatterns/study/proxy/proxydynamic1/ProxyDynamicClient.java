@@ -17,4 +17,13 @@ public class ProxyDynamicClient {
 
   }
 
+  public void test() {
+    Star star = new Jay();
+    StarHandler handler = new StarHandler(star);
+
+    Star proxy = (Star) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(), new Class[]{Star.class}, handler);
+    proxy.bookTicket();
+    proxy.sing();
+
+  }
 }

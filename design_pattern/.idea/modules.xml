@@ -3,6 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/design-pattern.iml" filepath="$PROJECT_DIR$/design-pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../leetcode/leetcode.iml" filepath="$PROJECT_DIR$/../leetcode/leetcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rabbitmq_study/rabbitmq-api/rabbitmq-api.iml" filepath="$PROJECT_DIR$/../rabbitmq_study/rabbitmq-api/rabbitmq-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rabbitmq_study/rabbitmq-spring/rabbitmq-spring.iml" filepath="$PROJECT_DIR$/../rabbitmq_study/rabbitmq-spring/rabbitmq-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rabbitmq_study/rabbitmq-springboot-consumer/rabbitmq-springboot-consumer.iml" filepath="$PROJECT_DIR$/../rabbitmq_study/rabbitmq-springboot-consumer/rabbitmq-springboot-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rabbitmq_study/rabbitmq-springboot-producer/rabbitmq-springboot-producer.iml" filepath="$PROJECT_DIR$/../rabbitmq_study/rabbitmq-springboot-producer/rabbitmq-springboot-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rabbitmq_study/rabbitmq-springcloudstream-consumer/rabbitmq-springcloudstream-consumer.iml" filepath="$PROJECT_DIR$/../rabbitmq_study/rabbitmq-springcloudstream-consumer/rabbitmq-springcloudstream-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rabbitmq_study/rabbitmq-springcloudstream-producer/rabbitmq-springcloudstream-producer.iml" filepath="$PROJECT_DIR$/../rabbitmq_study/rabbitmq-springcloudstream-producer/rabbitmq-springcloudstream-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rabbitmq_study/rabbitmq-study.iml" filepath="$PROJECT_DIR$/../rabbitmq_study/rabbitmq-study.iml" />
       <module fileurl="file://$PROJECT_DIR$/../study_demos/study-demos.iml" filepath="$PROJECT_DIR$/../study_demos/study-demos.iml" />
     </modules>
   </component>

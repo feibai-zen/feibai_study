@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../study_demos/pom.xml" />
+        <option value="$PROJECT_DIR$/../rabbitmq_study/pom.xml" />
+        <option value="$PROJECT_DIR$/../leetcode/pom.xml" />
       </list>
     </option>
   </component>

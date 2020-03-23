@@ -6,13 +6,35 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="rabbitmq-springcloudstream-consumer" />
+        <module name="rabbitmq-springboot-producer" />
+        <module name="rabbitmq-api" />
+        <module name="rabbitmq-spring" />
+        <module name="rabbitmq-study" />
         <module name="design-pattern" />
         <module name="study-demos" />
+        <module name="rabbitmq-springcloudstream-producer" />
+        <module name="leetcode" />
+        <module name="rabbitmq-springboot-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="design-pattern" target="8" />
+      <module name="leetcode" target="8" />
+      <module name="rabbitmq-api" target="1.8" />
+      <module name="rabbitmq-spring" target="1.8" />
+      <module name="rabbitmq-springboot-consumer" target="1.8" />
+      <module name="rabbitmq-springboot-producer" target="1.8" />
+      <module name="rabbitmq-springcloudstream-consumer" target="1.8" />
+      <module name="rabbitmq-springcloudstream-producer" target="1.8" />
+      <module name="rabbitmq-study" target="8" />
       <module name="study-demos" target="8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="rabbitmq-springboot-consumer" options="-parameters" />
+      <module name="rabbitmq-springboot-producer" options="-parameters" />
+    </option>
   </component>
 </project>

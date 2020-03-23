@@ -7,7 +7,7 @@ import redis.clients.jedis.Jedis;
 /**
  * redis中有哪些命令，Jedis中就有哪些方法
  * 
- * @author leeyuanlong
+ * @author feibai
  */
 public class RedisDemo {
 

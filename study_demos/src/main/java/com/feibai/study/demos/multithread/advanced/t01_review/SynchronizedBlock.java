@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  * 操作非线程安全容器
- * @author leeyuanlong
+ * @author feibai
  */
 public class SynchronizedBlock {
 

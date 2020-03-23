@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 /**
  * @ClassName IntStream_test
  * @Description TODO
- * @Author leeyuanlong
+ * @author feibai
  * @Date 2019/11/25 8:28 下午
  **/
 

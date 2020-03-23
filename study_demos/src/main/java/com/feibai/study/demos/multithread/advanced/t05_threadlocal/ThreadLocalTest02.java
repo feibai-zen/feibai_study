@@ -3,7 +3,7 @@ package com.feibai.study.demos.multithread.advanced.t05_threadlocal;
 /**
  * ThreadLocal:每个线程自身的数据，更改不会影响其他线程
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class ThreadLocalTest02 {

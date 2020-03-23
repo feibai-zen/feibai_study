@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * 数据流 1.写出后读取 2.读取的顺序与写出保持一致
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  *         DataOutputStream DataInputStream
  */

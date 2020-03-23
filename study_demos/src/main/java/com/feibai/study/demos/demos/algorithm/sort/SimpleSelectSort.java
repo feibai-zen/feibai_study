@@ -9,7 +9,7 @@ import java.util.Arrays;
  *平均时间复杂度 ---- O(n^2) 
  *所需辅助空间 ------ O(1)
 *稳定性 ------------ 不稳定
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月21日
  *

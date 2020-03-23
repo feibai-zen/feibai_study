@@ -3,7 +3,7 @@ package com.feibai.study.demos.demos.reflect;
 /**
  * 测试java.lang.Class对象的获取方式
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月7日
  *

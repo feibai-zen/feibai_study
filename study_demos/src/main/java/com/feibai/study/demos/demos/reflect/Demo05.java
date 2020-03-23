@@ -9,7 +9,7 @@ import com.feibai.study.demos.demos.reflect.annotation.FeibaiStudyTable;
 /**
  * 通过反射获取注解信息
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月7日
  *

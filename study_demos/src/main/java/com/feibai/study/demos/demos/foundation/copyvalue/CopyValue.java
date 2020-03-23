@@ -5,7 +5,7 @@ package com.feibai.study.demos.demos.foundation.copyvalue;
  * 
  * Java中只存在按值传递1）基本类型传递值的副本；2）对象（数组，类，接口）类型的传递，传入函数的值是对象引用的拷贝
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月11日
  *

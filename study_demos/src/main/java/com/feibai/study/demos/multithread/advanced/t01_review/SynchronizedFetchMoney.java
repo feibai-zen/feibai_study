@@ -2,7 +2,7 @@ package com.feibai.study.demos.multithread.advanced.t01_review;
 
 /**
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class SynchronizedFetchMoney {

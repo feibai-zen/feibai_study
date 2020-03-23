@@ -8,7 +8,7 @@ import java.util.concurrent.Future;
 /**
  * 创建线程的方式3，实现Callable接口， 重写call()方法
  *
- * @author leeyuanlong
+ * @author feibai
  */
 public class CallableDownloader implements Callable<Boolean> {
 

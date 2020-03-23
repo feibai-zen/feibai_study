@@ -7,7 +7,7 @@ package com.feibai.study.demos.demos.jvm.classloader.demo_evernote;
  * Person person = new Person()，而Person类还没有被加载过，因此会先加载Person类并执行Person类中的static块，接着执行
  * 父类的构造器，完成了父类的初始化，然后就来初始化自身了，因此会接着执行MyClass中的Person person = new Person()，最后执行
  * MyClass的构造器。
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月13日
  *

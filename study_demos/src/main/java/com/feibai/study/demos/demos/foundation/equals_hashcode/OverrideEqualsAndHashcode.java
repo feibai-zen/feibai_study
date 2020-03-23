@@ -5,7 +5,7 @@ import java.util.HashSet;
 /**
  * 重写object类的hashcode()和equals()
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月12日
  *

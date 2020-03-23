@@ -10,13 +10,13 @@ import org.slf4j.LoggerFactory;
 
 public class HelloJob implements Job {
 
-	private static Logger logger = LoggerFactory.getLogger(HelloJob.class);
+  private static Logger logger = LoggerFactory.getLogger(HelloJob.class);
 
-	public HelloJob() {
-	}
+  public HelloJob() {
+  }
 
-	public void execute(JobExecutionContext context) throws JobExecutionException {
-		logger.info("Hello World! - " + new Date());
-	}
+  public void execute(JobExecutionContext context) throws JobExecutionException {
+    logger.info("Hello World! - " + new Date());
+  }
 
 }

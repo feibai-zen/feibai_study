@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 /**
  * 应用反射的API，获取类的信息(类的名字、属性、方法、构造器等)
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月7日
  *

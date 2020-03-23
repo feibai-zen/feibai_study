@@ -5,7 +5,7 @@ package com.feibai.study.demos.multithread.foundation.lock;
  * 
  * 避免: 不要在同一个代码块中，同时持有多个对象的锁
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class DeadLock {

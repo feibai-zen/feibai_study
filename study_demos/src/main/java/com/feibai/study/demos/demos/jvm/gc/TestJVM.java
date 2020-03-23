@@ -7,7 +7,7 @@ import java.util.Map;
  * -Xms1024M -Xmx1024M -XX:+UseSerialGC -XX:MaxTenuringThreshold=15
  * -XX:+PrintGCDetails
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class TestJVM {

@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * 可重入锁: 锁可以延续使用 + 计数器
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class LockTest04 {

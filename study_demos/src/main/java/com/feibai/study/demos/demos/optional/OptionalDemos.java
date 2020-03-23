@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 /**
  * @ClassName OptionalDemos
  * @Description JDK8 Optional的使用。对空值进行疯转，减少了业务对空的判断。
- * @Author leeyuanlong
+ * @author feibai
  * @Date 2019/10/30 5:55 下午
  **/
 

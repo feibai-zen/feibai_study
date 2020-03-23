@@ -3,7 +3,7 @@ package com.feibai.study.demos.multithread.foundation.cooperation;
 /**
  * 协作模型:生产者消费者 实现方式一:管程法 借助缓冲区
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class Cooperation_Buffer_SteamedBun {

@@ -3,7 +3,7 @@ package com.feibai.study.demos.multithread.advanced.t05_threadlocal;
 /**
  * ThreadLocal:分析上下文 环境 起点 1、构造器: 哪里调用 就属于哪里 找线程体 2、run方法:本线程自身的
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class ThreadLocalTest03 {

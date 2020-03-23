@@ -3,7 +3,7 @@ package com.feibai.study.demos.demos.lambda;
 /**
  * lambda推导 +参数
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class LambdaTest02 {

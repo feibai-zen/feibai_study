@@ -3,7 +3,7 @@ package com.feibai.study.demos.demos.foundation.base_class_type;
 /**
  * @ClassName IntegerCompareWithInt
  * @Description Integer与int
- * @Author leeyuanlong
+ * @author feibai
  * @Date 2019/11/25 10:25 上午
  **/
 

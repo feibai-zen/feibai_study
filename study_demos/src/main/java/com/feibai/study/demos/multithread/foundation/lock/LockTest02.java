@@ -3,7 +3,7 @@ package com.feibai.study.demos.multithread.foundation.lock;
 /**
  * 不可重入锁: 锁不可以延续使用
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class LockTest02 {

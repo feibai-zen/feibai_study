@@ -3,7 +3,7 @@ package com.feibai.study.demos.demos.foundation.copyvalue;
 /**
  * 由于String类是final修饰的，不可变，它会在内存中在开辟一块新空间。
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月11日
  *

@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * 初始化对象为HashMap
- * @author leeyuanlong
+ * @author feibai
  */
 public class ThreadLocalTestObject {
 	// 让ThreadLocal里面有一个默认的类即在初始化时 new 出来

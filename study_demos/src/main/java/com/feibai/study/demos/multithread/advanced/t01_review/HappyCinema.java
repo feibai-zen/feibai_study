@@ -3,7 +3,7 @@ package com.feibai.study.demos.multithread.advanced.t01_review;
 /**
  * 快乐影院：购票
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class HappyCinema {

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 快乐影院:选座位
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class HappyCinema2 {

@@ -3,7 +3,7 @@ package com.feibai.study.demos.multithread.foundation.happensbefore;
 /**
  * 指令重排: 代码执行顺序与预期不一致 目的:提高性能
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class HappenBefore {

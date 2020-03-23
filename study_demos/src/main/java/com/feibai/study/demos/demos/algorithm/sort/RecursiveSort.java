@@ -13,7 +13,7 @@ import java.util.Arrays;
    　 需要一个辅助向量来暂存两有序子文件归并的结果，故其辅助空间复杂度为O(n)，显然它不是就地排序。
   注意：
     　若用单链表做存储结构，很容易给出就地的归并排序
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月21日
  *

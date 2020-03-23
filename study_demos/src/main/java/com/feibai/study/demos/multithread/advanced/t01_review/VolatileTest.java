@@ -3,7 +3,7 @@ package com.feibai.study.demos.multithread.advanced.t01_review;
 /**
  * volatile用于保证数据的同步，也就是可见性
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class VolatileTest {

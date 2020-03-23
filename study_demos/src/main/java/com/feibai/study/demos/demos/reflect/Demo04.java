@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * 通过反射获取泛型信息
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月7日
  *

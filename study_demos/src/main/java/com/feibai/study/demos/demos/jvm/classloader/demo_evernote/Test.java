@@ -7,7 +7,7 @@ package com.feibai.study.demos.demos.jvm.classloader.demo_evernote;
  * 在加载完所需的类之后，便开始执行main方法。在main方法中执行new Test()的时候会先调用父类的构造器，然后再调
  * 用自身的构造器。因此，便出现了程序的输出结果
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月13日
  *

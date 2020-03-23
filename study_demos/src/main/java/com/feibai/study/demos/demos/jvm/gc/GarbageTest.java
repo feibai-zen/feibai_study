@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 提供了打印垃圾收集器名称的功能
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class GarbageTest {

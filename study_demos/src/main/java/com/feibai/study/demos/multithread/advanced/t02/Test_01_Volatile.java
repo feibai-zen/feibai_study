@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * 练习： 自定义容器，提供新增元素（add）和获取元素数量（size）方法。
  * 启动两个线程。线程1向容器中新增10个数据。线程2监听容器元素数量，当容器元素数量为5时，线程2输出信息并终止。
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  * @Time 2019年8月21日
  *

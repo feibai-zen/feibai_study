@@ -3,7 +3,7 @@ package com.feibai.study.demos.multithread.advanced.t05_threadlocal;
 /**
  * ThreadLocal:每个线程自身的存储本地、局部区域 get/set/initialValue
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class ThreadLocalTest01 {

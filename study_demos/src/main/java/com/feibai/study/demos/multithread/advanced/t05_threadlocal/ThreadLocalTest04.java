@@ -3,7 +3,7 @@ package com.feibai.study.demos.multithread.advanced.t05_threadlocal;
 /**
  * InheritableThreadLocal:继承上下文环境的数据 ，拷贝一份给子线程
  * 
- * @author leeyuanlong
+ * @author feibai
  *
  */
 public class ThreadLocalTest04 {

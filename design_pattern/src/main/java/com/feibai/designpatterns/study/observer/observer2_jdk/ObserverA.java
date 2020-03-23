@@ -1,4 +1,4 @@
-package com.feibai.designpatterns.study.observer.observer2;
+package com.feibai.designpatterns.study.observer.observer2_jdk;
 
 import java.util.Observable;
 import java.util.Observer;

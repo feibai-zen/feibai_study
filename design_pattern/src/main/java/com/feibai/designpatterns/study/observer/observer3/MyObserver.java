@@ -5,6 +5,6 @@ package com.feibai.designpatterns.study.observer.observer3;
  */
 public interface MyObserver {
 
-    void receive(NewsModel model);
+  void receive(NewsModel model);
 
 }

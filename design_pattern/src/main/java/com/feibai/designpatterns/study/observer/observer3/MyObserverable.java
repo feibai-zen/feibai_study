@@ -5,10 +5,10 @@ package com.feibai.designpatterns.study.observer.observer3;
  */
 public interface MyObserverable {
 
-    void register(MyObserver myObserver);
+  void register(MyObserver myObserver);
 
-    void remove(MyObserver myObserver);
+  void remove(MyObserver myObserver);
 
-    void send(NewsModel model);
+  void send(NewsModel model);
 
 }

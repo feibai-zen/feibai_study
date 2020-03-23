@@ -1,4 +1,4 @@
-package com.feibai.designpatterns.study.observer.observer2;
+package com.feibai.designpatterns.study.observer.observer2_jdk;
 
 public class Client {
   public static void main(String[] args) {

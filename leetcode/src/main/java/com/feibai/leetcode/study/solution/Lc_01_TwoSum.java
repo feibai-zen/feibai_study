@@ -25,30 +25,35 @@ import java.util.Map;
  */
 
 public class Lc_01_TwoSum {
-
   public static void main(String[] args) {
     int[] arr = new int[]{2, 7, 11, 15, 20, 1};
 
-    System.out.println(Arrays.asList(twoSum(arr, 9)).toString());
+    System.out.println(Arrays.toString(twoSum(arr, 9)));
 
-    System.out.println(Arrays.asList(solution_by_violence(arr, 9)).toString());
+    System.out.println(Arrays.toString(solution_by_violence(arr, 9)));
   }
 
+  /**
+   * O(n)
+   */
   public static int[] twoSum(int[] nums, int target) {
     int[] ret = new int[2];
     Map<Integer, Integer> numMap = new HashMap<>();
     for (int i = 0; i < nums.length; i++) {
-      numMap.put(target - nums[i], i);
       int tmp = target - nums[i];
       if (numMap.containsKey(tmp)) {
-        ret[0] = i;
-        ret[1] = numMap.get(tmp);
-        break;
+        ret[0] = numMap.get(tmp);
+        ret[1] = i;
+        return ret;
       }
+      numMap.put(nums[i], i);
     }
     throw new IllegalArgumentException("No two sum solution");
   }
 
+  /**
+   * O(n)
+   */
   public static int[] solution_by_violence(int[] num, int target) {
     int[] ret = new int[2];
     for (int i = 0; i < num.length; i++) {

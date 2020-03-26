@@ -1,5 +1,6 @@
 package com.feibai.leetcode.study.solution;
 
+import javax.sound.midi.Soundbank;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,12 +24,14 @@ import java.util.Map;
  * 所以返回 [0, 1]
  */
 
-public class TwoSum_01 {
+public class Lc_01_TwoSum {
 
   public static void main(String[] args) {
     int[] arr = new int[]{2, 7, 11, 15, 20, 1};
 
     System.out.println(Arrays.asList(twoSum(arr, 9)).toString());
+
+    System.out.println(Arrays.asList(solution_by_violence(arr, 9)).toString());
   }
 
   public static int[] twoSum(int[] nums, int target) {
@@ -46,13 +49,17 @@ public class TwoSum_01 {
     throw new IllegalArgumentException("No two sum solution");
   }
 
-  public static int[] solution_force(int[] num, int target) {
-
+  public static int[] solution_by_violence(int[] num, int target) {
     int[] ret = new int[2];
+    for (int i = 0; i < num.length; i++) {
+      for (int j = i + 1; j < num.length; j++) {
+        if (num[i] + num[j] == target) {
+          ret[0] = i;
+          ret[1] = j;
+        }
+      }
+    }
 
-
-
-
-    return null;
+    return ret;
   }
 }

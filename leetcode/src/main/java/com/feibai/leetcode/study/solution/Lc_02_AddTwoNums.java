@@ -18,9 +18,9 @@ import com.feibai.leetcode.study.beans.ListNode;
  */
 
 
-public class AddTwoNums_02 {
+public class Lc_02_AddTwoNums {
   public static void main(String[] args) {
-    AddTwoNums_02 instance = new AddTwoNums_02();
+    Lc_02_AddTwoNums instance = new Lc_02_AddTwoNums();
 
     instance.addTwoNumbers(new ListNode(10), new ListNode(10));
   }

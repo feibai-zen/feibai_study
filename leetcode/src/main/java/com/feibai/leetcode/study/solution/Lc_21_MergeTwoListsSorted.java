@@ -9,7 +9,7 @@ package com.feibai.leetcode.study.solution;
  * 输出：1->1->2->3->4->4
  *
  */
-public class MergeTwoListsSorted_21 {
+public class Lc_21_MergeTwoListsSorted {
 
 
 }

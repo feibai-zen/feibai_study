@@ -3,7 +3,7 @@ package com.feibai.leetcode.study.solution;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LongestSubstring_03 {
+public class Lc_03_LongestSubstring {
 
   public static void main(String[] args) {
 

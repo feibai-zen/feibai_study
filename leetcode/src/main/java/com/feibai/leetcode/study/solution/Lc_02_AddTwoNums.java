@@ -34,8 +34,8 @@ public class Lc_02_AddTwoNums {
       throw new IllegalArgumentException("输入的参数链表为null!");
     }
     int flag = 0;
-    ListNode ret = new ListNode(0);//虚拟头节点dummyHead
-    ListNode tmp_ret = ret;
+    ListNode dummyHead = new ListNode(0);
+    ListNode tmp_ret = dummyHead;
     while (true) {
       int l1_val = 0;
       int l2_val = 0;
@@ -59,7 +59,7 @@ public class Lc_02_AddTwoNums {
       tmp_ret = new_node;
     }
 
-    return ret.next;
+    return dummyHead.next;
   }
 
 }

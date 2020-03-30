@@ -21,8 +21,10 @@ import com.feibai.leetcode.study.beans.ListNode;
 public class Lc_02_AddTwoNums {
   public static void main(String[] args) {
     Lc_02_AddTwoNums instance = new Lc_02_AddTwoNums();
-
-    instance.addTwoNumbers(new ListNode(10), new ListNode(10));
+    ListNode l1 = new ListNode(0);
+    ListNode l2 = new ListNode(0);
+    instance.constructList(l1, l2);
+    instance.printList(instance.addTwoNumbers(l1.next, l2.next));
   }
 
   /**
@@ -30,36 +32,53 @@ public class Lc_02_AddTwoNums {
    * 总结：1）返回虚拟头节点的next  2）对链表进行操作时，应该定义分身，对分身进行操作
    */
   public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-    if (l1 == null || l2 == null) {
-      throw new IllegalArgumentException("输入的参数链表为null!");
+    if (l1 == null && l2 == null) {
+      throw new IllegalArgumentException("链表不能为null.");
     }
-    int flag = 0;
+
     ListNode dummyHead = new ListNode(0);
-    ListNode tmp_ret = dummyHead;
-    while (true) {
-      int l1_val = 0;
-      int l2_val = 0;
+    ListNode tmp = dummyHead;
+    int flag = 0;
+    while (l1 != null || l2 != null) {
+      int var1 = 0;
+      int var2 = 0;
       int sum = 0;
-      if (l1 == null && l2 == null && flag == 0) {
-        break;
-      }
+
       if (l1 != null) {
-        l1_val = l1.val;
+        var1 = l1.val;
         l1 = l1.next;
       }
       if (l2 != null) {
-        l2_val = l2.val;
+        var2 = l2.val;
         l2 = l2.next;
       }
-      sum = (l1_val + l2_val + flag) % 10;
-      flag = (l1_val + l2_val + flag) / 10;
+      sum = (var1 + var2 + flag) % 10;
+      flag = (var1 + var2 + flag) / 10;
 
-      ListNode new_node = new ListNode(sum);
-      tmp_ret.next = new_node;
-      tmp_ret = new_node;
+      ListNode newNode = new ListNode(sum);
+      tmp.next = newNode;
+      tmp = newNode;
     }
 
     return dummyHead.next;
   }
 
+  private void constructList(ListNode l1, ListNode l2) {
+    // (2 -> 4 -> 3) + (5 -> 6 -> 4)
+    l1.next = new ListNode(2);
+    l1.next.next = new ListNode(4);
+    l1.next.next.next = new ListNode(3);
+
+    l2.next = new ListNode(5);
+    l2.next.next = new ListNode(6);
+    l2.next.next.next = new ListNode(4);
+  }
+
+
+  private void printList(ListNode l) {
+    while (l != null) {
+      System.out.println(l.val);
+      l = l.next;
+    }
+  }
 }

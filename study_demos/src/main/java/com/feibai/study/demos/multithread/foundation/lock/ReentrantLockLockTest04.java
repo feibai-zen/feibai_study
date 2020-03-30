@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author feibai
  *
  */
-public class LockTest04 {
+public class ReentrantLockLockTest04 {
 	ReentrantLock lock = new ReentrantLock();
 
 	public void a() throws InterruptedException {
@@ -29,7 +29,7 @@ public class LockTest04 {
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		LockTest04 test = new LockTest04();
+		ReentrantLockLockTest04 test = new ReentrantLockLockTest04();
 		test.a();
 		Thread.sleep(1000);
 		System.out.println(test.lock.getHoldCount());

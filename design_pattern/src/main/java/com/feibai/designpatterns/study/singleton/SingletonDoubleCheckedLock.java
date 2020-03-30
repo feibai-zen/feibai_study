@@ -28,6 +28,7 @@ public class SingletonDoubleCheckedLock {
       if (null == instance) {
         instance = new SingletonDoubleCheckedLock();
         // 1、开辟空间 //2、初始化对象信息 //3、返回对象的地址给引用
+        // 注意：如果instance没有被volatile修饰，创建instance过程可能会发生指令重排，步骤3可能会优先于步骤2执行，导致其他线程可能拿到空对象
       }
     }
     return instance;

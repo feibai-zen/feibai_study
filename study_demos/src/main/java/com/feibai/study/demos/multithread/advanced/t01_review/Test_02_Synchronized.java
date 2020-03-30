@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * 静态同步方法，锁的是当前类型的类对象。在本代码中就是Synchronized_Test_02.class
  * <p>
- * 注意区别类对象、对象。一个类只有一个类对象，一个类可以有很多个对象
+ * 注意区别类对象 、对象。一个类只有一个类对象，一个类可以有很多个对象
  */
 public class Test_02_Synchronized {
   private static int staticCount = 0;
@@ -19,7 +19,6 @@ public class Test_02_Synchronized {
     try {
       TimeUnit.SECONDS.sleep(3);
     } catch (InterruptedException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }

@@ -39,7 +39,7 @@ public class Lc_02_AddTwoNums {
     ListNode dummyHead = new ListNode(0);
     ListNode tmp = dummyHead;
     int flag = 0;
-    while (l1 != null || l2 != null) {
+    while (l1 != null || l2 != null || flag != 0) {//如果l1、l2都遍历完了,但是flag不是0,计算仍然没有结束
       int var1 = 0;
       int var2 = 0;
       int sum = 0;
@@ -73,7 +73,6 @@ public class Lc_02_AddTwoNums {
     l2.next.next = new ListNode(6);
     l2.next.next.next = new ListNode(4);
   }
-
 
   private void printList(ListNode l) {
     while (l != null) {

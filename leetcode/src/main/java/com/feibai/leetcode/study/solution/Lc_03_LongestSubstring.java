@@ -1,5 +1,7 @@
 package com.feibai.leetcode.study.solution;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,35 +30,41 @@ public class Lc_03_LongestSubstring {
    */
 
   public static void main(String[] args) {
+    Lc_03_LongestSubstring instance = new Lc_03_LongestSubstring();
+    System.out.println(instance.lengthOfLongestSubstringByVolience(" "));
 
-    try {
-      checkPayeeId(Long.valueOf(1), Long.valueOf(1));
-    } catch (Exception e) {
-      System.out.println("exce");
-
-    }
   }
 
-  public static int lengthOfLongestSubstring(String s) {
-
-    Map<Character, Integer> map = new HashMap<>();
-    for (int i = 0; i < s.length(); i++) {
-
-      int start = 0;
-      int end = 0;
-      Character c = s.charAt(i);
-
-      System.out.println(c);
+  // 滑动窗口:O(n)
+  public int lengthOfLongestSubstringbyFlyWindow(String s) {
+    if (s == null || s.isEmpty()) {
+      return 0;
     }
-
-
     return 0;
   }
 
-  public static void checkPayeeId(Long uid, Long payeedId) {
-    if (uid.equals(payeedId)) {
-      throw new RuntimeException();
+  // 暴力解法: O(n^3)
+  public int lengthOfLongestSubstringByVolience(String s) {
+    if (s == null || s.isEmpty()) {
+      return 0;
     }
+
+    int max = 0;
+    for (int i = 0; i < s.length(); i++) {
+      StringBuilder sb = new StringBuilder();
+      int cnt = 0;
+      for (int j = i; j < s.length(); j++) {
+        if (sb.toString().contains(Character.toString(s.charAt(j)))) {//String.valueOf(s.charAt(j));
+          break;
+        }
+        sb.append(s.charAt(j));
+        cnt++;
+      }
+      if (cnt > max) {
+        max = cnt;
+      }
+    }
+    return max;
   }
 
 }

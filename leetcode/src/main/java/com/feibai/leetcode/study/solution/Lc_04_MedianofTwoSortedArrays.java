@@ -43,9 +43,9 @@ public class Lc_04_MedianofTwoSortedArrays {
     while (i < m && j < n) {
       int tmp_num1 = nums1[i];
       int tmp_num2 = nums2[j];
-      int ans = 0;
+      double ans = 0;
       if (tmp_num1 <= tmp_num2) {
-        ans = nums1[i];
+        ans = (double) nums1[i];
         i++;
       } else {
         ans = nums2[j];

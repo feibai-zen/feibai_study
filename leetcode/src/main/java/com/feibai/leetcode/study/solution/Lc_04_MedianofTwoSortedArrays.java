@@ -25,40 +25,52 @@ package com.feibai.leetcode.study.solution;
 public class Lc_04_MedianofTwoSortedArrays {
 
   public static void main(String[] args) {
-
+    Lc_04_MedianofTwoSortedArrays instance = new Lc_04_MedianofTwoSortedArrays();
+    int[] nums1 = new int[]{1, 3};
+    int[] nums2 = new int[]{2};
+    System.out.println(instance.findMedianSortedArrays(nums1, nums2));
   }
 
   public double findMedianSortedArrays(int[] nums1, int[] nums2) {
     int m = nums1.length;
     int n = nums2.length;
-    int[] arr = new int[m + n];
-    int k = 0;
+    int[] arr = new int[(m + n) / 2 + 1];
+    //偶数
+    boolean isOdd = false;
     if ((m + n) % 2 == 0) {
-      k = (m + n) / 2;
-    } else {
-      k = (m + n) / 2 + 1;
+      isOdd = true;
     }
 
-    int i = 0, j = 0;
-    while (i < m && j < n) {
-      int tmp_num1 = nums1[i];
-      int tmp_num2 = nums2[j];
-      double ans = 0;
+    int i = 0, j = 0, q = 0;
+    while (i < m || j < n) {
+      int tmp_num1 = Integer.MAX_VALUE;
+      int tmp_num2 = Integer.MAX_VALUE;
+
+      if (i < m) {
+        tmp_num1 = nums1[i];
+      }
+      if (j < n) {
+        tmp_num2 = nums2[j];
+      }
+
       if (tmp_num1 <= tmp_num2) {
-        ans = (double) nums1[i];
+        arr[q++] = tmp_num1;
         i++;
       } else {
-        ans = nums2[j];
+        arr[q++] = tmp_num2;
         j++;
       }
-      if (i + j == k) {
-        return ans;
+
+      if (i + j >= (m + n) / 2 + 1) {
+        break;
       }
-
-      return (ans1 + ans2) / 2;
     }
-
-    return 0;
+    //处理返回值
+    if (isOdd) {
+      return ((double) arr[(m + n) / 2 - 1] + (double) arr[(m + n) / 2]) / 2;
+    } else {
+      return arr[(m + n) / 2];
+    }
   }
 
 }

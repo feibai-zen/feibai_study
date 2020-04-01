@@ -20,9 +20,6 @@ package com.feibai.leetcode.study.solution;
  * <p>
  * 则中位数是 (2 + 3)/2 = 2.5
  * <p>
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/median-of-two-sorted-arrays
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
 public class Lc_04_MedianofTwoSortedArrays {
@@ -32,7 +29,34 @@ public class Lc_04_MedianofTwoSortedArrays {
   }
 
   public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    int m = nums1.length;
+    int n = nums2.length;
+    int[] arr = new int[m + n];
+    int k = 0;
+    if ((m + n) % 2 == 0) {
+      k = (m + n) / 2;
+    } else {
+      k = (m + n) / 2 + 1;
+    }
 
+    int i = 0, j = 0;
+    while (i < m && j < n) {
+      int tmp_num1 = nums1[i];
+      int tmp_num2 = nums2[j];
+      int ans = 0;
+      if (tmp_num1 <= tmp_num2) {
+        ans = nums1[i];
+        i++;
+      } else {
+        ans = nums2[j];
+        j++;
+      }
+      if (i + j == k) {
+        return ans;
+      }
+
+      return (ans1 + ans2) / 2;
+    }
 
     return 0;
   }

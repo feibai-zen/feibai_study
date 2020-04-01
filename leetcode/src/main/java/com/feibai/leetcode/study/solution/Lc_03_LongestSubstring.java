@@ -1,9 +1,6 @@
 package com.feibai.leetcode.study.solution;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Lc_03_LongestSubstring {
 
@@ -31,16 +28,25 @@ public class Lc_03_LongestSubstring {
 
   public static void main(String[] args) {
     Lc_03_LongestSubstring instance = new Lc_03_LongestSubstring();
-    System.out.println(instance.lengthOfLongestSubstringByVolience(" "));
-
+//    System.out.println(instance.lengthOfLongestSubstringByVolience(" "));
+    System.out.println(instance.lengthOfLongestSubstringKMP("abcbbcbbefgbgfyue"));
   }
 
   // 滑动窗口:O(n)
-  public int lengthOfLongestSubstringbyFlyWindow(String s) {
-    if (s == null || s.isEmpty()) {
-      return 0;
+  public int lengthOfLongestSubstringKMP(String s) {
+    int n = s.length();
+    Set<Character> set = new HashSet<>();
+    int ans = 0, i = 0, j = 0;
+    while (i < n && j < n) {
+      //试图调整[i,j]的范围
+      if (!set.contains(s.charAt(j))) {
+        set.add(s.charAt(j++));
+        ans = Math.max(ans, j - i);
+      } else {
+        set.remove(s.charAt(i++));
+      }
     }
-    return 0;
+    return ans;
   }
 
   // 暴力解法: O(n^3)

@@ -1,6 +1,7 @@
 package com.feibai.study.demos.demos.collections.datastructure;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -14,7 +15,9 @@ public class ArrayListTest {
   public static void main(String[] args) {
     ArrayListTest instance = new ArrayListTest();
 //    instance.test_02();
-    instance.test_03();
+//    instance.test_03();
+    instance.test_04();
+//    instance.test_05();
   }
 
   /**
@@ -58,4 +61,28 @@ public class ArrayListTest {
     list.sort(Comparator.reverseOrder());//逆序
     System.out.println(list);
   }
+
+  /**
+   * Array.asList()
+   *
+   * @Exception Arrays.asList()返回的list容量固定
+   */
+  public void test_04() {
+    List<Integer> list = Arrays.asList(1, 2, 3);//Arrays.asList()返回的list容量固定
+
+//    list.add(5);
+    System.out.println(list.toString());
+
+    List<Integer> list2 = new ArrayList<>(list);
+    list2.add(5);
+    System.out.println(list2);
+  }
+
+  public void test_05() {
+    List<Integer> list = new ArrayList<>(2);
+    for (int i = 0; i < 10; i++) {
+      list.add(i);
+    }
+  }
+
 }

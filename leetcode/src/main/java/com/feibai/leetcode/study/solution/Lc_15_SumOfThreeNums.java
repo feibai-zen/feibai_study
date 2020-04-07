@@ -68,7 +68,7 @@ public class Lc_15_SumOfThreeNums {
           tmp.add(nums[j]);
           set.add(tmp);
           break;
-        } else hashMap.put(nums[i] + nums[j], new ArrayList<>(Arrays.asList(nums[i], nums[j])));
+        } else hashMap.put(nums[i] + nums[j], new ArrayList<>(Arrays.asList(nums[i], nums[j])));//Array.asList(ele1,ele2)这种方式创建的List,容量是固定的
       }
     }
 

@@ -14,12 +14,7 @@ import java.util.stream.Stream;
 
 public class StreamTest {
   public static void main(String[] args) {
-
-    List<Employee> employees = new ArrayList<>();
-    List<Integer> ids = employees.stream().map(Employee::getId).collect(Collectors.toList());
-
-    employees.stream().map(Employee::getId).collect(Collectors.toList());
-    employees.stream().distinct().filter(Objects::nonNull).collect(Collectors.toList());
+    test_02();
 
   }
 
@@ -41,6 +36,23 @@ public class StreamTest {
     List<Medal> medalList = Lists.newArrayList();
     medalList.stream().filter(tuple -> tuple.getEndAt() > System.currentTimeMillis())
             .map(tuple -> tuple.getTagNo().toString()).distinct().collect(Collectors.toList());
+  }
+
+  public static void test_02() {
+    List<Integer> list = new ArrayList<>();
+    list.addAll(Arrays.asList(1, 2, 4, 5, 6, 7, 8, 9, 10));
+
+    List<Integer> list_after = list.stream().filter(item -> item > 5).collect(Collectors.toList());
+    System.out.println(list_after.toString());
+  }
+
+  private static void test_03() {
+
+    List<Employee> employees = new ArrayList<>();
+    List<Integer> ids = employees.stream().map(Employee::getId).collect(Collectors.toList());
+
+    employees.stream().map(Employee::getId).collect(Collectors.toList());
+    employees.stream().distinct().filter(Objects::nonNull).collect(Collectors.toList());
   }
 
 }

@@ -14,12 +14,13 @@ import java.util.List;
 public class LinkedListTest {
 
   public static void main(String[] args) {
-
+    LinkedListTest instance = new LinkedListTest();
+    instance.test_01();
   }
 
   public void test_01() {
-
     List<Integer> linkedList = new LinkedList<>();
+    System.out.println(linkedList.lastIndexOf(1));
 
   }
 

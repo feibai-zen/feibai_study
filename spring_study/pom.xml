@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.1.7.RELEASE</version>
+    <version>2.1.0.RELEASE</version>
     <relativePath/>
   </parent>
 
@@ -104,6 +104,8 @@
     <module>27-quartz-demo</module>
     <module>28-spring-boot-quartz</module>
     <module>29-spring-boot-aspect-log</module>
+    <module>30-spring-boot-transaction-jpa</module>
+    <module>31-spring-boot-transaction-jms</module>
 
 
     <module>100-springmvc-quickstart</module>

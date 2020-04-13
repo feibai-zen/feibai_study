@@ -12,10 +12,10 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StreamTest {
+public class StreamDemos {
   public static void main(String[] args) {
-    test_02();
-
+//    test_02();
+    test_distinct();
   }
 
   private static void construct_stream() {
@@ -55,4 +55,12 @@ public class StreamTest {
     employees.stream().distinct().filter(Objects::nonNull).collect(Collectors.toList());
   }
 
+  /**
+   * distinct()
+   */
+  private static void test_distinct() {
+
+    System.out.println(Arrays.asList(1, 2, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1)
+            .stream().distinct().collect(Collectors.toList()));
+  }
 }

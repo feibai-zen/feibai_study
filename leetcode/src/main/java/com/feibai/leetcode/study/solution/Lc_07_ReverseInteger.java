@@ -29,7 +29,26 @@ public class Lc_07_ReverseInteger {
     System.out.println(instance.reverse(123));
   }
 
+  //Official solution
   public int reverse(int x) {
+    try {
+      int result = 0;
+      while (x != 0) {
+        result = 10 * result + x % 10;
+        x = x / 10;
+      }
+      return result;
+    } catch (NumberFormatException e) {
+      return 0;
+    }
+  }
+
+  /**
+   * 使用字符串的方式处理
+   * <p>
+   * 缺点：时间复杂度高，两次遍历数据
+   */
+  public int reverseByString(int x) {
     if (x == 0) {
       return 0;
     }

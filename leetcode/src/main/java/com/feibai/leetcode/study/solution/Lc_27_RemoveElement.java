@@ -29,27 +29,7 @@ public class Lc_27_RemoveElement {
     System.out.println(Arrays.toString(test_case2));
   }
 
-  public int removeElement(int[] nums, int val) {
-    if (nums.length == 0) {
-      throw new IllegalArgumentException("数组长度为0.");
-    }
-
-    int length = nums.length;
-    int removed = 0;
-    for (int i = 0; i < length; i++) {
-      if (nums[i] == val) {
-        removed++;
-        System.arraycopy(nums, i + 1, nums, i, length - i - 1);
-//        i--;
-      }
-    }
-
-    return length - removed;
-  }
-
-  /**
-   * 官方：双指针题解
-   */
+  //官方：双指针题解
   private int removeElementByDoublePointer(int[] nums, int val) {
     int i = 0;
     for (int j = 0; j < nums.length; j++) {

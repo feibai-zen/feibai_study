@@ -26,9 +26,34 @@ public class Lc_07_ReverseInteger {
     System.out.println(instance.reverse(123456));
     System.out.println(instance.reverse(-123456));
     System.out.println(instance.reverse(-1234560));
+    System.out.println(instance.reverse(123));
   }
 
   public int reverse(int x) {
-    return 0;
+    if (x == 0) {
+      return 0;
+    }
+
+    boolean isNegative = false;
+    if (x < 0) {
+      isNegative = true;
+      x = -x;
+    }
+    String number = String.valueOf(x);
+    while (number.endsWith("0")) {
+      number = number.substring(0, number.length() - 1);
+    }
+    StringBuilder sb = new StringBuilder();
+    for (int i = number.length() - 1; i >= 0; i--) {
+      sb.append(number.charAt(i));
+    }
+    int result;
+    try {
+      result = isNegative ? -Integer.valueOf(sb.toString()) : Integer.valueOf(sb.toString());
+    } catch (Exception e) {
+      result = 0;
+    }
+
+    return result;
   }
 }

@@ -1,6 +1,8 @@
 package com.feibai.leetcode.study.solution;
 
 
+import com.feibai.leetcode.study.beans.ListNode;
+
 /**
  * 给定一个单链表，把所有的奇数节点和偶数节点分别排在一起。请注意，这里的奇数节点和偶数节点指的是节点编号的奇偶性，而不是节点的值的奇偶性。
  * <p>
@@ -25,4 +27,9 @@ package com.feibai.leetcode.study.solution;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Lc_328_OddEvenLinkedList {
+  public ListNode oddEvenList(ListNode head) {
+
+    return null;
+  }
+
 }

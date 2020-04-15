@@ -2,13 +2,11 @@ package com.feibai.study.demos.demos.stream;
 
 import com.feibai.study.demos.beans.Employee;
 import com.feibai.study.demos.beans.Medal;
+import com.feibai.study.demos.beans.User;
 import com.google.common.collect.Lists;
 import org.apache.commons.codec.digest.MessageDigestAlgorithms;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -62,5 +60,13 @@ public class StreamDemos {
 
     System.out.println(Arrays.asList(1, 2, 4, 5, 6, 7, 8, 9, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1)
             .stream().distinct().collect(Collectors.toList()));
+  }
+
+  /**
+   * sort
+   */
+  private void test_sorted() {
+    List<User> users = new ArrayList();
+    List<User> giftTypeList = users.stream().distinct().sorted(Comparator.comparing(User::getId)).collect(Collectors.toList());
   }
 }

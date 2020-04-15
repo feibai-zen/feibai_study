@@ -30,34 +30,34 @@ import java.util.List;
 public class Lc_328_OddEvenLinkedList {
   public static void main(String[] args) {
     Lc_328_OddEvenLinkedList instance = new Lc_328_OddEvenLinkedList();
-    ListNode result = instance.oddEvenList(instance.createList(20));
+    ListNode result = instance.oddEvenList(instance.createList(5));
     instance.printList(result);
   }
 
   public ListNode oddEvenList(ListNode head) {
-    if (null == head) {
-      return head;
-    }
-
-    ListNode odd, even, tmp, tmp_odd, tmp_even;
-    int i = 1;
-
-    tmp = head;
+    int index = 1;
+    ListNode odd_head = new ListNode(0);
+    ListNode even_head = new ListNode(0);
+    ListNode tmp_odd = odd_head;
+    ListNode tmp_even = even_head;
+    ListNode tmp = head;
     while (tmp != null) {
-      if (i % 2 == 0) {
-
+      if (index % 2 != 0) {
+        tmp_odd.next = tmp;
+        tmp_odd = tmp;
       } else {
-
+        tmp_even.next = tmp;
+        tmp_even = tmp;
       }
       tmp = tmp.next;
-      i++;
+      index++;
     }
-    odd.next = even;
-
-    return odd;
+    tmp_even.next = null;
+    tmp_odd.next = even_head.next;
+    return odd_head.next;
   }
 
-  public ListNode createList(int cnt) {
+  private ListNode createList(int cnt) {
     ListNode dummy = new ListNode(0);
 
     ListNode tmp = dummy;
@@ -67,11 +67,9 @@ public class Lc_328_OddEvenLinkedList {
     }
 
     return dummy.next;
-
   }
 
   public void printList(ListNode listNode) {
-
     ListNode tmp = listNode;
     while (tmp != null) {
       System.out.println(tmp.val);

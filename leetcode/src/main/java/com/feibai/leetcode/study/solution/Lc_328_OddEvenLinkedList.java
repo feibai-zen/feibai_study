@@ -1,6 +1,5 @@
 package com.feibai.leetcode.study.solution;
 
-
 import com.feibai.leetcode.study.beans.ListNode;
 
 import java.util.List;
@@ -58,7 +57,7 @@ public class Lc_328_OddEvenLinkedList {
     return odd;
   }
 
-  private ListNode createList(int cnt) {
+  public ListNode createList(int cnt) {
     ListNode dummy = new ListNode(0);
 
     ListNode tmp = dummy;
@@ -71,7 +70,7 @@ public class Lc_328_OddEvenLinkedList {
 
   }
 
-  private void printList(ListNode listNode) {
+  public void printList(ListNode listNode) {
 
     ListNode tmp = listNode;
     while (tmp != null) {

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.io.datastream;
+package com.feibai.study.demos.io.datastream;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

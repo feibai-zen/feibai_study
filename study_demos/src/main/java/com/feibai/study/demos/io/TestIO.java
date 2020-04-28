@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.io;
+package com.feibai.study.demos.io;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.io.commons_io;
+package com.feibai.study.demos.io.commons_io;
 
 import java.io.File;
 import java.net.URL;

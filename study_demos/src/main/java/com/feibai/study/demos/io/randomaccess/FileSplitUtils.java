@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.io.randomaccess;
+package com.feibai.study.demos.io.randomaccess;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

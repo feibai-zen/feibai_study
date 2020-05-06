@@ -30,7 +30,6 @@ public class Procuder {
 			//关键点:如果exchange没有指定，则默认走AMQP default.如果没有指定Queue，则按照routingKey找相同名称的队列，如果找到，就投递到
 			//该队列，找不到则发送失败。
 		}
-
 		//5 记得要关闭相关的连接
 		channel.close();
 		connection.close();

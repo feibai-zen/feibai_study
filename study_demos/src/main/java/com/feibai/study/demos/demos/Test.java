@@ -1,16 +1,16 @@
 package com.feibai.study.demos.demos;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class Test {
+
   public static void main(String[] args) {
+    BigDecimal innerValue = BigDecimal.valueOf(100.00000);
+    System.out.println(String.valueOf(innerValue.longValueExact()));
+//    System.out.println(Long.parseLong("20.0"));
 
-
-    int[] arr = {180, 395, 232, 394, 189, 523, 201, 457, 522, 300, 385, 450, 233, 559, 521, 473, 513, 455, 396, 190, 402, 408, 397, 403, 398, 417, 419, 421, 420, 360, 244, 411, 426, 412, 447, 462, 470, 187, 475, 476, 517, 480, 506, 505, 495, 514, 188, 147, 515, 196, 280, 358, 466, 181, 200, 245, 199, 558, 302, 205, 309, 549, 243, 240, 184, 183, 186, 191, 386, 198, 254, 257, 182, 234, 389, 463, 185, 260, 261, 262, 263, 246, 301, 304, 193, 393, 418, 422, 423, 428, 535, 464, 465, 538, 511, 516, 519, 534, 303, 536, 539, 540, 541, 542, 561, 500, 338, 456, 449, 497, 501, 482, 347, 227, 247, 444, 548, 563, 564, 565};
-
-    System.out.println(arr.length);
-
+    System.out.println(BigDecimal.valueOf(20).multiply(new BigDecimal("0.2")).toString());
   }
-
 
 }

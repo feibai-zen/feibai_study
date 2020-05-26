@@ -3,6 +3,7 @@ package com.feibai.study.demos.good_practice;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.UUID;
 
 class LRUCache<K, V> extends LinkedHashMap<K, V> {
   private final int CACHE_SIZE;
@@ -22,5 +23,14 @@ class LRUCache<K, V> extends LinkedHashMap<K, V> {
   protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
     // 当 map中的数据量大于指定的缓存个数的时候，就自动删除最老的数据。
     return size() > CACHE_SIZE;
+  }
+
+  public static void main(String[] args) {
+
+    for (int i = 0; i < 20; i++) {
+      System.out.println(UUID.randomUUID());
+    }
+
+
   }
 }

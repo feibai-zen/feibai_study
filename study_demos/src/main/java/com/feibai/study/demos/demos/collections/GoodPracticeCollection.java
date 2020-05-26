@@ -34,7 +34,7 @@ public class GoodPracticeCollection {
     Sets.newConcurrentHashSet();
     Sets.newHashSet();
 
-    List<Integer> testList = Collections.EMPTY_LIST;
+    List<Integer> testList = Collections.EMPTY_LIST;//返回的List不能再调用add()方法
     Collections.emptyList();
   }
 

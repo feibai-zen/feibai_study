@@ -257,6 +257,11 @@ public class DateTest_jdk8 {
     System.out.println(date.toString());//Tue Mar 27 14:17:17 CST 2018
   }
 
+  public Duration getDuration() {
+    Duration duration = Duration.between(LocalDateTime.now(), LocalDate.now().plusDays(1).atStartOfDay());
+
+    return duration;
+  }
 
 
 }

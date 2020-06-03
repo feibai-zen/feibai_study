@@ -17,6 +17,7 @@ import org.apache.commons.io.filefilter.SuffixFileFilter;
 public class CommonIOTest {
 
   public static void main(String[] args) throws Exception {
+
     // 文件大小
     long len = FileUtils.sizeOf(new File("/Users/xmly/Leeyuanlong/feibai_study/study_demos/image.jpg"));
     System.out.println(len);
@@ -99,6 +100,15 @@ public class CommonIOTest {
     FileUtils.copyURLToFile(new URL(url), new File("marvel.jpg"));
     String datastring = IOUtils.toString(new URL("http://www.163.com"), "gbk");
     System.out.println(datastring);
+
+  }
+
+  public void createDir() {
+    File file = new File("/Users/xmly/Test/test/test/");
+    if (!file.exists()) {
+      file.mkdirs();
+    }
+    System.out.println(file.getAbsoluteFile());
   }
 
 }

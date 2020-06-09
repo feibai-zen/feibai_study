@@ -3,6 +3,8 @@ package com.feibai.study.demos.good_practice;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalField;
+import java.time.temporal.WeekFields;
 import java.util.Date;
 
 /**
@@ -14,8 +16,21 @@ import java.util.Date;
 public class DateTest_jdk8 {
   public static void main(String[] args) {
 //        today();
-    other(3000000000000L);
+//    other(3000000000000L);
+    System.out.println("粉丝日榜" +
+            buildFansLiveTotalRankDailyKey(0));
+
+    System.out.println("粉丝周榜:" + buildFansLiveTotalRankWeekKey(0));
+
+
+    System.out.println("粉丝月榜:" + buildFansLiveTotalRankMonthKey(0));
+
+
+    System.out.println("主播月榜" + buildAnchorLiveTotalRankMonthKey(0));
+
+
   }
+
 
   private static void today() {
     LocalDate today = LocalDate.now();//获取当前日期，不含时间
@@ -263,5 +278,36 @@ public class DateTest_jdk8 {
     return duration;
   }
 
+  public static String buildFansLiveTotalRankDailyKey(int offset) {
+    LocalDate localDate = LocalDate.now().plusDays(offset);
+
+    return "gift_fans_live_total_rank_daily_" + localDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
+  }
+
+  public static String buildFansLiveTotalRankWeekKey(int offset) {
+    LocalDate localDate = LocalDate.now().plusWeeks(offset);
+    TemporalField weekBasedYear = WeekFields.of(DayOfWeek.MONDAY, 7).weekOfWeekBasedYear();
+    LocalDate formatLocalDate = localDate.minusDays((long) (localDate.getDayOfWeek().getValue() - 1));
+    StringBuilder sb = new StringBuilder();
+    sb.append("gift_fans_live_total_rank_week_").append(String.format("%4d%02d", formatLocalDate.getYear(), formatLocalDate.get(weekBasedYear)));
+
+    return sb.toString();
+  }
+
+  public static String buildFansLiveTotalRankMonthKey(int offset) {
+    LocalDate localDate = LocalDate.now().plusDays(offset);
+    StringBuilder sb = new StringBuilder();
+    sb.append("gift_fans_live_total_rank_month_").append(localDate.getYear()).append(localDate.getMonth().toString());
+
+    return sb.toString();
+  }
+
+  public static String buildAnchorLiveTotalRankMonthKey(int offset) {
+    LocalDate localDate = LocalDate.now().plusMonths(offset);
+    StringBuilder sb = new StringBuilder();
+    sb.append("gift_anchor_live_total_rank_month_").append(localDate.getYear()).append(localDate.getMonth().toString());
+
+    return sb.toString();
+  }
 
 }

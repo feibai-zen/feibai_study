@@ -29,9 +29,11 @@ import java.util.List;
  */
 public class Lc_328_OddEvenLinkedList {
   public static void main(String[] args) {
-    Lc_328_OddEvenLinkedList instance = new Lc_328_OddEvenLinkedList();
-    ListNode result = instance.oddEvenList(instance.createList(5));
-    instance.printList(result);
+//    Lc_328_OddEvenLinkedList instance = new Lc_328_OddEvenLinkedList();
+//    ListNode result = instance.oddEvenList(instance.createList(5));
+//    instance.printList(result);
+
+    System.out.println(Integer.valueOf(123).equals(1234));
   }
 
   public ListNode oddEvenList(ListNode head) {

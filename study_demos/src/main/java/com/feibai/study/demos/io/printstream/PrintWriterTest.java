@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.io.printstream;
+package com.feibai.study.demos.io.printstream;
 
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;

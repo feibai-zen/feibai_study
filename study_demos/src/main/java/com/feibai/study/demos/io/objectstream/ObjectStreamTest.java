@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.io.objectstream;
+package com.feibai.study.demos.io.objectstream;
 
 import java.io.*;
 

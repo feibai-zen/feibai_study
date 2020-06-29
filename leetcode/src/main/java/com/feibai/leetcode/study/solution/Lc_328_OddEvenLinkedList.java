@@ -59,6 +59,19 @@ public class Lc_328_OddEvenLinkedList {
     return odd_head.next;
   }
 
+  private ListNode oddEvenListOffcialSolution(ListNode head) {
+    if (head == null) return null;
+    ListNode odd = head, even = head.next, evenHead = even;
+    while (even != null && even.next != null) {
+      odd.next = even.next;
+      odd = odd.next;
+      even.next = odd.next;
+      even = even.next;
+    }
+    odd.next = evenHead;
+    return head;
+  }
+
   private ListNode createList(int cnt) {
     ListNode dummy = new ListNode(0);
 

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.io;
+package com.feibai.study.demos.io;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

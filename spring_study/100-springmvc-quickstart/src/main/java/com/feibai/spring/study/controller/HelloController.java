@@ -26,6 +26,7 @@ public class HelloController {
    *
    * @return
    */
+  //headers中必须有Accept参数，必须有username请求参数，且值必须为heihei
   @RequestMapping(value = "/testRequestMapping", params = {"username=heihei"}, headers = {"Accept"})
   public String testRequestMapping() {
     System.out.println("测试RequestMapping注解...");

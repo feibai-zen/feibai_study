@@ -42,14 +42,49 @@
         </exclusion>
       </exclusions>
     </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.2</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
 
   <build>
+<!--    <resources>-->
+<!--      <resource>-->
+<!--        <directory>src/main/resources</directory>-->
+<!--        <filtering>true</filtering>-->
+<!--        <excludes>-->
+<!--          <exclude>*.keystore</exclude>-->
+<!--        </excludes>-->
+<!--      </resource>-->
+<!--      <resource>-->
+<!--        <directory>src/main/resources</directory>-->
+<!--        <filtering>false</filtering>-->
+<!--        <includes>-->
+<!--          <include>*.keystore</include>-->
+<!--        </includes>-->
+<!--      </resource>-->
+<!--    </resources>-->
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-resources-plugin</artifactId>-->
+<!--        <configuration>-->
+<!--          <encoding>UTF-8</encoding>-->
+<!--          &lt;!&ndash; 过滤后缀为pem、pfx的证书文件 &ndash;&gt;-->
+<!--          <nonFilteredFileExtensions>-->
+<!--            <nonFilteredFileExtension>pem</nonFilteredFileExtension>-->
+<!--            <nonFilteredFileExtension>pfx</nonFilteredFileExtension>-->
+<!--          </nonFilteredFileExtensions>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
     </plugins>
   </build>
 

@@ -3,6 +3,7 @@ package com.feibai.study.demos.good_practice;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjusters;
 import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
 import java.util.Date;
@@ -308,6 +309,30 @@ public class DateTest_jdk8 {
     sb.append("gift_anchor_live_total_rank_month_").append(localDate.getYear()).append(localDate.getMonth().toString());
 
     return sb.toString();
+  }
+
+  /**
+   * 时间间隔
+   */
+  public Duration getDuration(int scene) {
+    Duration duration = null;
+    switch (scene) {
+      case 1:
+        duration = Duration.between(LocalDateTime.now(),
+                LocalDate.now().plusDays(1).atStartOfDay());
+        break;
+      case 2:
+        duration = Duration.between(LocalDateTime.now(),
+                LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.MONDAY)).atStartOfDay());
+        break;
+      case 3:
+        duration = Duration.between(LocalDateTime.now(),
+                LocalDate.now().with(TemporalAdjusters.firstDayOfNextMonth()).atStartOfDay());
+        break;
+      default:
+        throw new RuntimeException("params error");
+    }
+    return duration;
   }
 
 

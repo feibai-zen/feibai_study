@@ -1,5 +1,8 @@
 package com.feibai.study.demos.beans;
 
+import lombok.Data;
+
+@Data
 public class Birthday {
 
   private String birthday;

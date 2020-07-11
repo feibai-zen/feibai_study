@@ -36,6 +36,11 @@ public class GoodPracticeCollection {
 
     List<Integer> testList = Collections.EMPTY_LIST;//返回的List不能再调用add()方法
     Collections.emptyList();
+
+    //对于只有一个元素的集合，防止分配多余对象
+    Integer a = 1;
+    List<Integer> singletonList = Collections.singletonList(a);
+    Collections.singletonMap(1, "");
   }
 
 }

@@ -1,6 +1,7 @@
 package com.feibai.study.demos.io.commons_io;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -99,6 +100,8 @@ public class CommonIOTest {
     String url = "https://pic2.zhimg.com/v2-7d01cab20858648cbf62333a7988e6d0_qhd.jpg";
     FileUtils.copyURLToFile(new URL(url), new File("marvel.jpg"));
     String datastring = IOUtils.toString(new URL("http://www.163.com"), "gbk");
+
+    byte[] contents = IOUtils.toByteArray(new FileInputStream(new File("")));//将文件内容写入字节数组
     System.out.println(datastring);
 
   }

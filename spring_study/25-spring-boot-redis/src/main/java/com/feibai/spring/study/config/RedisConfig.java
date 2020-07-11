@@ -53,6 +53,7 @@ public class RedisConfig {
     factory.setHostName("111.230.115.242");
     //端口
     factory.setPort(6379);
+    factory.setPassword("123456");
     return factory;
   }
 

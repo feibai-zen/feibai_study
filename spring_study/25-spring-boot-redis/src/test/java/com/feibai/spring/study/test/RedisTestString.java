@@ -27,7 +27,7 @@ public class RedisTestString {
    */
   @Test
   public void testSet() {
-    this.redisTemplate.opsForValue().set("key", "北京尚学堂");
+    this.redisTemplate.opsForValue().set("key", "我是个中文字符串，请在redis查看是否乱码啊....");
   }
 
   /**

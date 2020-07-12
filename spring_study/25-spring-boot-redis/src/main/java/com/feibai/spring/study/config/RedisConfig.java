@@ -50,10 +50,10 @@ public class RedisConfig {
     factory.setPoolConfig(config);
     //配置链接Redis的信息
     //主机地址
-    factory.setHostName("111.230.115.242");
-    //端口
-    factory.setPort(6379);
-    factory.setPassword("123456");
+//    factory.setHostName("111.230.115.242");
+//    //端口
+//    factory.setPort(6379);
+//    factory.setPassword("123456");
     return factory;
   }
 

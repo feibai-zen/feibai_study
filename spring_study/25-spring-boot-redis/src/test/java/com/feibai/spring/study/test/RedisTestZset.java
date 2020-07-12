@@ -1,6 +1,5 @@
 package com.feibai.spring.study.test;
 
-
 import com.feibai.spring.study.App;
 import com.feibai.spring.study.common.IRedisKeySpace;
 import com.feibai.spring.study.common.RedisKeySpaceEnum;
@@ -28,29 +27,30 @@ public class RedisTestZset {
   private IRedisKeySpace redisKeyCreator = RedisKeySpaceEnum.V2;
 
   /**
-   * 添加一个字符串
+   *
    */
   @Test
-  public void testSet() {
-    System.out.println(Instant.now());
-    this.redisTemplate.opsForValue().set("key", "我是个中文字符串，请在redis查看是否乱码啊....");
-  }
-
-  @Test
   public void testSet1() {
-    String redisZKey = "";
+    String redisZKey = redisKeyCreator.buildStarRankStarHourKey(0);
     Set<ZSetOperations.TypedTuple<String>> tuples = redisTemplate.opsForZSet().reverseRangeWithScores(redisZKey, 0, 99);
     if (CollectionUtils.isEmpty(tuples)) {
+      System.out.println("===============================");
+      System.out.println(redisZKey+"is empty");
     } else {
-      Double score = tuples.iterator().next().getScore();
+      while (tuples.iterator().hasNext()) {
+        Double score = tuples.iterator().next().getScore();
+        System.out.println("===============================");
+        System.out.println(score);
+      }
     }
   }
 
   @Test
   public void test01() {
-    String zkey = "";
+    String zkey = redisKeyCreator.buildStarRankStarHourKey(0);;
     Double increScore = new Double("100");
     String member = "test_test01";
     Double resScore = redisTemplate.opsForZSet().incrementScore(zkey, member, increScore);
   }
+
 }

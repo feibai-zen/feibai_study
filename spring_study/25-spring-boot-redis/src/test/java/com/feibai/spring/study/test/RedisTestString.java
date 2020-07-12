@@ -1,15 +1,11 @@
 package com.feibai.spring.study.test;
 
-
 import com.feibai.spring.study.App;
-import com.feibai.spring.study.pojo.Users;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
-import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
@@ -24,10 +20,12 @@ public class RedisTestString {
 
   /**
    * 添加一个字符串
+   * <p>
+   * 添加入库的字符串是编码后的字符串，默认使用的是JdkSerializationRedisSerializer
    */
   @Test
   public void testSet() {
-    this.redisTemplate.opsForValue().set("key", "我是个中文字符串，请在redis查看是否乱码啊....");
+    this.redisTemplate.opsForValue().set("spring.boot.redis.test.string", "我是个中文字符串，请在redis查看是否乱码啊....");
   }
 
   /**
@@ -35,7 +33,10 @@ public class RedisTestString {
    */
   @Test
   public void testGet() {
-    String value = (String) this.redisTemplate.opsForValue().get("key");
+    String key = "spring.boot.redis.test.string";
+    //取出字符串的过程中，经过了JdkSerializationRedisSerializer
+    // 逆序列化处理
+    String value = (String) this.redisTemplate.opsForValue().get(key);
     System.out.println(value);
   }
 

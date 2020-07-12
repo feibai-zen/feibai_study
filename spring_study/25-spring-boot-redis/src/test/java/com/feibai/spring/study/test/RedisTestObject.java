@@ -53,7 +53,7 @@ public class RedisTestObject {
     users.setName("李四");
     users.setId(1);
     this.redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(Users.class));
-    this.redisTemplate.opsForValue().set("users_json", users);
+    this.redisTemplate.opsForValue().set("get ", users);
   }
 
   /**

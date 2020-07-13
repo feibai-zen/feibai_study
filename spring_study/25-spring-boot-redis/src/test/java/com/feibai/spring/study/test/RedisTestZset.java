@@ -25,9 +25,6 @@ public class RedisTestZset {
   private RedisTemplate<String, String> redisTemplate;
   private IRedisKeySpace redisKeyCreator = RedisKeySpaceEnum.V2;
 
-  /**
-   *
-   */
   @Test
   public void testSet1() {
     String redisZKey = redisKeyCreator.buildStarRankStarHourKey(0);

@@ -23,6 +23,10 @@ public class RedisTestList {
 
   @Autowired
   private RedisTemplate<String, String> redisTemplate;
-  private IRedisKeySpace redisKeyCreator = RedisKeySpaceEnum.V2;
+
+
+  public void test_push() {
+
+  }
 
 }

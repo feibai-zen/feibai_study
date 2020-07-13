@@ -16,6 +16,7 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.CollectionUtils;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -28,8 +29,11 @@ public class RedisTestPipeline {
 
   @Autowired
   private RedisTemplate<String, String> redisTemplate;
-  private IRedisKeySpace redisKeyCreator = RedisKeySpaceEnum.V2;
 
+
+  /**
+   * zkey、member需要序列化
+   */
   @Test
   public void testPipeline() {
     String zkey = "sping.boot.redis.pipeline";
@@ -39,8 +43,8 @@ public class RedisTestPipeline {
 
     RedisSerializer<String> serializer = redisTemplate.getStringSerializer();
     redisTemplate.executePipelined((RedisCallback<Object>) connection -> {
-      for (String name : memberList) {
-        connection.zIncrBy(zkey.getBytes(Charsets.UTF_8), 10, serializer.serialize(name));
+      for (String member : memberList) {
+        connection.zIncrBy(serializer.serialize(zkey), 10, serializer.serialize(member));
       }
       return null;
     });
@@ -54,8 +58,11 @@ public class RedisTestPipeline {
       System.out.println("===============================");
       System.out.println(zKey + "is empty");
     } else {
-      while (tuples.iterator().hasNext()) {
-        Double score = tuples.iterator().next().getScore();
+      System.out.println("查询到的数据有：" + tuples.size() + "条");
+
+      Iterator<ZSetOperations.TypedTuple<String>> iterator = tuples.iterator();
+      while (iterator.hasNext()) {
+        Double score = iterator.next().getScore();
         System.out.println("===============================");
         System.out.println(score);
       }

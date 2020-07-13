@@ -37,24 +37,16 @@ public class RedisTestString {
   @Test
   public void testGet() {
     String key = "spring.boot.redis.test.string";
-    //取出字符串的过程中，经过了JdkSerializationRedisSerializer
-    // 逆序列化处理
     String value = (String) this.redisTemplate.opsForValue().get(key);
     System.out.println(value);
   }
 
-  /**
-   * 这个时候从redis服务上查询的就能够正常显示了
-   */
   @Test
   public void testSetWithJsonSerializer() {
     this.redisTemplate.setValueSerializer(new StringRedisSerializer());
     this.redisTemplate.opsForValue().set("spring.boot.redis.test.string.json", "我是个中文字符串，请在redis查看是否乱码啊....");
   }
 
-  /**
-   * 获取一个字符串
-   */
   @Test
   public void testGetWithJsonSerializer() {
     String key = "spring.boot.redis.test.string.json";

@@ -12,7 +12,6 @@ import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.CollectionUtils;
 
-import java.time.Instant;
 import java.util.Set;
 
 /**
@@ -35,7 +34,7 @@ public class RedisTestZset {
     Set<ZSetOperations.TypedTuple<String>> tuples = redisTemplate.opsForZSet().reverseRangeWithScores(redisZKey, 0, 99);
     if (CollectionUtils.isEmpty(tuples)) {
       System.out.println("===============================");
-      System.out.println(redisZKey+"is empty");
+      System.out.println(redisZKey + "is empty");
     } else {
       while (tuples.iterator().hasNext()) {
         Double score = tuples.iterator().next().getScore();
@@ -47,7 +46,8 @@ public class RedisTestZset {
 
   @Test
   public void test01() {
-    String zkey = redisKeyCreator.buildStarRankStarHourKey(0);;
+    String zkey = redisKeyCreator.buildStarRankStarHourKey(0);
+    ;
     Double increScore = new Double("100");
     String member = "test_test01";
     Double resScore = redisTemplate.opsForZSet().incrementScore(zkey, member, increScore);

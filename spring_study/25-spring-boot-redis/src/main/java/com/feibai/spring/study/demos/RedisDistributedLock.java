@@ -9,18 +9,10 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.Transaction;
 import redis.clients.jedis.exceptions.JedisException;
 
-/**
- * //TODO
- *
- * @author zhuquanwen
- * @vesion 1.0
- * @date 2018/9/14 21:59
- * @since jdk1.8
- */
-public class RedisDistriLock {
+public class RedisDistributedLock {
   private final JedisPool jedisPool;
 
-  public RedisDistriLock(JedisPool jedisPool) {
+  public RedisDistributedLock(JedisPool jedisPool) {
     this.jedisPool = jedisPool;
   }
 
@@ -37,6 +29,7 @@ public class RedisDistriLock {
     Jedis conn = null;
     boolean broken = false;
     String retIdentifier = null;
+
     try {
       conn = jedisPool.getResource();
       String identifier = UUID.randomUUID().toString();
@@ -45,14 +38,13 @@ public class RedisDistriLock {
 
       long end = System.currentTimeMillis() + acquireTimeoutInMS;
       while (System.currentTimeMillis() < end) {
-        if (conn.setnx(lockKey, identifier) == 1) {
+        if (conn.setnx(lockKey, identifier) == 1) {//不存在这个key，则拿到锁
           conn.expire(lockKey, lockExpire);
           retIdentifier = identifier;
         }
-        if (conn.ttl(lockKey) == -1) {
+        if (conn.ttl(lockKey) == -1) {//没有过期时间就重新设置过期时间
           conn.expire(lockKey, lockExpire);
         }
-
         try {
           Thread.sleep(10);
         } catch (InterruptedException ie) {
@@ -123,7 +115,7 @@ public class RedisDistriLock {
 //        jedisPoolConfig.setMaxIdle(10);
 //        JedisPool jedisPool = new JedisPool(jedisPoolConfig, "192.168.72.128", 6379);
     JedisPool jedisPool = JedisPoolUtils.getInstance();
-    RedisDistriLock lock = new RedisDistriLock(jedisPool);
+    RedisDistributedLock lock = new RedisDistributedLock(jedisPool);
     String result = lock.acquireLockWithTimeout("aaa", 11111, 13331);
     System.out.println("lock:" + result);
     System.out.println(lock.releaseLock("aaa", result));

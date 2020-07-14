@@ -50,4 +50,10 @@ public class RedisTestZset {
     Double resScore = redisTemplate.opsForZSet().incrementScore(zkey, member, increScore);
   }
 
+  public void test_get_rank() {
+    String zkey = "sping.boot.redis.zset";
+    String name = "liyuanlong";
+    Long rank = redisTemplate.opsForZSet().reverseRank(zkey, String.valueOf(name));
+  }
+
 }

@@ -466,7 +466,7 @@ public final class Bootstrap {
       // Don't set daemon until init() has completed
       Bootstrap bootstrap = new Bootstrap();
       try {
-        bootstrap.init();
+        bootstrap.init();//liyuanlong--创建catalina对象
       } catch (Throwable t) {
         handleThrowable(t);
         t.printStackTrace();
@@ -488,7 +488,7 @@ public final class Bootstrap {
 
       if (command.equals("startd")) {
         args[args.length - 1] = "start";
-        daemon.load(args);
+        daemon.load(args);//liyuanlong--调用catalina的load()方法
         daemon.start();
       } else if (command.equals("stopd")) {
         args[args.length - 1] = "stop";
@@ -496,12 +496,12 @@ public final class Bootstrap {
       } else if (command.equals("start")) {
         daemon.setAwait(true);
         daemon.load(args);
-        daemon.start();
+        daemon.start();//liyuanlong--调用catalina的start()方法
         if (null == daemon.getServer()) {
           System.exit(1);
         }
       } else if (command.equals("stop")) {
-        daemon.stopServer(args);
+        daemon.stopServer(args);//liyuanlong--调用catalina的stop方法
       } else if (command.equals("configtest")) {
         daemon.load(args);
         if (null == daemon.getServer()) {

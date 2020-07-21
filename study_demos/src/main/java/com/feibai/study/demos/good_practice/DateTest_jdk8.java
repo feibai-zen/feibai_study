@@ -16,8 +16,8 @@ import java.util.Date;
 
 public class DateTest_jdk8 {
   public static void main(String[] args) {
-//        today();
-//    other(3000000000000L);
+    today();
+    other(3000000000000L);
     System.out.println("粉丝日榜" +
             buildFansLiveTotalRankDailyKey(0));
 
@@ -28,8 +28,7 @@ public class DateTest_jdk8 {
 
 
     System.out.println("主播月榜" + buildAnchorLiveTotalRankMonthKey(0));
-
-
+    System.out.println(LocalDateTime.now().getMinute());
   }
 
 
@@ -334,6 +333,5 @@ public class DateTest_jdk8 {
     }
     return duration;
   }
-
 
 }

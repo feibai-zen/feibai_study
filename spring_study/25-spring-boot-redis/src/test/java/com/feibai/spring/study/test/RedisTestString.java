@@ -71,11 +71,9 @@ public class RedisTestString {
 
   @Test
   public void test_getSet() {
-
     String key = "spring.boot.redis.test.string";
     //返回给定 key 的旧值。 当 key没有旧值时，即key不存在时，返回nil。当key存在但不是字符串类型时，返回一个错误。
     redisTemplate.opsForValue().getAndSet(key, "haha");
-
   }
 
 }

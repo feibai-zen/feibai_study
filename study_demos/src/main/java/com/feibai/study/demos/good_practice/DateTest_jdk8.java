@@ -16,19 +16,22 @@ import java.util.Date;
 
 public class DateTest_jdk8 {
   public static void main(String[] args) {
-    today();
-    other(3000000000000L);
-    System.out.println("粉丝日榜" +
-            buildFansLiveTotalRankDailyKey(0));
+//    today();
+//    other(3000000000000L);
+//    System.out.println("粉丝日榜" +
+//            buildFansLiveTotalRankDailyKey(0));
+//
+//    System.out.println("粉丝周榜:" + buildFansLiveTotalRankWeekKey(0));
+//
+//
+//    System.out.println("粉丝月榜:" + buildFansLiveTotalRankMonthKey(0));
+//
+//
+//    System.out.println("主播月榜" + buildAnchorLiveTotalRankMonthKey(0));
+//    System.out.println(LocalDateTime.now().getMinute());
 
-    System.out.println("粉丝周榜:" + buildFansLiveTotalRankWeekKey(0));
+    System.out.println( LocalDateTime.now().getNano());
 
-
-    System.out.println("粉丝月榜:" + buildFansLiveTotalRankMonthKey(0));
-
-
-    System.out.println("主播月榜" + buildAnchorLiveTotalRankMonthKey(0));
-    System.out.println(LocalDateTime.now().getMinute());
   }
 
 

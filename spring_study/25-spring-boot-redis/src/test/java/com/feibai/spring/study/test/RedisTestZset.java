@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.CollectionUtils;
@@ -22,7 +23,7 @@ import java.util.Set;
 public class RedisTestZset {
 
   @Autowired
-  private RedisTemplate<String, String> redisTemplate;
+  private StringRedisTemplate redisTemplate;
   private IRedisKeySpace redisKeyCreator = RedisKeySpaceEnum.V2;
 
   @Test
@@ -50,10 +51,16 @@ public class RedisTestZset {
     Double resScore = redisTemplate.opsForZSet().incrementScore(zkey, member, increScore);
   }
 
+  @Test
   public void test_get_rank() {
     String zkey = "sping.boot.redis.zset";
     String name = "liyuanlong";
     Long rank = redisTemplate.opsForZSet().reverseRank(zkey, String.valueOf(name));
   }
 
+  @Test
+  public void test_add() {
+    String key = "spring.boot.redis.test.zset";
+    redisTemplate.opsForZSet().add(key + "add", " liyuanlong", 1);
+  }
 }

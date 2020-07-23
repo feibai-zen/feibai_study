@@ -11,6 +11,9 @@ import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+
 /**
  * Spring String测试
  */
@@ -54,6 +57,25 @@ public class RedisTestString {
     this.redisTemplate.setValueSerializer(new StringRedisSerializer());
     String value = (String) this.redisTemplate.opsForValue().get(key);
     System.out.println(value);
+  }
+
+  @Test
+  public void test_setIfAbsent() {
+    Boolean lock = redisTemplate.opsForValue().setIfAbsent("spring.boot.redis.test.string.if.absent", "lock", 200, TimeUnit.MILLISECONDS);
+    if (!Objects.isNull(lock) && lock) {
+      System.out.println("设置key成功");
+    } else {
+      System.out.println("已经存在这个key");
+    }
+  }
+
+  @Test
+  public void test_getSet() {
+
+    String key = "spring.boot.redis.test.string";
+    //返回给定 key 的旧值。 当 key没有旧值时，即key不存在时，返回nil。当key存在但不是字符串类型时，返回一个错误。
+    redisTemplate.opsForValue().getAndSet(key, "haha");
+
   }
 
 }

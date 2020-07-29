@@ -17,15 +17,57 @@ import org.apache.commons.io.filefilter.SuffixFileFilter;
 
 public class CommonIOTest {
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
+//    long length = getFileLength("/Users/xmly/Leeyuanlong/feibai_study/study_demos/image.jpg");
+//    System.out.println(length);
 
-    // 文件大小
-    long len = FileUtils.sizeOf(new File("/Users/xmly/Leeyuanlong/feibai_study/study_demos/image.jpg"));
-    System.out.println(len);
+//    createDir("/Users/xmly/Test/test/test/");
+
+    System.out.println(getDirLength("/Users/xmly/Leeyuanlong/feibai_study/study_demos/lib"));
+
+
+    System.out.println(getUserDir());
+  }
+
+  /**
+   * 创建目录
+   */
+  public static void createDir(String dirPath) {
+    File file = new File(dirPath);
+    if (!file.exists()) {
+      file.mkdirs();
+    }
+    System.out.println(file.getAbsoluteFile());
+  }
+
+  /**
+   * 文件长度
+   */
+  public static long getFileLength(String filePath) {
+
+    return new File(filePath).length();
+  }
+
+  /**
+   * 获取目录大小(包含文件大小)
+   */
+  public static long getDirLength(String dirPath) {
     // 目录大小
-    long dirlen = FileUtils.sizeOf(new File("/Users/xmly/Leeyuanlong/feibai_study/study_demos/lib"));
-    System.out.println(dirlen);
+    long dirlen = FileUtils.sizeOf(new File(dirPath));
+    return dirlen;
+  }
 
+  /**
+   * 当前工作空间目录
+   */
+  public static String getUserDir() {
+    return System.getProperty("user.dir");
+  }
+
+  /**
+   * 查询目录下所有文件
+   */
+  public static void listFiles() {
     Collection<File> files = FileUtils.listFiles(new File("D:/BaiduNetdiskDownload"), EmptyFileFilter.NOT_EMPTY,
             null);// 列出目录下所有文件；最后一个参数为null，则只扫描一层目录
     for (File file : files) {
@@ -58,6 +100,10 @@ public class CommonIOTest {
     for (File file : files) {
       System.out.println(file.getAbsolutePath());
     }
+  }
+
+
+  public static void test() throws Exception {
 
     // 读取文件
     String msg = FileUtils.readFileToString(new File("emp.txt"), "UTF-8");
@@ -104,14 +150,6 @@ public class CommonIOTest {
     byte[] contents = IOUtils.toByteArray(new FileInputStream(new File("")));//将文件内容写入字节数组
     System.out.println(datastring);
 
-  }
-
-  public void createDir() {
-    File file = new File("/Users/xmly/Test/test/test/");
-    if (!file.exists()) {
-      file.mkdirs();
-    }
-    System.out.println(file.getAbsoluteFile());
   }
 
 }

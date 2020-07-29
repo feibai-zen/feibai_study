@@ -99,7 +99,6 @@ public class Array {
     emps1[0] = a1;
     emps1[1] = a2;
     emps1[2] = a3;
-
   }
 
 }

@@ -28,6 +28,7 @@ class Productor extends Thread {
 		this.container = container;
 	}
 
+	@Override
 	public void run() {
 		// 生产
 		for (int i = 0; i < 100; i++) {
@@ -45,6 +46,7 @@ class Consumer extends Thread {
 		this.container = container;
 	}
 
+	@Override
 	public void run() {
 		// 消费
 		for (int i = 0; i < 100; i++) {

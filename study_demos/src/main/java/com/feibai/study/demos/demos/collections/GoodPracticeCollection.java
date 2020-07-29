@@ -38,9 +38,14 @@ public class GoodPracticeCollection {
     Collections.emptyList();
 
     //对于只有一个元素的集合，防止分配多余对象
-    Integer a = 1;
-    List<Integer> singletonList = Collections.singletonList(a);
+    List<Integer> singletonList = Collections.singletonList(1);
     Collections.singletonMap(1, "");
+
+
+    //创建指定元素的list
+    Lists.newArrayList(1, 2, 3);
+    //创建指定元素的Set
+    Sets.newHashSet(1, 2, 3);
   }
 
 }

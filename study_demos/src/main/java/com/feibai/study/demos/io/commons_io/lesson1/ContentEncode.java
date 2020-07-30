@@ -20,8 +20,12 @@ public class ContentEncode {
 		System.out.println(datas.length);
 		
 		datas = msg.getBytes("GBK");
-		System.out.println(datas.length);		
-		
+		System.out.println(datas.length);
+
+		datas = msg.getBytes("UTF-8");
+		System.out.println(datas.length);
+
+
 	}
 
 }

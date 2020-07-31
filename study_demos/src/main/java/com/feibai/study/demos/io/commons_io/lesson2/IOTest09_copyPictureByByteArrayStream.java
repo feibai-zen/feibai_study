@@ -14,7 +14,7 @@ import java.io.OutputStream;
  * 1、 图片读取到字节数组
  * 2、 字节数组写出到文件
  */
-public class IOTest09 {
+public class IOTest09_copyPictureByByteArrayStream {
 
   public static void main(String[] args) {
     //图片转成字节数组

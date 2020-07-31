@@ -13,7 +13,7 @@ import java.io.InputStream;
  * 3、操作
  * 4、释放资源
  */
-public class IOTest01_readFileByOneByte {
+public class IOTest01_ReadFileByOneByte {
 
   public static void main(String[] args) {
     //1、创建源

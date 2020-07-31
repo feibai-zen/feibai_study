@@ -13,7 +13,7 @@ import java.io.IOException;
  * <p>
  * 获取数据:  toByteArray()
  */
-public class IOTest08 {
+public class IOTest08_ByteArrayOutputStream {
 
   public static void main(String[] args) {
     //1、创建源

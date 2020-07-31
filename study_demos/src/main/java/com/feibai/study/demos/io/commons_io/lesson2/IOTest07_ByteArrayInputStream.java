@@ -7,12 +7,12 @@ import java.io.InputStream;
 
 /**
  * 四个步骤:字节数组输入流
- * 1、创建源  : 字节数组 不要太大
+ * 1、创建源: 字节数组 不要太大
  * 2、选择流
  * 3、操作
- * 4、释放资源: 可以不用处理
+ * 4、释放资源: 可以不用处理，close()是个空方法
  */
-public class IOTest07 {
+public class IOTest07_ByteArrayInputStream {
 
   public static void main(String[] args) {
     //1、创建源

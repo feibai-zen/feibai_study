@@ -24,6 +24,8 @@ public class IOTest09_copyPictureByByteArrayStream {
   }
 
   /**
+   * file(FileInputStream) --> ByteArrayOutputStream --> 字节数组
+   * <p>
    * 1、图片读取到字节数组
    * 1)、图片到程序  FileInputStream
    * 2)、程序到字节数组	ByteArrayOutputStream
@@ -64,6 +66,8 @@ public class IOTest09_copyPictureByByteArrayStream {
   }
 
   /**
+   * 字节数组 --> ByteArrayInputStream --> file(FileOutputStream)
+   * <p>
    * 2、字节数组写出到图片
    * 1)、字节数组到程序 ByteArrayInputStream
    * 2)、程序到文件 FileOutputStream
@@ -81,7 +85,7 @@ public class IOTest09_copyPictureByByteArrayStream {
       byte[] flush = new byte[5]; //缓冲容器
       int len = -1; //接收长度
       while ((len = is.read(flush)) != -1) {
-        os.write(flush, 0, len);      //写出到文件
+        os.write(flush, 0, len);//写出到文件
       }
       os.flush();
     } catch (IOException e) {

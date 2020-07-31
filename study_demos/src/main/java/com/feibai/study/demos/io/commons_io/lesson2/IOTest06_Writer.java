@@ -13,7 +13,7 @@ import java.io.Writer;
  * 3、操作(写出内容)
  * 4、释放资源
  */
-public class IOTest06 {
+public class IOTest06_Writer {
 
   public static void main(String[] args) {
     //1、创建源

@@ -13,7 +13,7 @@ import java.io.OutputStream;
  * 3、操作(写出内容)
  * 4、释放资源
  */
-public class IOTest04_writeFileByByteArray {
+public class IOTest04_OutputStream {
 
   public static void main(String[] args) {
     //1、创建源

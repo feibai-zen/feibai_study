@@ -24,7 +24,7 @@ public class IOTest09_copyPictureByByteArrayStream {
   }
 
   /**
-   * file(FileInputStream) --> ByteArrayOutputStream --> 字节数组
+   * file --> FileInputStream --> ByteArrayOutputStream --> byte[]
    * <p>
    * 1、图片读取到字节数组
    * 1)、图片到程序  FileInputStream
@@ -66,7 +66,7 @@ public class IOTest09_copyPictureByByteArrayStream {
   }
 
   /**
-   * 字节数组 --> ByteArrayInputStream --> file(FileOutputStream)
+   * byte[] --> ByteArrayInputStream --> FileOutputStream -->file
    * <p>
    * 2、字节数组写出到图片
    * 1)、字节数组到程序 ByteArrayInputStream

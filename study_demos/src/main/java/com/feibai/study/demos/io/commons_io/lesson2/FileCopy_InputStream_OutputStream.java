@@ -11,7 +11,7 @@ import java.io.OutputStream;
 /**
  * 文件拷贝：文件字节输入、输出流
  */
-public class Copy {
+public class FileCopy_InputStream_OutputStream {
 
   public static void main(String[] args) {
     copy("src/com/sxt/io/Copy.java", "copy.txt");

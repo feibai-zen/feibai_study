@@ -17,10 +17,8 @@ import java.util.Date;
  * <p>
  * ObjectOutputStream
  * ObjectInputStream
- *
- * @author TW
  */
-public class ObjectTest {
+public class ObjectTest_ObjectOutputStream_ObjectInputStream {
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
     //写出 -->序列化

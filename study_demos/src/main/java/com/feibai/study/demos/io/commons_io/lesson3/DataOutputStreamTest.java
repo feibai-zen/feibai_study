@@ -12,6 +12,7 @@ import java.io.IOException;
  * 数据流:
  * 1、写出后读取
  * 2、读取的顺序与写出保持一致
+ * 3、不是所有的对象都可以序列化Serializable
  * <p>
  * DataOutputStream
  * DataInputStream
@@ -21,7 +22,7 @@ public class DataOutputStreamTest {
   public static void main(String[] args) throws IOException {
     //写出
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(baos));
+    DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(baos));//只要是字节流都可以使用BufferedOutputStream进行优化提升性能
     //操作数据类型 +数据
     dos.writeUTF("编码辛酸泪");
     dos.writeInt(18);

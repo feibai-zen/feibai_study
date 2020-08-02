@@ -11,7 +11,7 @@ import java.io.OutputStreamWriter;
  * 1、以字符流的形式操作字节流（纯文本的）
  * 2、指定字符集
  */
-public class ConvertTest {
+public class ConvertTest_InputStreamReader_OutputStreamWriter {
   public static void main(String[] args) {
     //操作System.in 和System.out
     try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

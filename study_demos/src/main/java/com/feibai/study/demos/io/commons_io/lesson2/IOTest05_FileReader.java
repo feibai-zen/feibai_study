@@ -13,7 +13,7 @@ import java.io.Reader;
  * 3、操作
  * 4、释放资源
  */
-public class IOTest05_Reader {
+public class IOTest05_FileReader {
 
   public static void main(String[] args) {
     //1、创建源
@@ -30,7 +30,6 @@ public class IOTest05_Reader {
         String str = new String(flush, 0, len);
         System.out.println(str);
       }
-
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     } catch (IOException e) {

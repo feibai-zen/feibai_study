@@ -13,8 +13,6 @@ import java.net.URL;
  * 转换流: InputStreamReader OutputStreamWriter
  * 1、以字符流的形式操作字节流（纯文本的）
  * 2、指定字符集
- *
- * @author TW
  */
 public class ConvertTest02 {
   public static void main(String[] args) {
@@ -66,7 +64,5 @@ public class ConvertTest02 {
     } catch (IOException e) {
       System.out.println("操作异常");
     }
-
-
   }
 }

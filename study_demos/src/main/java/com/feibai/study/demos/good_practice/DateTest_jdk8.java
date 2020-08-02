@@ -16,24 +16,8 @@ import java.util.Date;
 
 public class DateTest_jdk8 {
   public static void main(String[] args) {
-//    today();
-//    other(3000000000000L);
-//    System.out.println("粉丝日榜" +
-//            buildFansLiveTotalRankDailyKey(0));
-//
-//    System.out.println("粉丝周榜:" + buildFansLiveTotalRankWeekKey(0));
-//
-//
-//    System.out.println("粉丝月榜:" + buildFansLiveTotalRankMonthKey(0));
-//
-//
-//    System.out.println("主播月榜" + buildAnchorLiveTotalRankMonthKey(0));
-//    System.out.println(LocalDateTime.now().getMinute());
-
-    System.out.println( LocalDateTime.now().getNano());
-
+    System.out.println(LocalDateTime.now().getNano());
   }
-
 
   private static void today() {
     LocalDate today = LocalDate.now();//获取当前日期，不含时间
@@ -88,8 +72,6 @@ public class DateTest_jdk8 {
   }
 
   // 时间增加
-
-
   private static void plusTime() {
     LocalTime time = LocalTime.now();
     //方法返回一个全新的LocalTime实例，由于其不可变性，返回后一定要用变量赋值。
@@ -203,8 +185,7 @@ public class DateTest_jdk8 {
   // 使用预定义的格式化工具去解析或格式化日期
   private static void format_date() {
     String dayAfterTommorrow = "20180205";
-    LocalDate formatted = LocalDate.parse(dayAfterTommorrow,
-            DateTimeFormatter.BASIC_ISO_DATE);
+    LocalDate formatted = LocalDate.parse(dayAfterTommorrow, DateTimeFormatter.BASIC_ISO_DATE);
     System.out.println(dayAfterTommorrow + "  格式化后的日期为:  " + formatted);
   }
 
@@ -245,11 +226,8 @@ public class DateTest_jdk8 {
     localDateTime2Date(LocalDateTime.now());
   }
 
-
   /**
    * Date转换为LocalDateTime
-   *
-   * @param date
    */
   public void date2LocalDateTime(Date date) {
     Instant instant = date.toInstant();//An instantaneous point on the time-line.(时间线上的一个瞬时点。)
@@ -265,8 +243,6 @@ public class DateTest_jdk8 {
 
   /**
    * LocalDateTime转换为Date
-   *
-   * @param localDateTime
    */
   public void localDateTime2Date(LocalDateTime localDateTime) {
     ZoneId zoneId = ZoneId.systemDefault();

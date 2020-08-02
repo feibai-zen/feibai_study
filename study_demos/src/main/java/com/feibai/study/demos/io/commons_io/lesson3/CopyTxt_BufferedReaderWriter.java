@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * 文件拷贝：文件字节输入、输出流
  */
-public class CopyTxt {
+public class CopyTxt_BufferedReaderWriter {
 
   public static void main(String[] args) {
     copy("abc.txt", "abc-copy.txt");

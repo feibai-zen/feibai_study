@@ -16,7 +16,7 @@ import java.io.IOException;
  * DataOutputStream
  * DataInputStream
  */
-public class DataTest {
+public class DataOutputStreamTest {
 
   public static void main(String[] args) throws IOException {
     //写出

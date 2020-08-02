@@ -13,7 +13,7 @@ import java.io.IOException;
  * 3、操作
  * 4、释放资源
  */
-public class BufferedTest03 {
+public class BufferedTest03_BufferedReader {
 
   public static void main(String[] args) {
     //1、创建源

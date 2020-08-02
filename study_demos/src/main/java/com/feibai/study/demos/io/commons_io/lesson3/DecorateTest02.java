@@ -6,8 +6,6 @@ package com.feibai.study.demos.io.commons_io.lesson3;
  * 2、具体组件:需要装饰的对象
  * 3、抽象装饰类:包含了对抽象组件的引用以及装饰着共有的方法
  * 4、具体装饰类:被装饰的对象
- *
- * @author TW
  */
 public class DecorateTest02 {
   public static void main(String[] args) {

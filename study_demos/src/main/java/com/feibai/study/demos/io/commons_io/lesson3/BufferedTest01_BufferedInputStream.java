@@ -14,7 +14,7 @@ import java.io.InputStream;
  * 3、操作
  * 4、释放资源
  */
-public class BufferedTest01 {
+public class BufferedTest01_BufferedInputStream {
 
   public static void main(String[] args) {
     File src = new File("abc.txt");
@@ -64,7 +64,6 @@ public class BufferedTest01 {
         String str = new String(flush, 0, len);
         System.out.println(str);
       }
-
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     } catch (IOException e) {

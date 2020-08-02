@@ -25,7 +25,6 @@ public class CommonIOTest {
 
     System.out.println(getDirLength("/Users/xmly/Leeyuanlong/feibai_study/study_demos/lib"));
 
-
     System.out.println(getUserDir());
   }
 

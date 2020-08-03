@@ -2,6 +2,7 @@ package com.feibai.study.demos.io.commons_io;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,14 +19,6 @@ import org.apache.commons.io.filefilter.SuffixFileFilter;
 public class CommonIOTest {
 
   public static void main(String[] args) {
-//    long length = getFileLength("/Users/xmly/Leeyuanlong/feibai_study/study_demos/image.jpg");
-//    System.out.println(length);
-
-//    createDir("/Users/xmly/Test/test/test/");
-
-    System.out.println(getDirLength("/Users/xmly/Leeyuanlong/feibai_study/study_demos/lib"));
-
-    System.out.println(getUserDir());
   }
 
   /**
@@ -73,37 +66,29 @@ public class CommonIOTest {
       System.out.println(file.getAbsolutePath());
     }
     System.out.println("---------------------");
-    files = FileUtils.listFiles(new File("D:/BaiduNetdiskDownload"), EmptyFileFilter.NOT_EMPTY,
-            DirectoryFileFilter.INSTANCE);
+    files = FileUtils.listFiles(new File("D:/BaiduNetdiskDownload"), EmptyFileFilter.NOT_EMPTY, DirectoryFileFilter.INSTANCE);
     for (File file : files) {
       System.out.println(file.getAbsolutePath());
     }
     System.out.println("---------------------");
-    files = FileUtils.listFiles(new File("D:/workspace/my-study-demos"), new SuffixFileFilter("java"),
-            DirectoryFileFilter.INSTANCE);
+    files = FileUtils.listFiles(new File("D:/workspace/my-study-demos"), new SuffixFileFilter("java"), DirectoryFileFilter.INSTANCE);
     for (File file : files) {
       System.out.println(file.getAbsolutePath());
     }
     System.out.println("---------------------");
-    files = FileUtils.listFiles(new File("D:/workspace/my-study-demos"),
-            FileFilterUtils.or(new SuffixFileFilter("java"), new SuffixFileFilter("class"), EmptyFileFilter.EMPTY),
-            DirectoryFileFilter.INSTANCE);
+    files = FileUtils.listFiles(new File("D:/workspace/my-study-demos"), FileFilterUtils.or(new SuffixFileFilter("java"), new SuffixFileFilter("class"), EmptyFileFilter.EMPTY), DirectoryFileFilter.INSTANCE);
     for (File file : files) {
       System.out.println(file.getAbsolutePath());
     }
 
     System.out.println("---------------------");
-    files = FileUtils.listFiles(new File("D:/workspace/my-study-demos"),
-            FileFilterUtils.and(new SuffixFileFilter("java"), EmptyFileFilter.NOT_EMPTY),
-            DirectoryFileFilter.INSTANCE);
+    files = FileUtils.listFiles(new File("D:/workspace/my-study-demos"), FileFilterUtils.and(new SuffixFileFilter("java"), EmptyFileFilter.NOT_EMPTY), DirectoryFileFilter.INSTANCE);
     for (File file : files) {
       System.out.println(file.getAbsolutePath());
     }
   }
 
-
-  public static void test() throws Exception {
-
+  public static void readFile() throws IOException {
     // 读取文件
     String msg = FileUtils.readFileToString(new File("emp.txt"), "UTF-8");
     System.out.println(msg);
@@ -119,7 +104,9 @@ public class CommonIOTest {
     while (it.hasNext()) {
       System.out.println(it.nextLine());
     }
+  }
 
+  public static void writeFile() throws Exception {
     // 写出文件
     FileUtils.write(new File("happy.sxt"), "学习是一件伟大的事业\r\n", "UTF-8");
     FileUtils.writeStringToFile(new File("happy.sxt"), "学习是一件辛苦的事业\r\n", "UTF-8", true);
@@ -132,7 +119,9 @@ public class CommonIOTest {
     datasList.add("弼马温");
 
     FileUtils.writeLines(new File("happy.sxt"), datasList, "。。。。。", true);// 元素之间的连接符
+  }
 
+  public static void copyFile() throws IOException {
     // 复制文件
     FileUtils.copyFile(new File("p.png"), new File("p-copy.png"));
     // 复制文件到目录
@@ -141,6 +130,9 @@ public class CommonIOTest {
     FileUtils.copyDirectoryToDirectory(new File("lib"), new File("lib2"));
     // 复制目录
     FileUtils.copyDirectory(new File("lib"), new File("lib2"));
+  }
+
+  public static void openResource() throws IOException {
     // 拷贝URL内容
     String url = "https://pic2.zhimg.com/v2-7d01cab20858648cbf62333a7988e6d0_qhd.jpg";
     FileUtils.copyURLToFile(new URL(url), new File("marvel.jpg"));
@@ -148,7 +140,6 @@ public class CommonIOTest {
 
     byte[] contents = IOUtils.toByteArray(new FileInputStream(new File("")));//将文件内容写入字节数组
     System.out.println(datastring);
-
   }
 
 }

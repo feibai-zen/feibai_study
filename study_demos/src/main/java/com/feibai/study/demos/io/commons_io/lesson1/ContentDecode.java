@@ -16,7 +16,6 @@ public class ContentDecode {
     msg = new String(datas, 0, datas.length, "utf8");
     System.out.println(msg);
 
-
     //乱码:
     //1)、字节数不够
     msg = new String(datas, 0, datas.length - 2, "utf8");

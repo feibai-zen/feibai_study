@@ -13,9 +13,9 @@ import com.feibai.designpatterns.study.factorypatern.factorymethod.BydFactory;
  */
 public class FactoryMethodClient {
 
-    Car audiCar = new AudiFactory().createCar();
+  Car audiCar = new AudiFactory().createCar();
 
-    Car bydCar = new BydFactory().createCar();
+  Car bydCar = new BydFactory().createCar();
 
-    Car benziCar = new BenziFactory().createCar();
+  Car benziCar = new BenziFactory().createCar();
 }

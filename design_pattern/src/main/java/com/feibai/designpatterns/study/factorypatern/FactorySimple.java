@@ -13,24 +13,24 @@ import com.feibai.designpatterns.study.factorypatern.bean.Car;
  */
 public class FactorySimple {
 
-    // 方式1
-    public static Car createCar(String type) {
-        if (type.equals("Audi")) {
-            return new Audi();
-        } else if (type.equals("Byd")) {
-            return new Byd();
-        }
-
-        return null;
+  // 方式1
+  public static Car createCar(String type) {
+    if (type.equals("Audi")) {
+      return new Audi();
+    } else if (type.equals("Byd")) {
+      return new Byd();
     }
 
-    // 方式2
-    public static Car creatAudi() {
-        return new Audi();
-    }
+    return null;
+  }
 
-    public static Car creatByd() {
-        return new Byd();
-    }
+  // 方式2
+  public static Car creatAudi() {
+    return new Audi();
+  }
+
+  public static Car creatByd() {
+    return new Byd();
+  }
 
 }

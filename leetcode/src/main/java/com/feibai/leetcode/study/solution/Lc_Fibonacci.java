@@ -10,7 +10,7 @@ public class Lc_Fibonacci {
 
   public static void main(String[] args) {
     System.out.println(solution_1(45));
-    System.out.println(solution_2(45));
+    System.out.println(solution_3(45));
   }
 
   /**
@@ -40,6 +40,15 @@ public class Lc_Fibonacci {
       second = sum;
     }
     return sum;
+  }
+
+
+  /**
+   * 使用数学公式
+   */
+  public static int solution_3(int n) {
+    double c = Math.sqrt(5);
+    return (int) ((Math.pow((1 + c) / 2, n) - Math.pow((1 - c) / 2, n)) / c);
   }
 
 

@@ -1,6 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+  </dependencies>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -107,7 +113,9 @@
     <module>29-spring-boot-aspect-log</module>
     <module>30-spring-boot-transaction-jpa</module>
     <module>31-spring-boot-transaction-jms</module>
-    <module> 32-spring-boot-config-study</module>
+    <module>32-spring-boot-config-study</module>
+    <module>33-spring-boot-shardingsphere</module>
+
 
     <module>100-springmvc-quickstart</module>
     <module>101-springmvc-response</module>

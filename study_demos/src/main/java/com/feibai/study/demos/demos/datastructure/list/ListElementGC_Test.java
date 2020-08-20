@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.collections.list;
+package com.feibai.study.demos.demos.datastructure.list;
 
 import com.feibai.study.demos.demos.reflect.Person;
 
@@ -10,6 +10,12 @@ import java.util.concurrent.TimeUnit;
 public class ListElementGC_Test {
 
   public static void main(String[] args) throws Exception {
+
+
+  }
+
+  public static void test_arrayList()throws Exception{
+
     List<Person> persons = new ArrayList<>();
     persons.add(new Person("", 11));
     persons.add(new Person("", 12));
@@ -22,6 +28,17 @@ public class ListElementGC_Test {
 
     BigDecimal bg = new BigDecimal("1.0");
     bg.intValueExact();
+
   }
 
+  public static void test_null_element() {
+    List<Person> persons = new ArrayList<>();
+    persons.add(new Person("", 11));
+    persons.add(new Person("", 12));
+    persons.add(new Person("", 13));
+    persons.add(null);
+
+
+
+  }
 }

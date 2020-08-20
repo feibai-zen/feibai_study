@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.collections.datastructure;
+package com.feibai.study.demos.demos.datastructure.datastructure;
 
 
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.collections;
+package com.feibai.study.demos.demos.datastructure;
 
 import java.io.Serializable;
 import java.io.File;

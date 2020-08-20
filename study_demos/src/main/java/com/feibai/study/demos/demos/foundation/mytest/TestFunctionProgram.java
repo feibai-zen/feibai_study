@@ -28,4 +28,10 @@ public class TestFunctionProgram {
   public static void main(String[] args) {
     System.out.println("main");
   }
+
+
+  public void test_final_variable() {
+    final int a;
+    a = 10;
+  }
 }

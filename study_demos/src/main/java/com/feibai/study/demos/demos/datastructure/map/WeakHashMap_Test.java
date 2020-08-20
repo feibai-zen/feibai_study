@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.collections.map;
+package com.feibai.study.demos.demos.datastructure.map;
 
 import java.util.WeakHashMap;
 

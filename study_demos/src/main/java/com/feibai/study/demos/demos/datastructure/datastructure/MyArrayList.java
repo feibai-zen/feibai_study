@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.collections.datastructure;
+package com.feibai.study.demos.demos.datastructure.datastructure;
 
 public class MyArrayList<E> {
 //自定义一个ArrayList

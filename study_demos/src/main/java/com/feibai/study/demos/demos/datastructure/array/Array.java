@@ -1,11 +1,10 @@
-package com.feibai.study.demos.demos.collections.array;
+package com.feibai.study.demos.demos.datastructure.array;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 

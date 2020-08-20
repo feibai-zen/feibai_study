@@ -28,7 +28,6 @@ public class Person {
 
   @Override
   public void finalize() {
-
     System.out.println("release resource.");
   }
 

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.collections.list;
+package com.feibai.study.demos.demos.datastructure.list;
 
 import java.util.Random;
 

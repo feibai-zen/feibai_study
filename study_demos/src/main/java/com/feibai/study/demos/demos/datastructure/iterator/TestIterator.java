@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.collections.iterator;
+package com.feibai.study.demos.demos.datastructure.iterator;
 
 import java.util.ArrayList;
 import java.util.HashMap;

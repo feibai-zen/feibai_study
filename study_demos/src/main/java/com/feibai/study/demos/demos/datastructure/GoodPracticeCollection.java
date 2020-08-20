@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.collections;
+package com.feibai.study.demos.demos.datastructure;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;

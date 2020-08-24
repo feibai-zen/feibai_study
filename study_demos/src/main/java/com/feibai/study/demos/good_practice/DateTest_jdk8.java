@@ -313,4 +313,15 @@ public class DateTest_jdk8 {
     return duration;
   }
 
+  public long milisecondsRemain() {
+    String deadlineTime = "2020-08-12 12:00:00";
+    long unixTimeStamp = 157800000;
+    DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(ZoneId.of("Asia/Shanghai"));
+    LocalDateTime start = LocalDateTime.parse(deadlineTime, format);
+    LocalDateTime currentDateTime = Instant.ofEpochMilli(unixTimeStamp).atZone(ZoneOffset.ofHours(8)).toLocalDateTime();
+    long remainSec = Duration.between(currentDateTime, start).toMillis();
+
+    return remainSec < 0 ? 0L : remainSec;
+  }
+
 }

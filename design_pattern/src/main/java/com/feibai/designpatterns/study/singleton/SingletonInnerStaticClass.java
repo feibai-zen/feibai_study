@@ -19,7 +19,6 @@ public class SingletonInnerStaticClass {
   private static class Inner {
     //静态内部类可以访问外层类
     private static final SingletonInnerStaticClass INSTANCE = new SingletonInnerStaticClass();
-
   }
 
   public static SingletonInnerStaticClass getInstance() {

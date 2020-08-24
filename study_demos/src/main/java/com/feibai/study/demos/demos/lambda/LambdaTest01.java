@@ -8,6 +8,7 @@ package com.feibai.study.demos.demos.lambda;
 public class LambdaTest01 {
   // 静态内部类
   static class LikeInnerStatic implements ILike {
+    @Override
     public void function_lambda() {
       System.out.println("i like lambda2 ");
     }
@@ -22,6 +23,7 @@ public class LambdaTest01 {
 
     // 局部内部类--定义在方法内的类称为局部内部类
     class LikeFunctionLocal implements ILike {
+      @Override
       public void function_lambda() {
         System.out.println("i like lambda3 ");
       }

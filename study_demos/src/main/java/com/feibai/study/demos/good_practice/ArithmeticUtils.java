@@ -282,10 +282,11 @@ public class ArithmeticUtils {
     BigDecimal b2 = new BigDecimal(v2);
     int bj = b1.compareTo(b2);
     boolean res;
-    if (bj > 0)
+    if (bj > 0) {
       res = true;
-    else
+    } else {
       res = false;
+    }
     return res;
   }
 

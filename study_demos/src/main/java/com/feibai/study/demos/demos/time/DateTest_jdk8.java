@@ -1,4 +1,4 @@
-package com.feibai.study.demos.good_practice;
+package com.feibai.study.demos.demos.time;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;

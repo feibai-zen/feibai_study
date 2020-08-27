@@ -17,15 +17,12 @@ class Productor_Car implements Runnable {
 
   @Override
   public void run() {
-    // TODO Auto-generated method stub
-
     for (int i = 0; i < 100; i++) {
       try {
         Thread.sleep(200);
         buffer.push(new Car(i));
 
       } catch (InterruptedException e) {
-        // TODO Auto-generated catch block
         e.printStackTrace();
       }
     }
@@ -79,7 +76,6 @@ class Buffer {
         wait();
       }
     } catch (Exception e) {
-      // TODO: handle exception
     }
     carsArr[count++] = car;
     notifyAll();

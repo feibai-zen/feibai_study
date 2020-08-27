@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
- * 模拟龟兔赛跑 视频第200集
+ * 模拟龟兔赛跑
  *
  * @author feibai
  */
@@ -43,20 +43,5 @@ public class TortoiseAndRabbitCallable implements Callable<Integer> {
       }
     }
     return false;
-  }
-
-  public static void main(String[] args) throws InterruptedException, ExecutionException {
-    TortoiseAndRabbitCallable racer = new TortoiseAndRabbitCallable();
-    // 创建执行服务:
-    ExecutorService ser = Executors.newFixedThreadPool(2);
-    // 提交执行:
-    Future<Integer> result1 = ser.submit(racer);
-    Future<Integer> result2 = ser.submit(racer);
-    // 获取结果:
-    Integer r1 = result1.get();
-    Integer r2 = result2.get();
-    System.out.println(r1 + "-->" + r2);
-    // 关闭服务:
-    ser.shutdownNow();
   }
 }

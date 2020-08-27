@@ -7,7 +7,7 @@ package com.feibai.study.demos.multithread.foundation.createthread;
  */
 public class Web12306 implements Runnable {
 
-  private static int ticket = 30;
+  private static int ticket = 30;//使用static类属性，所有对象共享
 
   @Override
   public void run() {
@@ -22,17 +22,6 @@ public class Web12306 implements Runnable {
       }
       System.out.println(Thread.currentThread().getName() + "购买一张后，还剩余张数. cnt: " + (ticket--));
     }
-
-  }
-
-  public static void main(String[] args) {
-    Web12306 runnableThread = new Web12306();
-    Web12306 runnableThread1 = new Web12306();
-
-    new Thread(runnableThread, "user01").start();
-    new Thread(runnableThread1, "user02").start();
-//		new Thread(runnableThread, "user03").start();
-
   }
 
 }

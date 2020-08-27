@@ -43,11 +43,4 @@ public class TortoiseAndRabbit implements Runnable {
     return false;
   }
 
-  public static void main(String[] args) {
-
-    TortoiseAndRabbit tortoiseAndRabbit = new TortoiseAndRabbit();
-    new Thread(tortoiseAndRabbit, "tortoise").start();
-    new Thread(tortoiseAndRabbit, "rabbit").start();
-
-  }
 }

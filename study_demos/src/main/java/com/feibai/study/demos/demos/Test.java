@@ -37,7 +37,7 @@ public class Test {
     TemporalField weekBasedYear = WeekFields.of(DayOfWeek.MONDAY, 7).weekOfWeekBasedYear();
     LocalDate formatLocalDate = localDate.minusDays((long) (localDate.getDayOfWeek().getValue() - 1));
     StringBuilder sb = new StringBuilder();
-    sb.append("gift_fans_live_total_rank_week_").append(String.format("%4d%02d", formatLocalDate.getYear(), formatLocalDate.get(weekBasedYear)));
+    sb.append("test_redis_key").append(String.format("%4d%02d", formatLocalDate.getYear(), formatLocalDate.get(weekBasedYear)));
 
     return sb.toString();
   }

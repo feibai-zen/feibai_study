@@ -7,24 +7,22 @@ import java.net.URL;
 
 import org.apache.commons.io.FileUtils;
 
+/**
+ * 下载器
+ */
 public class WebDownloader {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void download(String url, String name) {
-		try {
-			System.out.println(name);
-			FileUtils.copyURLToFile(new URL(url), new File(name));
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-			System.out.println("不合法的url.");
-		} catch (IOException e) {
-			e.printStackTrace();
-			System.out.println("图片下载失败.");
-		}
-	}
+  public void download(String url, String name) {
+    try {
+      System.out.println(name);
+      FileUtils.copyURLToFile(new URL(url), new File(name));
+    } catch (MalformedURLException e) {
+      e.printStackTrace();
+      System.out.println("不合法的url.");
+    } catch (IOException e) {
+      e.printStackTrace();
+      System.out.println("图片下载失败.");
+    }
+  }
 
 }

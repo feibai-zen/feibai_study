@@ -29,9 +29,7 @@ public class _ThreadTest {
 //    test_02();
 //    test_03();
     test_06();
-
   }
-
 
   /**
    * 继承Thread创建线程
@@ -66,12 +64,12 @@ public class _ThreadTest {
     CallableThread cd3 = new CallableThread("http://p1.pstatp.com/large/403c00037462ae2eee13", "spl.jpg");
     // 创建执行服务
     ExecutorService ser = Executors.newFixedThreadPool(3);
-    Future<Boolean> result1 = ser.submit(cd1);
-    Future<Boolean> result2 = ser.submit(cd2);
-    Future<Boolean> result3 = ser.submit(cd3);
-    boolean r1 = result1.get();
-    boolean r2 = result2.get();
-    boolean r3 = result3.get();
+    Future<Boolean> ret1 = ser.submit(cd1);
+    Future<Boolean> ret2 = ser.submit(cd2);
+    Future<Boolean> ret3 = ser.submit(cd3);
+    boolean r1 = ret1.get();
+    boolean r2 = ret2.get();
+    boolean r3 = ret3.get();
     ser.shutdownNow();
   }
 

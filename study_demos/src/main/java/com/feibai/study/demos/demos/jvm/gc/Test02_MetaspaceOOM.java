@@ -40,3 +40,23 @@ public class Test02_MetaspaceOOM {
     }
   }
 }
+/**
+ * 1.MetaspaceSize
+ * 初始化的Metaspace大小，控制元空间发生GC的阈值。GC后，动态增加或降低MetaspaceSize。在默认情况下，这个值大小根据不同的平台在12M到20M浮动。使用Java -XX:+PrintFlagsInitial命令查看本机的初始化参数
+ * <p>
+ * 2.MaxMetaspaceSize
+ * 限制Metaspace增长的上限，防止因为某些情况导致Metaspace无限的使用本地内存，影响到其他程序。在本机上该参数的默认值为4294967295B（大约4096MB）。
+ * <p>
+ * 3.MinMetaspaceFreeRatio
+ * 当进行过Metaspace GC之后，会计算当前Metaspace的空闲空间比，如果空闲比小于这个参数（即实际非空闲占比过大，内存不够用），那么虚拟机将增长Metaspace的大小。默认值为40，也就是40%。设置该参数可以控制Metaspace的增长
+ * 的速度，太小的值会导致Metaspace增长的缓慢，Metaspace的使用逐渐趋于饱和，可能会影响之后类的加载。而太大的值会导致Metaspace增长的过快，浪费内存。
+ * <p>
+ * 4.MaxMetasaceFreeRatio
+ * 当进行过Metaspace GC之后， 会计算当前Metaspace的空闲空间比，如果空闲比大于这个参数，那么虚拟机会释放Metaspace的部分空间。默认值为70，也就是70%。
+ * <p>
+ * 5.MaxMetaspaceExpansion
+ * Metaspace增长时的最大幅度。在本机上该参数的默认值为5452592B（大约为5MB）。
+ * <p>
+ * 6.MinMetaspaceExpansion
+ * Metaspace增长时的最小幅度。在本机上该参数的默认值为340784B（大约330KB为）。
+ */

@@ -51,18 +51,18 @@ public class Test {
       return;
     }
     Map<String, String> idToGroup = new HashMap(uids.size());
-    int step;
+    int step = 10;
     int index = 0;
     int i = 0;
-    String cacer = "racer_catching_";
+    String racer = "racer_catching_";
     String groupName;
-    while (index < uids.size() && i <= 10) {
+    while (index < uids.size() - step && i <= 10) {
       if (i == 0) {
         step = 10;
         groupName = "racer_king";
       } else {
         step = 11;
-        groupName = cacer + i;
+        groupName = racer + i;
       }
       for (Object uid : uids.subList(index, index + step)) {
         idToGroup.put(uid.toString(), groupName);

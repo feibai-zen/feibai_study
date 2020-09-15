@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.jvm.classloader.demo_evernote;
+package com.feibai.study.demos.jvm.classloader.demo_evernote;
 
 /**
  * 首先加载Test类，因此会执行Test类中的static块。接着执行new MyClass()，而MyClass类还没有被加载，因此需要加载MyClass类。

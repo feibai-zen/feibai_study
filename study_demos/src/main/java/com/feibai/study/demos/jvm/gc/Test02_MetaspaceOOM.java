@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.jvm.gc;
+package com.feibai.study.demos.jvm.gc;
 
 import java.io.File;
 import java.lang.management.ClassLoadingMXBean;

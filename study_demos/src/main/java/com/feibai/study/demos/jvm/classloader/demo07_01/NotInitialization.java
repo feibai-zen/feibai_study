@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.jvm.classloader.demo07_01;
+package com.feibai.study.demos.jvm.classloader.demo07_01;
 
 public class NotInitialization {
 	public static void main(String[] args) {

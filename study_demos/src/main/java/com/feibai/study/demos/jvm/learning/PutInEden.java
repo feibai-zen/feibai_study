@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.jvm.learning;
+package com.feibai.study.demos.jvm.learning;
 
 
 /**

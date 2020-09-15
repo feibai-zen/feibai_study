@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.jvm.classloader.demo_evernote;
+package com.feibai.study.demos.jvm.classloader.demo_evernote;
 
 import java.io.FileInputStream;
 

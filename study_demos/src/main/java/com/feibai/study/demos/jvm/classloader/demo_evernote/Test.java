@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.jvm.classloader.demo_evernote;
+package com.feibai.study.demos.jvm.classloader.demo_evernote;
 
 /**
  * 在执行开始，先要寻找到main方法，因为main方法是程序的入口，但是在执行main方法之前，必须先加载Test类，而在

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.jvm.classloader.demo_evernote;
+package com.feibai.study.demos.jvm.classloader.demo_evernote;
 
 class Parent {
 	static String name = "hello";

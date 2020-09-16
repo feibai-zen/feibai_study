@@ -35,8 +35,8 @@ public class RedisTestPipeline {
    * zkey、member需要序列化
    */
   @Test
-  public void testPipeline() {
-    String zkey = "sping.boot.redis.pipeline";
+  public void testPipeline1() {
+    String zkey = "sping.boot.redis.pipeline1";
     List<String> memberList = Lists.newArrayList();
     memberList.add("liyuanlong");
     memberList.add("yangzongqin");
@@ -49,6 +49,22 @@ public class RedisTestPipeline {
       return null;
     });
   }
+
+  public void testPipeline2() {
+    String zkey = "sping.boot.redis.pipeline2";
+    List<String> memberList = Lists.newArrayList();
+    memberList.add("liyuanlong");
+    memberList.add("yangzongqin");
+
+    RedisSerializer<String> serializer = redisTemplate.getStringSerializer();
+    redisTemplate.executePipelined((RedisCallback<Object>) connection -> {
+      for (String member : memberList) {
+        connection.set(serializer.serialize(zkey + "_anchor"), serializer.serialize(member));
+      }
+      return null;
+    });
+  }
+
 
   @Test
   public void testGetPipeline() {

@@ -63,4 +63,5 @@ public class RedisTestZset {
     String key = "spring.boot.redis.test.zset";
     redisTemplate.opsForZSet().add(key + "add", " liyuanlong", 1);
   }
+
 }

@@ -76,4 +76,19 @@ public class RedisTestString {
     redisTemplate.opsForValue().getAndSet(key, "haha");
   }
 
+  /**
+   * 查询key的过期时间，如果key不存在，就设置键。如果存在，增加过期时间
+   */
+  @Test
+  public void test_incrExpireTime() {
+    long expireMills = 60000L;
+
+    String key = "spring.boot.redis.test.string";
+    boolean isSet = redisTemplate.opsForValue().setIfAbsent(key, "1", expireMills, TimeUnit.MILLISECONDS);
+    if (!isSet) {
+      long oldExpires = redisTemplate.getExpire(key);
+      redisTemplate.opsForValue().set(key, "1", expireMills + oldExpires, TimeUnit.MILLISECONDS);
+    }
+  }
+
 }

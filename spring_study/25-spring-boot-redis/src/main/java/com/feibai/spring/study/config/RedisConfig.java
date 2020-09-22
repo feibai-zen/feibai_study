@@ -1,12 +1,19 @@
 package com.feibai.spring.study.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.support.EncodedResource;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.scripting.support.ResourceScriptSource;
 import redis.clients.jedis.JedisPoolConfig;
+
+import java.util.ArrayList;
 
 /**
  * 完成对Redis的整合的一些配置
@@ -72,5 +79,33 @@ public class RedisConfig {
     template.setValueSerializer(new StringRedisSerializer());
 
     return template;
+  }
+
+
+  @Bean
+  public DefaultRedisScript getRedisScriptClient1() {
+    DefaultRedisScript<ArrayList> redisScript = new DefaultRedisScript<>();
+    redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("classpath:lua/switchSeasonRound.lua")));
+    redisScript.setResultType(ArrayList.class);
+
+    return redisScript;
+  }
+
+  @Bean
+  public DefaultRedisScript getRedisScriptClient2() {
+    DefaultRedisScript<String> redisScript = new DefaultRedisScript<>();
+    redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("classpath:lua/lock.lua")));
+    redisScript.setResultType(String.class);
+
+    return redisScript;
+  }
+
+  @Bean
+  public DefaultRedisScript getRedisScriptClient3() {
+    DefaultRedisScript<Integer> redisScript = new DefaultRedisScript<>();
+    redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("classpath:lua/incrCard.lua")));
+    redisScript.setResultType(Integer.class);
+
+    return redisScript;
   }
 }

@@ -45,7 +45,7 @@ public class Test {
             51L, 52L, 53L, 54L, 55L, 56L, 57L, 329243L, 329245L
     );
 
-    String url = "http://ops.test.ximalaya.com/baikal-server/baikal/amqp/mock?app=3";
+    String url = "";
     int i = 1;
     for (Long uid : uids) {
       i++;

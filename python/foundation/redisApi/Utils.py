@@ -3,8 +3,8 @@
 
 import redis
 
-host = '192.168.3.131'
-port = 19000
+host = '192.168.1.175'
+port = 6386
 password = 'jredis123456'
 db = 0
 
@@ -18,3 +18,10 @@ class Util:
     pool = redis.ConnectionPool(host, port, password)
 
     return redis.Redis(connection_pool=pool)
+
+  def set(self, util, key, value):
+    r = util.getRedisConnection()
+    list = []
+
+    for i in list:
+      r.zadd(key, 100, i)

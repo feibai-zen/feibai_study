@@ -39,7 +39,7 @@ public class RedisTestHash {
   @Test
   public void test_getHash() {
     String hashKey = "sping.boot.redis.hashmap";
-    List<Object> userNames = Lists.newArrayListWithCapacity(3);
+    List<Object> userNames = Lists.newArrayListWithCapacity(5);
     userNames.add("lichuanjin");
     userNames.add("luoli");
     userNames.add("liyuanlong");
@@ -47,7 +47,13 @@ public class RedisTestHash {
     userNames.add("yangzongqin");
     List<Object> values = redisTemplate.opsForHash().multiGet(hashKey, userNames);
 
-    values.forEach(value -> System.out.println(value));
+    //返回的value按照传入list的顺序
+    values.forEach(value -> System.out.println(value.toString()));
   }
 
+
+  private void test_lua(){
+
+
+  }
 }

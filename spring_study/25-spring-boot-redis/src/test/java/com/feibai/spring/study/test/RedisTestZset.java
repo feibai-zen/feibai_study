@@ -51,6 +51,9 @@ public class RedisTestZset {
     Double resScore = redisTemplate.opsForZSet().incrementScore(zkey, member, increScore);
   }
 
+  /**
+   * 倒序的排名。score从高向低排序。
+   */
   @Test
   public void test_get_rank() {
     String zkey = "sping.boot.redis.zset";
@@ -62,6 +65,10 @@ public class RedisTestZset {
   public void test_add() {
     String key = "spring.boot.redis.test.zset";
     redisTemplate.opsForZSet().add(key + "add", " liyuanlong", 1);
+  }
+
+  public void test_reverseRange() {
+    Set<String> set = redisTemplate.opsForZSet().reverseRange("Zkey", 0, 99);
   }
 
 }

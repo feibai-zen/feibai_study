@@ -25,11 +25,18 @@ public class RedisTestSet {
   private StringRedisTemplate redisTemplate;
 
   @Test
-  public void test_add() {
+  public void test_ismember() {
     String key = "spring.boot.redis.test.set";
     String name = "liyuanlong";
     Boolean res = redisTemplate.opsForSet().isMember(key, name);
   }
 
+  /**
+   * 删除member
+   */
+  @Test
+  public void test_remove() {
+    redisTemplate.opsForSet().remove("sKey", String.valueOf("member"));
+  }
 
 }

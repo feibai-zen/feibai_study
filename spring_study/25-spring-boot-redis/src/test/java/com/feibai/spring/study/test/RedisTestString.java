@@ -1,6 +1,7 @@
 package com.feibai.spring.study.test;
 
 import com.feibai.spring.study.App;
+import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,10 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.testng.collections.Maps;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
@@ -32,6 +36,15 @@ public class RedisTestString {
   @Test
   public void testSet() {
     this.redisTemplate.opsForValue().set("spring.boot.redis.test.string", "我是个中文字符串，请在redis查看是否乱码啊....");
+  }
+
+  public void test_multi() {
+    List<String> opsList = Lists.newArrayList();
+    redisTemplate.opsForValue().multiGet(opsList);
+
+
+    Map<String, String> map = Maps.newHashMap();
+    redisTemplate.opsForValue().multiSet(map);
   }
 
   /**
@@ -91,4 +104,12 @@ public class RedisTestString {
     }
   }
 
+  private boolean hasKey() {
+    return redisTemplate.hasKey("key");
+  }
+
+  private Double test_increment() {
+
+    return redisTemplate.opsForValue().increment("key", 10.0);
+  }
 }

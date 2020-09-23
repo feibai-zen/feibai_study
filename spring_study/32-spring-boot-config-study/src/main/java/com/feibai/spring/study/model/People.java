@@ -1,4 +1,4 @@
-package com.feibai.study.model;
+package com.feibai.spring.study.model;
 
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

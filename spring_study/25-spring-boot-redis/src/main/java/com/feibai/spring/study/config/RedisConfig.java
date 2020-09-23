@@ -1,11 +1,9 @@
 package com.feibai.spring.study.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.support.EncodedResource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
@@ -82,7 +80,7 @@ public class RedisConfig {
   }
 
 
-  @Bean
+  @Bean(name="redisScriptSwitchSeasonRound")
   public DefaultRedisScript getRedisScriptClient1() {
     DefaultRedisScript<ArrayList> redisScript = new DefaultRedisScript<>();
     redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("classpath:lua/switchSeasonRound.lua")));
@@ -91,7 +89,7 @@ public class RedisConfig {
     return redisScript;
   }
 
-  @Bean
+  @Bean(name="redisScriptLock")
   public DefaultRedisScript getRedisScriptClient2() {
     DefaultRedisScript<String> redisScript = new DefaultRedisScript<>();
     redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("classpath:lua/lock.lua")));
@@ -100,7 +98,7 @@ public class RedisConfig {
     return redisScript;
   }
 
-  @Bean
+  @Bean(name="redisScriptInCard")
   public DefaultRedisScript getRedisScriptClient3() {
     DefaultRedisScript<Integer> redisScript = new DefaultRedisScript<>();
     redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("classpath:lua/incrCard.lua")));

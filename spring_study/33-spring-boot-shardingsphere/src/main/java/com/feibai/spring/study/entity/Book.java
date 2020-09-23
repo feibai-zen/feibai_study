@@ -1,4 +1,4 @@
-package com.feibai.study.entity;
+package com.feibai.spring.study.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;

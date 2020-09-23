@@ -2,20 +2,15 @@ package com.feibai.spring.study.test;
 
 import com.feibai.spring.study.App;
 import com.feibai.spring.study.common.JedisPoolUtils;
-import com.google.common.collect.Lists;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.testng.collections.Maps;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Spring Hash测试

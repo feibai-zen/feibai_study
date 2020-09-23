@@ -1,10 +1,10 @@
-package com.feibai.study.service.impl;
+package com.feibai.spring.study.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.feibai.study.mapper.BookMapper;
-import com.feibai.study.entity.Book;
-import com.feibai.study.service.BookService;
+import com.feibai.spring.study.entity.Book;
+import com.feibai.spring.study.mapper.BookMapper;
+import com.feibai.spring.study.service.BookService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

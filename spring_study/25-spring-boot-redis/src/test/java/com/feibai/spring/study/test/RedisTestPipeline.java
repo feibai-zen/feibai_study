@@ -1,9 +1,6 @@
 package com.feibai.spring.study.test;
 
 import com.feibai.spring.study.App;
-import com.feibai.spring.study.common.IRedisKeySpace;
-import com.feibai.spring.study.common.RedisKeySpaceEnum;
-import com.google.common.base.Charsets;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;

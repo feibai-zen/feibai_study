@@ -1,4 +1,4 @@
-package com.feibai.study;
+package com.feibai.spring.study;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

@@ -115,7 +115,7 @@
     <module>31-spring-boot-transaction-jms</module>
     <module>32-spring-boot-config-study</module>
     <module>33-spring-boot-shardingsphere</module>
-
+    <module>34-spring-boot-rabbitmq</module>
 
     <module>100-springmvc-quickstart</module>
     <module>101-springmvc-response</module>

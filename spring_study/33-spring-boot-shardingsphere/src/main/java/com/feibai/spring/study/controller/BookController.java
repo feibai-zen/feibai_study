@@ -1,7 +1,7 @@
-package com.feibai.study.controller;
+package com.feibai.spring.study.controller;
 
-import com.feibai.study.entity.Book;
-import com.feibai.study.service.BookService;
+import com.feibai.spring.study.service.BookService;
+import com.feibai.spring.study.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,7 @@
-package com.feibai.study.service;
+package com.feibai.spring.study.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.feibai.study.entity.Book;
+import com.feibai.spring.study.entity.Book;
 
 import java.util.List;
 

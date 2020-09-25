@@ -12,7 +12,6 @@ import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.CollectionUtils;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -30,7 +29,7 @@ public class RedisTestZset {
   private String test_zkey = "springboot.study.redis.zset";
 
   @Test
-  private void test_reverseRangeWithScores() {
+  public void test_reverseRangeWithScores() {
     Set<ZSetOperations.TypedTuple<String>> tuples = redisTemplate.opsForZSet().reverseRangeWithScores(test_zkey, 0, 99);
     List<Double> scores = Lists.newArrayList();
     if (CollectionUtils.isEmpty(tuples)) {
@@ -45,7 +44,7 @@ public class RedisTestZset {
   }
 
   @Test
-  private void test_incrementScore() {
+  public void test_incrementScore() {
     Double increScore = new Double("100");
     String member = "test_incrementScore";
     Double resScore = redisTemplate.opsForZSet().incrementScore(test_zkey, member, increScore);
@@ -55,7 +54,7 @@ public class RedisTestZset {
    * 倒序的排名。score从高向低排序。
    */
   @Test
-  private void test_reverseRank() {
+  public void test_reverseRank() {
     String name = "test_reverseRank";
     Long rank = redisTemplate.opsForZSet().reverseRank(test_zkey, String.valueOf(name));
   }
@@ -64,7 +63,7 @@ public class RedisTestZset {
    * 添加member
    */
   @Test
-  private void test_add() {
+  public void test_add() {
     String member = "test_add";
     Boolean success = redisTemplate.opsForZSet().add(test_zkey, member, 1);
   }
@@ -72,8 +71,17 @@ public class RedisTestZset {
   /**
    * 倒序members
    */
-  private void test_reverseRange() {
+  public void test_reverseRange() {
     Set<String> set = redisTemplate.opsForZSet().reverseRange(test_zkey, 0, 99);
+  }
+
+  /**
+   * 正序
+   */
+  public void test_rank() {
+    String member = "test_rank";
+    redisTemplate.opsForZSet().add(test_zkey, member, 10000);
+    Long rank = redisTemplate.opsForZSet().rank(test_zkey, member);
   }
 
 }

@@ -23,7 +23,6 @@ public class RedisTestHash {
   @Autowired
   private RedisTemplate<String, String> redisTemplate;
 
-
   @Test
   public void test_putHash() {
     String hashKey = "sping.boot.redis.hashmap";
@@ -51,9 +50,4 @@ public class RedisTestHash {
     values.forEach(value -> System.out.println(value.toString()));
   }
 
-
-  private void test_lua(){
-
-
-  }
 }

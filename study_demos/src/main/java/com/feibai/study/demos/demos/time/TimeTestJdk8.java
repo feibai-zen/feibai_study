@@ -7,6 +7,7 @@ import java.time.temporal.TemporalAdjusters;
 import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * 为什么使用Jdk8的时间类型？
@@ -14,9 +15,27 @@ import java.util.Date;
  * 新API基于ISO标准日历系统，java.time包下的所有类都是不可变类型而且线程安全。
  */
 
-public class DateTest_jdk8 {
+public class TimeTestJdk8 {
   public static void main(String[] args) {
-    System.out.println(LocalDateTime.now().getNano());
+
+    System.out.println(LocalDateTime.now());
+    getTime();
+  }
+
+  private static void getTime() {
+    LocalDateTime now = LocalDateTime.now();
+    System.out.println(now);
+
+    System.out.println(now.getYear());
+    System.out.println(now.getMonth());
+    System.out.println(now.getMonthValue());
+    System.out.println(now.getDayOfMonth());
+    System.out.println(now.getDayOfYear());
+    System.out.println(now.getDayOfWeek());
+    System.out.println(now.getHour());
+//    System.out.println(now.getLong());
+
+
   }
 
   private static void today() {
@@ -296,16 +315,13 @@ public class DateTest_jdk8 {
     Duration duration = null;
     switch (scene) {
       case 1:
-        duration = Duration.between(LocalDateTime.now(),
-                LocalDate.now().plusDays(1).atStartOfDay());
+        duration = Duration.between(LocalDateTime.now(), LocalDate.now().plusDays(1).atStartOfDay());
         break;
       case 2:
-        duration = Duration.between(LocalDateTime.now(),
-                LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.MONDAY)).atStartOfDay());
+        duration = Duration.between(LocalDateTime.now(), LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.MONDAY)).atStartOfDay());
         break;
       case 3:
-        duration = Duration.between(LocalDateTime.now(),
-                LocalDate.now().with(TemporalAdjusters.firstDayOfNextMonth()).atStartOfDay());
+        duration = Duration.between(LocalDateTime.now(), LocalDate.now().with(TemporalAdjusters.firstDayOfNextMonth()).atStartOfDay());
         break;
       default:
         throw new RuntimeException("params error");

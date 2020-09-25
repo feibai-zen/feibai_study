@@ -2,24 +2,15 @@
 # encoding=utf-8
 
 def main():
-  file = open("./total.txt", 'r')
-  file_400 = open("./400.txt", 'w')
-  file_609 = open("./609.txt", 'w')
-  file_601 = open("./601.txt", 'w')
+  file = open("long_text_2020-09-25-15-17-38.txt", 'r')
 
+  str = ""
   for line in file.readlines():
-    if line.__contains__('"businessTypeId":400'):
-      file_400.write(line)
+    str = str + " " + line.replace("\n", "")
 
-    if line.__contains__('"businessTypeId":609'):
-      file_609.write(line)
+  file.close()
 
-    if line.__contains__('"businessTypeId":601'):
-      file_601.write(line)
-
-  file_400.close()
-  file_601.close()
-  file_609.close()
+  print(str)
 
 
 if __name__ == '__main__':

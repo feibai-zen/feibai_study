@@ -7,9 +7,7 @@ import java.time.ZoneOffset;
 import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
 
-/**
- * Baikal时间相关操作
- */
+
 public final class TimeUtils {
 
   private TimeUtils() {

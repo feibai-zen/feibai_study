@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class CrabTimeJob {
+public class CronTimeJob {
 
   @Value("${environment.id}")
   private String environment;
@@ -23,6 +23,7 @@ public class CrabTimeJob {
   @Scheduled(cron = "0 */1 * * * ?")
   @ExecuteOnceRedisLock(key = "crab_time_job_one_minute")
   public void minute() {
+    log.info("execute job per minute.");
 
   }
 
@@ -32,7 +33,7 @@ public class CrabTimeJob {
   @Scheduled(cron = "0 */10 * * * ?")
   @ExecuteOnceRedisLock(key = "crab_time_job_ten_minute")
   public void tenMinute() {
-
+    log.info("execute job per 10 minutes.");
   }
 
   /**
@@ -41,6 +42,7 @@ public class CrabTimeJob {
   @Scheduled(cron = "0 0/30 * * * ?")
   @ExecuteOnceRedisLock(key = "crab_time_job_half_hour")
   public void halfHour() {
+    log.info("execute job per 30 minutes.");
 
   }
 
@@ -50,7 +52,7 @@ public class CrabTimeJob {
   @Scheduled(cron = "0 0 * * * ?")
   @ExecuteOnceRedisLock(key = "crab_time_job_hour")
   public void hour() {
-
+    log.info("execute job per hour.");
   }
 
   /**
@@ -59,7 +61,6 @@ public class CrabTimeJob {
   @Scheduled(cron = "0 0 0 * * ?")
   @ExecuteOnceRedisLock(key = "crab_time_job_day")
   public void day() {
-
   }
 
   /**

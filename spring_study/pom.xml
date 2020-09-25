@@ -102,7 +102,6 @@
     <module>18-spring-boot-exception5</module>
     <module>19-spring-boot-test</module>
     <module>20-spring-boot-springloader</module>
-    <module>21-spring-boot-devtools</module>
     <module>22-spring-boot-jpa</module>
     <module>23-spring-boot-jpa-sharding</module>
     <module>24-spring-boot-ehcache</module>
@@ -114,7 +113,6 @@
     <module>30-spring-boot-transaction-jpa</module>
     <module>31-spring-boot-transaction-jms</module>
     <module>32-spring-boot-config-study</module>
-    <module>33-spring-boot-shardingsphere</module>
     <module>34-spring-boot-rabbitmq</module>
 
     <module>100-springmvc-quickstart</module>

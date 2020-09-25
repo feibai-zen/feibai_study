@@ -1,4 +1,4 @@
-package com.feibai.spring.study.test;
+package com.feibai.spring.study.test.redis;
 
 import com.feibai.spring.study.App;
 import org.junit.runner.RunWith;

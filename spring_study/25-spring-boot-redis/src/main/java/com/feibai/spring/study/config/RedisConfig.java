@@ -34,9 +34,11 @@ public class RedisConfig {
 		config.setMinIdle(5);
 		//最大链接数
 		config.setMaxTotal(20);*/
-    System.out.println("默认值：" + config.getMaxIdle());
-    System.out.println("默认值：" + config.getMinIdle());
-    System.out.println("默认值：" + config.getMaxTotal());
+
+
+//    System.out.println("默认值：" + config.getMaxIdle());
+//    System.out.println("默认值：" + config.getMinIdle());
+//    System.out.println("默认值：" + config.getMaxTotal());
     return config;
   }
 
@@ -46,9 +48,9 @@ public class RedisConfig {
   @Bean
   @ConfigurationProperties(prefix = "spring.redis")
   public JedisConnectionFactory jedisConnectionFactory(JedisPoolConfig config) {
-    System.out.println("配置完毕：" + config.getMaxIdle());
-    System.out.println("配置完毕：" + config.getMinIdle());
-    System.out.println("配置完毕：" + config.getMaxTotal());
+//    System.out.println("配置完毕：" + config.getMaxIdle());
+//    System.out.println("配置完毕：" + config.getMinIdle());
+//    System.out.println("配置完毕：" + config.getMaxTotal());
 
     JedisConnectionFactory factory = new JedisConnectionFactory();
     //关联链接池的配置对象
@@ -70,7 +72,6 @@ public class RedisConfig {
     RedisTemplate<String, Object> template = new RedisTemplate<>();
     //关联
     template.setConnectionFactory(jedisConnectionFactory);
-
     //为key设置序列化器
     template.setKeySerializer(new StringRedisSerializer());
     //为value设置序列化器
@@ -79,8 +80,7 @@ public class RedisConfig {
     return template;
   }
 
-
-  @Bean(name="redisScriptSwitchSeasonRound")
+  @Bean(name = "redisScriptSwitchSeasonRound")
   public DefaultRedisScript getRedisScriptClient1() {
     DefaultRedisScript<ArrayList> redisScript = new DefaultRedisScript<>();
     redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("classpath:lua/switchSeasonRound.lua")));
@@ -89,7 +89,7 @@ public class RedisConfig {
     return redisScript;
   }
 
-  @Bean(name="redisScriptLock")
+  @Bean(name = "redisScriptLock")
   public DefaultRedisScript getRedisScriptClient2() {
     DefaultRedisScript<String> redisScript = new DefaultRedisScript<>();
     redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("classpath:lua/lock.lua")));
@@ -98,7 +98,7 @@ public class RedisConfig {
     return redisScript;
   }
 
-  @Bean(name="redisScriptInCard")
+  @Bean(name = "redisScriptInCard")
   public DefaultRedisScript getRedisScriptClient3() {
     DefaultRedisScript<Integer> redisScript = new DefaultRedisScript<>();
     redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("classpath:lua/incrCard.lua")));

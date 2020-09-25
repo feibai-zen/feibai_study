@@ -2,10 +2,7 @@ package com.feibai.study.demos.demos.time;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAdjusters;
-import java.time.temporal.TemporalField;
-import java.time.temporal.WeekFields;
+import java.time.temporal.*;
 import java.util.Date;
 import java.util.Locale;
 
@@ -13,15 +10,21 @@ import java.util.Locale;
  * 为什么使用Jdk8的时间类型？
  * Java处理日期、日历和时间的方式一直为社区所诟病，将 java.util.Date设定为可变类型，以及SimpleDateFormat的非线程安全使其应用非常受限。
  * 新API基于ISO标准日历系统，java.time包下的所有类都是不可变类型而且线程安全。
+ * <p>
+ * <p>
+ * Instant: simple beautiful strong immutable thread-safe. 线程安全并且不可变
  */
 
 public class TimeTestJdk8 {
   public static void main(String[] args) {
 
-    System.out.println(LocalDateTime.now());
-    getTime();
+//    System.out.println(LocalDateTime.now());
+//    getTime();
+//    today();
+    System.out.println(Instant.now());
   }
 
+  //测试LocalDateTime
   private static void getTime() {
     LocalDateTime now = LocalDateTime.now();
     System.out.println(now);
@@ -33,9 +36,8 @@ public class TimeTestJdk8 {
     System.out.println(now.getDayOfYear());
     System.out.println(now.getDayOfWeek());
     System.out.println(now.getHour());
-//    System.out.println(now.getLong());
-
-
+    System.out.println(now.getLong(ChronoField.YEAR));
+    System.out.println(now.atZone(ZoneId.systemDefault()).toInstant());
   }
 
   private static void today() {

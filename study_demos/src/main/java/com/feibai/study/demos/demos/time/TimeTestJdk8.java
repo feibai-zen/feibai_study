@@ -39,6 +39,10 @@ public class TimeTestJdk8 {
     System.out.println(now.atZone(ZoneId.systemDefault()).toInstant());
   }
 
+  private static void testLocalDateTime() {
+    LocalDate localDate = LocalDate.now().plusMonths(1);
+  }
+
   private static void today() {
     LocalDate today = LocalDate.now();//获取当前日期，不含时间
     System.out.println("今天的日期:" + today);
@@ -297,14 +301,6 @@ public class TimeTestJdk8 {
     LocalDate localDate = LocalDate.now().plusDays(offset);
     StringBuilder sb = new StringBuilder();
     sb.append("gift_fans_live_total_rank_month_").append(localDate.getYear()).append(localDate.getMonth().toString());
-
-    return sb.toString();
-  }
-
-  public static String buildAnchorLiveTotalRankMonthKey(int offset) {
-    LocalDate localDate = LocalDate.now().plusMonths(offset);
-    StringBuilder sb = new StringBuilder();
-    sb.append("gift_anchor_live_total_rank_month_").append(localDate.getYear()).append(localDate.getMonth().toString());
 
     return sb.toString();
   }

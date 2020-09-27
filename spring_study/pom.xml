@@ -119,7 +119,6 @@
     <module>29-spring-boot-aspect-log</module>
     <module>30-spring-boot-transaction-jpa</module>
     <module>31-spring-boot-transaction-jms</module>
-    <module>32-spring-boot-config-study</module>
     <module>34-spring-boot-rabbitmq</module>
 
     <module>100-springmvc-quickstart</module>

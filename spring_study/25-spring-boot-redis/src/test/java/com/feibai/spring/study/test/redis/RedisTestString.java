@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.testng.collections.Maps;
@@ -24,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 public class RedisTestString {
 
   @Autowired
-  private RedisTemplate<String, Object> redisTemplate;
+  private StringRedisTemplate redisTemplate;
 
   /**
    * 添加一个字符串

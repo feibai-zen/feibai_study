@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -25,7 +26,7 @@ import java.util.Set;
 public class RedisTestPipeline {
 
   @Autowired
-  private RedisTemplate<String, String> redisTemplate;
+  private StringRedisTemplate redisTemplate;
 
 
   /**

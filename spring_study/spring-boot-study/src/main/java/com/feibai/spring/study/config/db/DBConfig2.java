@@ -29,7 +29,7 @@ public class DBConfig2 extends MysqlPoolConfig {
   private String password;
 
   /**
-   * 配置redis连接工厂
+   * 配置mysql连接工厂
    */
   @Bean(name = "dataSource2")
   public DruidDataSource connectionFactory2() throws SQLException {

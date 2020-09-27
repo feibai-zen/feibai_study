@@ -1,6 +1,6 @@
 package com.feibai.spring.study.test.redis;
 
-import com.feibai.spring.study.App;
+import com.feibai.spring.study.SpringbootStudyStartup;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import java.util.Set;
  * Spring Zset测试
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = App.class)
+@SpringBootTest(classes = SpringbootStudyStartup.class)
 @Slf4j
 public class RedisTestZset {
 

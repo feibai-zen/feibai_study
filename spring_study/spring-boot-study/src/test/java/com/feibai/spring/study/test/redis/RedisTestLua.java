@@ -1,14 +1,12 @@
 package com.feibai.spring.study.test.redis;
 
-import com.feibai.spring.study.App;
+import com.feibai.spring.study.SpringbootStudyStartup;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -20,7 +18,7 @@ import java.util.Objects;
  * Spring Hash测试
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = App.class)
+@SpringBootTest(classes = SpringbootStudyStartup.class)
 @Slf4j
 public class RedisTestLua {
 

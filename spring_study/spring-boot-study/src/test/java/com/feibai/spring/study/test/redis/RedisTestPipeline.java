@@ -1,13 +1,12 @@
 package com.feibai.spring.study.test.redis;
 
-import com.feibai.spring.study.App;
+import com.feibai.spring.study.SpringbootStudyStartup;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisCallback;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.data.redis.serializer.RedisSerializer;
@@ -22,7 +21,7 @@ import java.util.Set;
  * Spring pipeline测试
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = App.class)
+@SpringBootTest(classes = SpringbootStudyStartup.class)
 public class RedisTestPipeline {
 
   @Autowired

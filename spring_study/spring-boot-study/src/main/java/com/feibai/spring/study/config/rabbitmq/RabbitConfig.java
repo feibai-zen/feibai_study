@@ -1,4 +1,4 @@
-package com.feibai.springboot.study.config;
+package com.feibai.spring.study.config.rabbitmq;
 
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;

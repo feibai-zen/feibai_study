@@ -1,12 +1,11 @@
 package com.feibai.spring.study.test.redis;
 
-import com.feibai.spring.study.App;
+import com.feibai.spring.study.SpringbootStudyStartup;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -21,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  * Spring String测试
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = App.class)
+@SpringBootTest(classes = SpringbootStudyStartup.class)
 public class RedisTestString {
 
   @Autowired

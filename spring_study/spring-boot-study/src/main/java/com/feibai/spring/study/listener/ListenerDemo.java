@@ -1,7 +1,7 @@
-package com.feibai.springboot.study.listener;
+package com.feibai.spring.study.listener;
 
 import com.alibaba.fastjson.JSON;
-import com.feibai.springboot.study.model.MessageDemo;
+import com.feibai.spring.study.model.MessageDemo;
 import com.google.common.base.Charsets;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;

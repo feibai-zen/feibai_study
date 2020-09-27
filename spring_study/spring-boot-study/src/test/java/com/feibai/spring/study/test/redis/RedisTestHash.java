@@ -1,12 +1,11 @@
 package com.feibai.spring.study.test.redis;
 
-import com.feibai.spring.study.App;
+import com.feibai.spring.study.SpringbootStudyStartup;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.testng.collections.Maps;
@@ -18,7 +17,7 @@ import java.util.Map;
  * Spring Hash测试
  */
 @RunWith(SpringJUnit4ClassRunner.class)//让junit与spring环境进行整合
-@SpringBootTest(classes = App.class)//1. 当前类为springBoot的测试类 2.加载SpringBoot启动类。启动springBoot
+@SpringBootTest(classes = SpringbootStudyStartup.class)//1. 当前类为springBoot的测试类 2.加载SpringBoot启动类。启动springBoot
 public class RedisTestHash {
 
   @Autowired

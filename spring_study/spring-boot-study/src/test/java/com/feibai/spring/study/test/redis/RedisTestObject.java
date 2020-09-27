@@ -1,7 +1,7 @@
 package com.feibai.spring.study.test.redis;
 
 
-import com.feibai.spring.study.App;
+import com.feibai.spring.study.SpringbootStudyStartup;
 import com.feibai.spring.study.model.Users;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +13,7 @@ import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = App.class)
+@SpringBootTest(classes = SpringbootStudyStartup.class)
 public class RedisTestObject {
   @Autowired
   private RedisTemplate<String, Object> redisTemplate;

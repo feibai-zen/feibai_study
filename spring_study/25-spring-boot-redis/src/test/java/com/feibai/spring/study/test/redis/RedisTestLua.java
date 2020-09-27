@@ -1,70 +1,40 @@
 package com.feibai.spring.study.test.redis;
 
 import com.feibai.spring.study.App;
-import com.feibai.spring.study.common.JedisPoolUtils;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
+import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
 
-import java.util.Arrays;
+import javax.annotation.Resource;
+import java.util.Collections;
+import java.util.Objects;
 
 /**
  * Spring Hash测试
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = App.class)
+@Slf4j
 public class RedisTestLua {
+
+  @Resource(name = "redisScriptLock")
+  private RedisScript lockScript;
 
   @Autowired
   private RedisTemplate<String, String> redisTemplate;
 
-  /**
-   * 实现一个对IP的限流
-   */
-
-  /**
-   * local num = redis.call('incr', KEYS[1])
-   * if tonumber(num) == 1 then
-   * redis.call('expire', KEYS[1], ARGV[1])
-   * return 1
-   * elseif tonumber(num) > tonumber(ARGV[2]) then
-   * return 0
-   * else
-   * return 1
-   * end
-   */
-
-  public void test_lua() {
-    JedisPool jedisPool = JedisPoolUtils.getInstance();
-    Jedis jedis = jedisPool.getResource();
-    try {
-      String lua = "local num = redis.call('incr', KEYS[1])\n" +
-              "if tonumber(num) == 1 then\n" +
-              "\tredis.call('expire', KEYS[1], ARGV[1])\n" +
-              "\treturn 1\n" +
-              "elseif tonumber(num) > tonumber(ARGV[2]) then\n" +
-              "\treturn 0\n" +
-              "else \n" +
-              "\treturn 1\n" +
-              "end\n";
-      Object result = jedis.evalsha(jedis.scriptLoad(lua), Arrays.asList("localhost"), Arrays.asList("10", "2"));
-      System.out.println(result);
-    } catch (Exception e) {
-      e.printStackTrace();
-    } finally {
-      if (jedis != null) {
-        try {
-          jedis.close();
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-      }
+  @Test
+  public void testLua() {
+    Object lock = redisTemplate.execute(lockScript, Collections.singletonList("test.distribute.lock"), "0");
+    if (Objects.isNull(lock)) {
+      log.warn("");
     }
   }
-
 
 }

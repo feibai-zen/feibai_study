@@ -1,4 +1,4 @@
-package com.feibai.spring.study.test.time;
+package com.feibai.spring.study.utils.time;
 
 import java.time.DayOfWeek;
 import java.time.Instant;
@@ -8,9 +8,9 @@ import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
 
 
-public final class TimeUtils {
+public final class TimeFormatUtils {
 
-  private TimeUtils() {
+  private TimeFormatUtils() {
   }
 
   public static String combineSuffix(String origin, byte suffixType, LocalDateTime dateTime) {
@@ -68,7 +68,4 @@ public final class TimeUtils {
     }
   }
 
-  public static void main(String[] args) {
-    String zkey = TimeUtils.combineSuffix("act_20_06_c_guess_fans_hit", (byte) 5, LocalDateTime.now());
-  }
 }

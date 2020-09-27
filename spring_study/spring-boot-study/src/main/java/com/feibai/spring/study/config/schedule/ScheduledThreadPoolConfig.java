@@ -1,4 +1,4 @@
-package com.feibai.spring.study.config;
+package com.feibai.spring.study.config.schedule;
 
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import org.springframework.context.annotation.Configuration;

@@ -99,6 +99,7 @@
   </build>
 
   <modules>
+    <module>spring-boot-study</module>
     <module>01-spring-boot-hello</module>
     <module>02-spring-boot-servlet</module>
     <module>03-spring-boot-filter</module>
@@ -117,7 +118,7 @@
     <module>22-spring-boot-jpa</module>
     <module>23-spring-boot-jpa-sharding</module>
     <module>24-spring-boot-ehcache</module>
-    <module>25-spring-boot-redis</module>
+
     <module>27-quartz-demo</module>
     <module>28-spring-boot-quartz</module>
     <module>29-spring-boot-aspect-log</module>

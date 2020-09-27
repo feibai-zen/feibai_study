@@ -113,7 +113,6 @@
     <module>16-spring-boot-exception3</module>
     <module>17-spring-boot-exception4</module>
     <module>18-spring-boot-exception5</module>
-    <module>19-spring-boot-test</module>
     <module>20-spring-boot-springloader</module>
     <module>22-spring-boot-jpa</module>
     <module>23-spring-boot-jpa-sharding</module>

@@ -14,6 +14,16 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * SpringBoot测试类
+ *
+ * @RunWith:启动器 SpringJUnit4ClassRunner.class：让junit与spring环境进行整合
+ * @SpringBootTest(classes={App.class}) 1, 当前类为springBoot的测试类
+ * @SpringBootTest(classes={App.class}) 2, 加载SpringBoot启动类。启动springBoot
+ * <p>
+ * junit与spring整合 @Contextconfiguartion("classpath:applicationContext.xml")
+ */
+
+/**
  * Spring Hash测试
  */
 @RunWith(SpringJUnit4ClassRunner.class)

@@ -2,7 +2,7 @@ package com.feibai.spring.study.test.redis;
 
 
 import com.feibai.spring.study.App;
-import com.feibai.spring.study.pojo.Users;
+import com.feibai.spring.study.model.Users;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

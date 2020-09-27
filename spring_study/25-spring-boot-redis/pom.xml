@@ -49,11 +49,11 @@
       <artifactId>aspectjrt</artifactId>
     </dependency>
 
-    <!-- DevTools的坐标 -->
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-devtools</artifactId>
-      <optional>true</optional>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.10</version>
     </dependency>
+
   </dependencies>
 </project>

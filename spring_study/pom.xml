@@ -32,6 +32,12 @@
       <artifactId>fastjson</artifactId>
       <version>1.2.60</version>
     </dependency>
+    <!-- DevTools的坐标 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional>
+    </dependency>
   </dependencies>
 
   <build>
@@ -113,7 +119,6 @@
     <module>23-spring-boot-jpa-sharding</module>
     <module>24-spring-boot-ehcache</module>
     <module>25-spring-boot-redis</module>
-    <module>26-spring-boot-scheduled</module>
     <module>27-quartz-demo</module>
     <module>28-spring-boot-quartz</module>
     <module>29-spring-boot-aspect-log</module>

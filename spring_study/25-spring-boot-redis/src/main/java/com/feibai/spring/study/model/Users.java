@@ -1,4 +1,4 @@
-package com.feibai.spring.study.pojo;
+package com.feibai.spring.study.model;
 
 import java.io.Serializable;
 

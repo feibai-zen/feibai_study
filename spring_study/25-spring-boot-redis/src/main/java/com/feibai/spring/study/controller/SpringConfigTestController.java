@@ -23,7 +23,7 @@ import java.util.Set;
  * 2.使用Environment方式
  */
 @RestController
-public class WebController {
+public class SpringConfigTestController {
   @Value("${test.msg:hahaha}")
   private String msg;
 

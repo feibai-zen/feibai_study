@@ -1,4 +1,4 @@
-package com.feibai.spring.study.lock;
+package com.feibai.spring.study.aspect.lock;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -19,7 +19,7 @@ public class ExecuteOnceRedisLockInterceptor {
   @Resource
   private StringRedisTemplate stringRedisTemplate;
 
-  @Around("@annotation(com.feibai.spring.study.lock.ExecuteOnceRedisLock)")
+  @Around("@annotation(com.feibai.spring.study.aspect.lock.ExecuteOnceRedisLock)")
   public Object around(ProceedingJoinPoint pjp) {
     MethodSignature methodSignature = (MethodSignature) pjp.getSignature();
     ExecuteOnceRedisLock executeOnceRedisLock = methodSignature.getMethod().getAnnotation(ExecuteOnceRedisLock.class);

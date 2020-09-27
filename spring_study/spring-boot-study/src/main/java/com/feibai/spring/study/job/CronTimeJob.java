@@ -1,6 +1,6 @@
 package com.feibai.spring.study.job;
 
-import com.feibai.spring.study.lock.ExecuteOnceRedisLock;
+import com.feibai.spring.study.aspect.lock.ExecuteOnceRedisLock;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;

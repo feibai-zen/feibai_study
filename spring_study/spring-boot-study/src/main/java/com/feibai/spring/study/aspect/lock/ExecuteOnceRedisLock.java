@@ -1,10 +1,7 @@
-package com.feibai.spring.study.lock;
+package com.feibai.spring.study.aspect.lock;
 
 import java.lang.annotation.*;
 
-/**
- * @author feibai
- */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented

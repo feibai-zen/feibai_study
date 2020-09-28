@@ -82,4 +82,14 @@
     </dependency>
 
   </dependencies>
+
+  <!--  打包成可以独立运行的jar-->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>

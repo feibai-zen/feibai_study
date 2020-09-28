@@ -7,10 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
-/**
- * @Author feibai
- */
-
 @Configuration
 public class RedisConfig3 extends RedisPoolConfig {
 
@@ -32,8 +28,8 @@ public class RedisConfig3 extends RedisPoolConfig {
   /**
    * 配置redis连接工厂
    */
-  @Bean(name = "phelpsRedisFactory")
-  public RedisConnectionFactory phelpsRedisConnectionFactory() {
+  @Bean(name = "redisFactory3")
+  public RedisConnectionFactory redisConnectionFactory3() {
     return createJedisConnectionFactory(dbIndex, host, port, password, timeout);
   }
 
@@ -41,10 +37,10 @@ public class RedisConfig3 extends RedisPoolConfig {
   /**
    * 配置redisTemplate 注入方式使用@Resource(name="") 方式注入
    */
-  @Bean(name = "phelpsRedisTemplate")
-  public RedisTemplate acquirePhelpsRedisTemplate() {
+  @Bean(name = "redisTemplate3")
+  public RedisTemplate acquireRedisTemplate3() {
     RedisTemplate template = new RedisTemplate();
-    template.setConnectionFactory(phelpsRedisConnectionFactory());
+    template.setConnectionFactory(redisConnectionFactory3());
     setSerializer(template);
     return template;
   }

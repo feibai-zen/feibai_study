@@ -5,12 +5,15 @@ import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.testng.collections.Maps;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -24,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 public class RedisTestString {
 
   @Autowired
-  private StringRedisTemplate redisTemplate;
+  private RedisTemplate<String, String> redisTemplate;
 
   /**
    * 添加一个字符串

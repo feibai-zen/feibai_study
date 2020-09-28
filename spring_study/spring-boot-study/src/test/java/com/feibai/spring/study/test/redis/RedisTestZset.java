@@ -6,12 +6,15 @@ import org.assertj.core.util.Lists;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Set;
 
@@ -24,7 +27,8 @@ import java.util.Set;
 public class RedisTestZset {
 
   @Autowired
-  private StringRedisTemplate redisTemplate;
+  @Qualifier("redisTemplate1")
+  private RedisTemplate<String, String> redisTemplate;
 
   private String test_zkey = "springboot.study.redis.zset";
 

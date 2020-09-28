@@ -4,9 +4,13 @@ import com.feibai.spring.study.SpringbootStudyStartup;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import javax.annotation.Resource;
 
 /**
  * Spring Zset测试
@@ -16,7 +20,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class RedisTestSet {
 
   @Autowired
-  private StringRedisTemplate redisTemplate;
+  @Qualifier("redisTemplate1")
+  private RedisTemplate<String, String> redisTemplate;
 
   @Test
   public void test_ismember() {

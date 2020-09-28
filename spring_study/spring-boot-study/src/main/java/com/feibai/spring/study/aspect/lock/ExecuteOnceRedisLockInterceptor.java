@@ -5,7 +5,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -16,8 +16,8 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class ExecuteOnceRedisLockInterceptor {
 
-  @Resource
-  private StringRedisTemplate stringRedisTemplate;
+  @Resource(name="redisTemplate1")
+  private RedisTemplate<String, String> redisTemplate;
 
   @Around("@annotation(com.feibai.spring.study.aspect.lock.ExecuteOnceRedisLock)")
   public Object around(ProceedingJoinPoint pjp) {
@@ -25,9 +25,9 @@ public class ExecuteOnceRedisLockInterceptor {
     ExecuteOnceRedisLock executeOnceRedisLock = methodSignature.getMethod().getAnnotation(ExecuteOnceRedisLock.class);
     Boolean success;
     if (executeOnceRedisLock.timeout() == -1) {
-      success = stringRedisTemplate.opsForValue().setIfAbsent(executeOnceRedisLock.key(), "");
+      success = redisTemplate.opsForValue().setIfAbsent(executeOnceRedisLock.key(), "");
     } else {
-      success = stringRedisTemplate.opsForValue()
+      success = redisTemplate.opsForValue()
               .setIfAbsent(executeOnceRedisLock.key(), "", executeOnceRedisLock.timeout(), TimeUnit.MILLISECONDS);
     }
     Object res = null;
@@ -35,7 +35,7 @@ public class ExecuteOnceRedisLockInterceptor {
       if (success != null && success) {
         res = pjp.proceed();
         if (executeOnceRedisLock.del()) {
-          stringRedisTemplate.opsForValue().getOperations().delete(executeOnceRedisLock.key());
+          redisTemplate.opsForValue().getOperations().delete(executeOnceRedisLock.key());
         }
       }
     } catch (Throwable throwable) {

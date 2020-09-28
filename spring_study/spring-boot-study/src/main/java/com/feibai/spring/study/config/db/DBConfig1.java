@@ -50,8 +50,7 @@ public class DBConfig1 extends MysqlPoolConfig {
     SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
     sqlSessionFactoryBean.setDataSource(DataSource);
     PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-    sqlSessionFactoryBean
-            .setMapperLocations(resolver.getResources("classpath:mybatis/study1/*.xml"));
+//    sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:mybatis/study1/*.xml"));
     return sqlSessionFactoryBean.getObject();
   }
 
@@ -61,16 +60,14 @@ public class DBConfig1 extends MysqlPoolConfig {
     return new DataSourceTransactionManager(dataSource);
   }
 
-  @Bean
-  public WallFilter wallFilter() {
+  private WallFilter wallFilter() {
     WallFilter wallFilter = new WallFilter();
     wallFilter.setConfig(wallConfig());
 
     return wallFilter;
   }
 
-  @Bean
-  public WallConfig wallConfig() {
+  private WallConfig wallConfig() {
     WallConfig config = new WallConfig();
     config.setMultiStatementAllow(true);
     config.setNoneBaseStatementAllow(true);

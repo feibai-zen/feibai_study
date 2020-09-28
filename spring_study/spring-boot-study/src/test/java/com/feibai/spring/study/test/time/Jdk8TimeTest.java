@@ -17,6 +17,7 @@ import java.util.Date;
 
 public class Jdk8TimeTest {
   //测试LocalDateTime
+
   @Test
   public void getTime() {
     LocalDateTime now = LocalDateTime.now();
@@ -33,18 +34,18 @@ public class Jdk8TimeTest {
     System.out.println(now.atZone(ZoneId.systemDefault()).toInstant());
   }
 
-  @Test
+
   public void testLocalDateTime() {
     LocalDate localDate = LocalDate.now().plusMonths(1);
   }
 
-  @Test
+
   public void today() {
     LocalDate today = LocalDate.now();//获取当前日期，不含时间
     System.out.println("今天的日期:" + today);
   }
 
-  @Test
+
   public void year_month_date() {
     LocalDate today = LocalDate.now();
     int year = today.getYear();
@@ -56,13 +57,13 @@ public class Jdk8TimeTest {
     System.out.println("day:" + day);
   }
 
-  @Test
+
   public void self_define() {
     LocalDate date = LocalDate.of(2018, 2, 6);
     System.out.println("自定义日期:" + date);
   }
 
-  @Test
+
   public void judge_equal() {
     LocalDate date1 = LocalDate.now();
     LocalDate date2 = LocalDate.of(2018, 2, 5);
@@ -75,7 +76,7 @@ public class Jdk8TimeTest {
   }
 
   // 忽略年
-  @Test
+
   public void cycle_time() {
     LocalDate date1 = LocalDate.now();
     LocalDate date2 = LocalDate.of(2018, 2, 6);
@@ -90,14 +91,14 @@ public class Jdk8TimeTest {
     }
   }
 
-  @Test
+
   public void currentTime() {
     LocalTime time = LocalTime.now();//当前时间，不含有日期信息
     System.out.println("获取当前的时间,不含有日期:" + time);
   }
 
   // 时间增加
-  @Test
+
   public void plusTime() {
     LocalTime time = LocalTime.now();
     //方法返回一个全新的LocalTime实例，由于其不可变性，返回后一定要用变量赋值。
@@ -106,7 +107,7 @@ public class Jdk8TimeTest {
   }
 
   // 计算一周后的日期
-  @Test
+
   public void one_week_after() {
     LocalDate today = LocalDate.now();
     System.out.println("今天的日期为:" + today);
@@ -116,7 +117,7 @@ public class Jdk8TimeTest {
   }
 
   // 一年后的日期
-  @Test
+
   public void one_year_before() {
     LocalDate today = LocalDate.now();
     LocalDate previousYear = today.minus(1, ChronoUnit.YEARS);
@@ -126,7 +127,7 @@ public class Jdk8TimeTest {
   }
 
   // 获取当时的时间戳，或当前时区下的日期时间信息
-  @Test
+
   public void unix_time() {
     // Returns the current time based on your system clock and set to UTC.
     Clock clock = Clock.systemUTC();
@@ -137,7 +138,7 @@ public class Jdk8TimeTest {
     System.out.println("Clock : " + defaultClock.millis());
   }
 
-  @Test
+
   public void compareDate() {
     LocalDate today = LocalDate.now();
     LocalDate tomorrow = LocalDate.of(2018, 2, 6);
@@ -151,7 +152,7 @@ public class Jdk8TimeTest {
   }
 
   //把本时区的时间转换成另一个时区的时间
-  @Test
+
   public void timeZone() {
     // Date and time with timezone in Java 8
     ZoneId america = ZoneId.of("America/New_York");
@@ -161,7 +162,7 @@ public class Jdk8TimeTest {
   }
 
   // 检查闰年
-  @Test
+
   public void isLeapYear() {
     LocalDate today = LocalDate.now();
     if (today.isLeapYear()) {
@@ -174,7 +175,7 @@ public class Jdk8TimeTest {
   // 忽略月--到期日
   // MonthDay检查重复事件的例子相似，YearMonth是另一个组合类，用于表示信用卡到期日、FD到期日、期货期权到期日等。还可以用这个类得到 当月
   // 共有多少天，YearMonth实例的lengthOfMonth()方法可以返回当月的天数，在判断2月有28天还是29天时非常有用。
-  @Test
+
   public void year_month() {
     YearMonth currentYearMonth = YearMonth.now();
     System.out.printf("Days in month year %s: %d%n", currentYearMonth, currentYearMonth.lengthOfMonth());
@@ -183,7 +184,7 @@ public class Jdk8TimeTest {
   }
 
   // 两个日期之间的天数和月数
-  @Test
+
   public void days_between_two_date() {
     LocalDate today = LocalDate.now();
     LocalDate java8Release = LocalDate.of(2018, 12, 14);
@@ -194,7 +195,7 @@ public class Jdk8TimeTest {
   }
 
   // 获取当前的时间戳
-  @Test
+
   public void time_stamp() {
     //时间戳信息里同时包含了日期和时间，这和java.util.Date很像。实际上Instant类确实等同于 Java 8之前的Date类，你可以使用Date类和
     //Instant类各自的转换方法互相转换，例如：Date.from(Instant) 将Instant转换成java.util.Date，Date.toInstant()则是将Date类
@@ -204,7 +205,7 @@ public class Jdk8TimeTest {
   }
 
   // 字符串互转日期类型
-  @Test
+
   public void stringToDateTime() {
     LocalDateTime date = LocalDateTime.now();
     DateTimeFormatter format1 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
@@ -219,19 +220,18 @@ public class Jdk8TimeTest {
   }
 
   // 使用预定义的格式化工具去解析或格式化日期
-  @Test
+
   public void format_date() {
     String dayAfterTommorrow = "20180205";
     LocalDate formatted = LocalDate.parse(dayAfterTommorrow, DateTimeFormatter.BASIC_ISO_DATE);
     System.out.println(dayAfterTommorrow + "  格式化后的日期为:  " + formatted);
   }
 
-  @Test
+
   public void other(long time) {
     System.out.println(Instant.ofEpochMilli(time).atZone(ZoneOffset.ofHours(8)).toLocalDate());
   }
 
-  @Test
   public boolean isOnDuration() {
     LocalDateTime now = LocalDateTime.now();
     LocalDateTime start = LocalDateTime.of(2019, 1, 25, 12, 0);
@@ -239,8 +239,8 @@ public class Jdk8TimeTest {
     return now.isAfter(start) && now.isBefore(end);
   }
 
-  @Test
-  public void test_convert(String[] args) {
+
+  public void test_convert() {
 
     String nowDateStr = LocalDate.now().toString();
     System.out.println(nowDateStr);//2018-03-27
@@ -269,7 +269,6 @@ public class Jdk8TimeTest {
   /**
    * Date转换为LocalDateTime
    */
-  @Test
   public void date2LocalDateTime(Date date) {
     Instant instant = date.toInstant();//An instantaneous point on the time-line.(时间线上的一个瞬时点。)
     ZoneId zoneId = ZoneId.systemDefault();//A time-zone ID, such as {@code Europe/Paris}.(时区)
@@ -285,7 +284,6 @@ public class Jdk8TimeTest {
   /**
    * LocalDateTime转换为Date
    */
-  @Test
   public void localDateTime2Date(LocalDateTime localDateTime) {
     ZoneId zoneId = ZoneId.systemDefault();
     ZonedDateTime zdt = localDateTime.atZone(zoneId);//Combines this date-time with a time-zone to create a  ZonedDateTime.
@@ -293,21 +291,18 @@ public class Jdk8TimeTest {
     System.out.println(date.toString());//Tue Mar 27 14:17:17 CST 2018
   }
 
-  @Test
   public Duration getDuration() {
     Duration duration = Duration.between(LocalDateTime.now(), LocalDate.now().plusDays(1).atStartOfDay());
 
     return duration;
   }
 
-  @Test
   public String buildFansLiveTotalRankDailyKey(int offset) {
     LocalDate localDate = LocalDate.now().plusDays(offset);
 
     return "gift_fans_live_total_rank_daily_" + localDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
   }
 
-  @Test
   public String buildFansLiveTotalRankWeekKey(int offset) {
     LocalDate localDate = LocalDate.now().plusWeeks(offset);
     TemporalField weekBasedYear = WeekFields.of(DayOfWeek.MONDAY, 7).weekOfWeekBasedYear();
@@ -318,7 +313,6 @@ public class Jdk8TimeTest {
     return sb.toString();
   }
 
-  @Test
   public String buildFansLiveTotalRankMonthKey(int offset) {
     LocalDate localDate = LocalDate.now().plusDays(offset);
     StringBuilder sb = new StringBuilder();
@@ -330,7 +324,6 @@ public class Jdk8TimeTest {
   /**
    * 时间间隔
    */
-  @Test
   public Duration getDuration(int scene) {
     Duration duration = null;
     switch (scene) {
@@ -349,7 +342,6 @@ public class Jdk8TimeTest {
     return duration;
   }
 
-  @Test
   public long milisecondsRemain() {
     String deadlineTime = "2020-08-12 12:00:00";
     long unixTimeStamp = 157800000;

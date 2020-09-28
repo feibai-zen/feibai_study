@@ -3,9 +3,13 @@ package com.feibai.spring.study.test.redis;
 import com.feibai.spring.study.SpringbootStudyStartup;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import javax.annotation.Resource;
 
 /**
  * Spring List测试
@@ -15,7 +19,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class RedisTestList {
 
   @Autowired
-  private StringRedisTemplate redisTemplate;
+  @Qualifier("redisTemplate2")
+  private RedisTemplate<String, String> redisTemplate;
 
 
   public void test_push() {

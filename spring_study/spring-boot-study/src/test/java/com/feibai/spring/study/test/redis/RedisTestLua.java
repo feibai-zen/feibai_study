@@ -5,7 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -26,7 +28,8 @@ public class RedisTestLua {
   private RedisScript lockScript;
 
   @Autowired
-  private StringRedisTemplate redisTemplate;
+  @Qualifier("redisTemplate1")
+  private RedisTemplate<String, String> redisTemplate;
 
   @Test
   public void testLua() {

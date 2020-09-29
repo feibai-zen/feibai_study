@@ -20,8 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-@MapperScan(basePackages = {
-        "com.springboot.study.dao"}, sqlSessionFactoryRef = "sqlSessionFactory1")
+@MapperScan(basePackages = {"com.springboot.study.dao"}, sqlSessionFactoryRef = "sqlSessionFactory1")
 public class DBConfig1 extends MysqlPoolConfig {
 
   @Value("${jdbc.url1}")
@@ -35,7 +34,7 @@ public class DBConfig1 extends MysqlPoolConfig {
    * 配置mysql连接工厂
    */
   @Bean(name = "dataSource1")
-  public DruidDataSource DbConnectionFactory2() throws SQLException {
+  public DruidDataSource DbConnectionFactory1() throws SQLException {
     DruidDataSource druidDataSource = createDataSource(url, username, password);
     druidDataSource.clearFilters();
     List<Filter> filterList = new ArrayList<>();

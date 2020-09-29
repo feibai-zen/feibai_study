@@ -20,8 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-@MapperScan(basePackages = {
-        "com.spring.boot.study.dao"}, sqlSessionFactoryRef = "sqlSessionFactory2")
+@MapperScan(basePackages = {"com.spring.boot.study.dao"}, sqlSessionFactoryRef = "sqlSessionFactory2")
 public class DBConfig2 extends MysqlPoolConfig {
 
   @Value("${jdbc.url2}")

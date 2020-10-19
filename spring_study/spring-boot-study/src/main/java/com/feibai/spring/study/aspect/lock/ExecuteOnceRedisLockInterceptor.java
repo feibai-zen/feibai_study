@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class ExecuteOnceRedisLockInterceptor {
 
-  @Resource(name="redisTemplate1")
+  @Resource(name = "redisTemplate1")
   private RedisTemplate<String, String> redisTemplate;
 
   @Around("@annotation(com.feibai.spring.study.aspect.lock.ExecuteOnceRedisLock)")

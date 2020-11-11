@@ -20,9 +20,6 @@ public class UserController {
 
   /**
    * 返回String
-   *
-   * @param model
-   * @return
    */
   @RequestMapping("/testString")
   public String testString(Model model) {
@@ -87,8 +84,6 @@ public class UserController {
 
   /**
    * 使用关键字的方式进行转发或者重定向
-   *
-   * @return
    */
   @RequestMapping("/testForwardOrRedirect")
   public String testForwardOrRedirect() {

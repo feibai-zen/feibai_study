@@ -36,6 +36,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
       <optional>true</optional>
     </dependency>
   </dependencies>
@@ -104,9 +105,7 @@
     <module>02-spring-boot-servlet</module>
     <module>03-spring-boot-filter</module>
     <module>04-spring-boot-Listener</module>
-    <module>05-spring-boot-static-resources1</module>
     <module>06-spring-boot-static-resources2</module>
-    <module>07-spring-boot-fileupload</module>
     <module>12-spring-boot-springmvc-mybatis</module>
     <module>13-spring-boot-validate</module>
     <module>14-spring-boot-exception1</module>

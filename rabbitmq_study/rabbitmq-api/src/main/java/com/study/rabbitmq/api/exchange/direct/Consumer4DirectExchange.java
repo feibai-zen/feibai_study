@@ -9,8 +9,6 @@ import com.rabbitmq.client.QueueingConsumer.Delivery;
 public class Consumer4DirectExchange {
 
   public static void main(String[] args) throws Exception {
-
-
     ConnectionFactory connectionFactory = new ConnectionFactory();
 
     connectionFactory.setHost("111.230.115.242");

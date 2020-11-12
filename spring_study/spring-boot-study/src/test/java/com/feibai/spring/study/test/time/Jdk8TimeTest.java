@@ -1,5 +1,8 @@
 package com.feibai.spring.study.test.time;
 
+import com.alibaba.fastjson.JSON;
+import lombok.Data;
+import lombok.ToString;
 import org.junit.Test;
 
 import java.time.*;
@@ -9,10 +12,33 @@ import java.util.Date;
 
 /**
  * 为什么使用Jdk8的时间类型？
- * Java处理日期、日历和时间的方式一直为社区所诟病，将 java.util.Date设定为可变类型，以及SimpleDateFormat的非线程安全使其应用非常受限。
+ * Java处理日期、日历和时间的方式一直为社区所诟病，将java.util.Date设定为可变类型，以及SimpleDateFormat的非线程安全使其应用非常受限。
  * 新API基于ISO标准日历系统，java.time包下的所有类都是不可变类型而且线程安全。
  * <p>
  * Instant: simple beautiful strong immutable thread-safe. 线程安全并且不可变
+ * <p>
+ * <p>
+ * 基本概念
+ * <p>
+ * 时刻：所有计算机系统内部都用一个整数表示时刻，这个整数是距离格林尼治标准时间1970年1月1日0时0分0秒的毫秒数，可以理解时刻就是绝对时间，它与时区无关，不同时区对同一时刻的解读，即年月日时分秒是不一样的；
+ * <p>
+ * 时区：同一时刻，世界上各个地区的时间可能是不一样的，具体时间与时区有关，一共有24个时区，英国格林尼治是0时区，北京是东八区，也就是说格林尼治凌晨1点，北京是早上9点；
+ * <p>
+ * 年历：我们都知道，中国有公历和农历之分，公历和农历都是年历，不同的年历，一年有多少月，每月有多少天，甚至一天有多少小时，这些可能都是不一样的，我们主要讨论公历。
+ * <p>
+ * Java 8中表示日期和时间的类有多个，主要的有：
+ * <p>
+ * Instant：表示时刻，不直接对应年月日信息，需要通过时区转换
+ * <p>
+ * LocalDateTime: 表示与时区无关的日期和时间信息，不直接对应时刻，需要通过时区转换
+ * <p>
+ * LocalDate：表示与时区无关的日期，与LocalDateTime相比，只有日期信息，没有时间信息
+ * <p>
+ * LocalTime：表示与时区无关的时间，与LocalDateTime相比，只有时间信息，没有日期信息
+ * <p>
+ * ZonedDateTime： 表示特定时区的日期和时间
+ * <p>
+ * ZoneId/ZoneOffset：表示时区
  */
 
 public class Jdk8TimeTest {
@@ -353,4 +379,19 @@ public class Jdk8TimeTest {
     return remainSec < 0 ? 0L : remainSec;
   }
 
+  @Test
+  public void test_parser_json_to_localDateTime() {
+    String json = "{\"age\": 120, \"birthday\": \"2020-20-20 12:00:00\" }";
+    People people = JSON.parseObject(json, People.class);
+    System.out.println(people);
+  }
+
 }
+
+@Data
+@ToString
+class People {
+  int age;
+  Date birthday;
+}
+

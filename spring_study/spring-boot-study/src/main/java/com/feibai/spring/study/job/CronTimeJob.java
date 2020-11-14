@@ -64,4 +64,11 @@ public class CronTimeJob {
   public void week() {
 
   }
+
+  public static void main(String[] args) {
+    System.out.println(Long.valueOf(123).equals(123));
+    System.out.println(String.valueOf("123").equals("123"));
+    System.out.println("123".equals("123"));
+    System.out.println(Integer.valueOf(123).equals(123));
+  }
 }

@@ -14,7 +14,7 @@ import com.feibai.study.demos.beans.User;
 public class FastJsonUtil {
 
   public static void main(String[] args) {
-    json2JsonObject();// 将Json字符串转换为JSONObject对象
+    /*json2JsonObject();// 将Json字符串转换为JSONObject对象
     json2JavaBean();// 将Json字符串转换为JavaBean对象
     json2JsonArray();// 将Json字符串转换为JSONArray对象
     json2JavaBeanList();// 将Json字符串转换为JavaBean的集合
@@ -22,6 +22,9 @@ public class FastJsonUtil {
     javaBean2JsonObject();// 将JavaBean转换为JSONObject对象
     json2ListInMap();// 从Json字符串的Map中获取List对象
     list2JsonInMap();// 将含list的Map对象转换为Json字符串
+    */
+
+    stringToMap();//将字符串转换成Map<Long,Long>
   }
 
   private static void json2JsonObject() {
@@ -130,4 +133,12 @@ public class FastJsonUtil {
     System.out.println(string2);
   }
 
+
+  public static void stringToMap() {
+    String str = "{\"43685172\":12652075,\"43668654\":126443430,\"43685326\":40168135,\"42119046\":102532573,\"43685738\":98986286}";
+    Map<Long, Long> mapType = JSON.parseObject(str, Map.class);
+    for (Object obj : mapType.keySet()) {
+      System.out.println("key为：" + obj + "值为：" + mapType.get(obj));
+    }
+  }
 }

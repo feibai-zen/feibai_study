@@ -1,4 +1,8 @@
+#!/usr/local/bin/python3
+# encoding=utf-8
+
 from time import time  # time()函数用于获取当前UNIX时间戳  
+from redis import Redis
 
 
 class Article:
@@ -51,3 +55,12 @@ class Article:
     if author is not None:
       article_data[self.author_key] = author
     return self.client.mset(article_data)
+
+
+if __name__ == '__main__':
+  client = Redis("192.168.1.175", "6386", 0, "jredis123456", decode_responses=True)
+  article = Article(client, 10086)  # 指定文章ID 
+  print(article.create('message', 'hello world', 'peter'))  # 创建文章 
+  print(article.get())  # 获取文章 
+  article.update(author="john")  # 更新文章的作者 
+  print(article.get())  # 再次获取文章 

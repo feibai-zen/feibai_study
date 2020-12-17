@@ -1,9 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # coding=utf-8
 
-from foundation.redisApi.Utils import Util
-
-
+from foundation.redis.Utils import Util
 class StringApi:
 
   def set(self, util, key, value):

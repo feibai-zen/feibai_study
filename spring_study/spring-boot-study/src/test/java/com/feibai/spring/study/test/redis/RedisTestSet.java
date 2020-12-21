@@ -126,9 +126,7 @@ public class RedisTestSet {
 
   /**
    * 9、
-   * <p>
    * remove(Kkey, Object... values)
-   * <p>
    * 批量移除变量中的元素。
    */
 
@@ -147,12 +145,11 @@ public class RedisTestSet {
   public void test_scan() {
     //Cursor<Object> cursor = redisTemplate.opsForSet().scan("setValue", ScanOptions.NONE); 
 
-    Cursor cursor = redisTemplate.opsForSet().scan("setValue", ScanOptions.scanOptions().match("C").build());
+    Cursor cursor = redisTemplate.opsForSet().scan("setValue", ScanOptions.scanOptions().match("C").count(100).build());
 
     while (cursor.hasNext()) {
       Object object = cursor.next();
       System.out.println("通过scan(K key, ScanOptions options)方法获取匹配的值:" + object);
-
     }
   }
 

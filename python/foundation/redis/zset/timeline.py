@@ -73,5 +73,3 @@ if __name__ == "__main__":
   output:
      [('Loki Release Follow Up', 1474549200.0), ('Our Gtk+ Stylesheet Has Moved', 1473642000.0),('Loki 0.4 Stable Release! ', 1473404400.0)]
   """
-
-

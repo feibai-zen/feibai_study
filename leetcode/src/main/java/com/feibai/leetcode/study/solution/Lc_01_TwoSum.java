@@ -34,10 +34,11 @@ public class Lc_01_TwoSum {
   }
 
   /**
-   * O(n)
+   * O(n) 用空间换时间
    */
   public static int[] twoSum(int[] nums, int target) {
     int[] ret = new int[2];
+    // Map中的key--num[i]; value--索引
     Map<Integer, Integer> numMap = new HashMap<>();
     for (int i = 0; i < nums.length; i++) {
       int tmp = target - nums[i];
@@ -52,7 +53,7 @@ public class Lc_01_TwoSum {
   }
 
   /**
-   * O(n)
+   * O(n^2)
    */
   public static int[] solution_by_violence(int[] num, int target) {
     int[] ret = new int[2];

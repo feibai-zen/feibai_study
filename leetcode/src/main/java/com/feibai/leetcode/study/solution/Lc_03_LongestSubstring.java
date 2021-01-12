@@ -2,6 +2,13 @@ package com.feibai.leetcode.study.solution;
 
 import java.util.*;
 
+/**
+ * 重点：滑动窗口法，查找最长不重复字符串
+ * <p>
+ * 使用空间换时间
+ * <p>
+ * 辅助数据结构：HashSet
+ */
 public class Lc_03_LongestSubstring {
 
   /**
@@ -29,24 +36,24 @@ public class Lc_03_LongestSubstring {
   public static void main(String[] args) {
     Lc_03_LongestSubstring instance = new Lc_03_LongestSubstring();
 //    System.out.println(instance.lengthOfLongestSubstringByVolience(" "));
-    System.out.println(instance.lengthOfLongestSubstringKMP("abcbbcbbefgbgfyue"));
+    System.out.println(instance.lengthOfLongestSubstringKMP_while("abcbbcbbefgbgfyue"));
   }
 
   // 滑动窗口:O(n)
-  public int lengthOfLongestSubstringKMP(String s) {
-    int n = s.length();
+  public int lengthOfLongestSubstringKMP_while(String s) {
+    int length = s.length();
     Set<Character> set = new HashSet<>();
-    int ans = 0, i = 0, j = 0;
-    while (i < n && j < n) {
-      //试图调整[i,j]的范围
+    int max_len = 0, i = 0, j = 0;
+    while (i < length && j < length) {
+      //调整[i,j]的范围
       if (!set.contains(s.charAt(j))) {
         set.add(s.charAt(j++));
-        ans = Math.max(ans, j - i);
+        max_len = Math.max(max_len, j - i);
       } else {
         set.remove(s.charAt(i++));
       }
     }
-    return ans;
+    return max_len;
   }
 
   // 暴力解法: O(n^3)

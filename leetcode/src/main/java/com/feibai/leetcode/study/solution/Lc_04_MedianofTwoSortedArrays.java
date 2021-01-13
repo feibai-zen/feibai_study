@@ -1,11 +1,11 @@
 package com.feibai.leetcode.study.solution;
 
 /**
- * 给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。
+ * 题目：给定两个大小为 m 和 n 的有序数组nums1 和nums2。
  * <p>
- * 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。
+ * 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为O(log(m + n))。
  * <p>
- * 你可以假设 nums1 和 nums2 不会同时为空。
+ * 你可以假设nums1和nums2不会同时为空。
  * <p>
  * 示例 1:
  * <p>
@@ -20,6 +20,8 @@ package com.feibai.leetcode.study.solution;
  * <p>
  * 则中位数是 (2 + 3)/2 = 2.5
  * <p>
+ * <p>
+ * 解题思路：插入排序将两个数组合并到一个。插排的时间复杂度为O(log(n))
  */
 
 public class Lc_04_MedianofTwoSortedArrays {
@@ -31,15 +33,13 @@ public class Lc_04_MedianofTwoSortedArrays {
     System.out.println(instance.findMedianSortedArrays(nums1, nums2));
   }
 
+  /**
+   * 时间复杂度O(m+n)。是否存在O(log(m+n))
+   */
   public double findMedianSortedArrays(int[] nums1, int[] nums2) {
     int m = nums1.length;
     int n = nums2.length;
     int[] arr = new int[(m + n) / 2 + 1];
-    //偶数
-    boolean isOdd = false;
-    if ((m + n) % 2 == 0) {
-      isOdd = true;
-    }
 
     int i = 0, j = 0, q = 0;
     while (i < m || j < n) {
@@ -65,8 +65,9 @@ public class Lc_04_MedianofTwoSortedArrays {
         break;
       }
     }
+
     //处理返回值
-    if (isOdd) {
+    if ((m + n) % 2 == 0) {
       return ((double) arr[(m + n) / 2 - 1] + (double) arr[(m + n) / 2]) / 2;
     } else {
       return arr[(m + n) / 2];

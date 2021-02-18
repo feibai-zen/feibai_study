@@ -20,10 +20,12 @@ import java.util.concurrent.Future;
  * <p>
  * 优势：
  * 编写简单，如果需要访问当前线程，则无须使用Thread.currentThread()方法，直接使用this即可获得当前线程。
- *
+ */
+
+/**
  * @author feibai
  */
-public class _ThreadTest {
+public class ThreadTest {
 
   public static void main(String[] args) throws Exception {
 //    test_02();
@@ -70,7 +72,7 @@ public class _ThreadTest {
     boolean r1 = ret1.get();
     boolean r2 = ret2.get();
     boolean r3 = ret3.get();
-    ser.shutdownNow();
+    ser.shutdownNow();//停止提交线程任务，已经提交的需要等待执行完成
   }
 
   /**

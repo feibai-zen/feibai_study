@@ -49,7 +49,7 @@ public class Test {
     int i = 1;
     for (Long uid : uids) {
       i++;
-      String data = "{\"baikalId\":218,\"roam\":{\"ANCHOR_UID\":" + uid + "L,\"BUYER_ID\":" + uid + "L,\"INNER_VALUE\":" + i + "L,\"QUANTITY\":1L,\"GIFT_ID" +
+      String data = "{\"baikalId\":288,\"roam\":{\"ANCHOR_UID\":" + uid + "L,\"BUYER_ID\":" + uid + "L,\"INNER_VALUE\":" + i + "L,\"QUANTITY\":1L,\"GIFT_ID" +
               "\":573L}}";
       String result = post(data, url);
       System.out.println(result);

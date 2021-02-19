@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class FixedThreadPool_demo {
 
-  private ExecutorService executor = Executors.newFixedThreadPool(8);
+  private static ExecutorService executor = Executors.newFixedThreadPool(8);
 
 
   public static void main(String[] args) {
@@ -21,7 +21,6 @@ public class FixedThreadPool_demo {
       }
     });
   }
-
 
   public void doJob() throws InterruptedException {
     TimeUnit.MILLISECONDS.sleep(5);

@@ -15,15 +15,19 @@ class IdentityLock:
     self.key = key
 
   def acquire(self, identity, timeout):
-    """尝试获取一个带有身份标识符和最大使用时限的锁，
-    成功时返回True，失败时返回False"""
+    """
+    尝试获取一个带有身份标识符和最大使用时限的锁，
+    成功时返回True，失败时返回False
+    """
     result = self.client.set(self.key, identity, ex=timeout, nx=True)
     return result is not None
 
   def release(self, input_identity):
-    """根据给定的标识符，尝试释放锁。
+    """
+    根据给定的标识符，尝试释放锁。
     返回True表示释放成功；
-    返回False则表示给定的标识符与锁持有者的标识符并不相同，释放请求被拒绝"""
+    返回False则表示给定的标识符与锁持有者的标识符并不相同，释放请求被拒绝
+    """
     # 开启流水线
     pipe = self.client.pipeline()
     try:

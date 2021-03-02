@@ -38,7 +38,6 @@ public class AttackSingleton {
     ObjectInputStream ois = new ObjectInputStream(new FileInputStream("singletonSerializable"));
     SingletonHunger instance5 = (SingletonHunger) ois.readObject();
     System.out.println(instance5);
-
   }
 
 }

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.demos.lambda;
+package com.feibai.study.demos.multithread.foundation.createthread;
 
 /**
  * Lambda表达式 简化线程(用一次)的使用

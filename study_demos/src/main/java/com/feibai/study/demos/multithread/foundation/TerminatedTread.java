@@ -6,7 +6,6 @@ package com.feibai.study.demos.multithread.foundation;
  * @author feibai
  */
 public class  TerminatedTread implements Runnable {
-
   private boolean flag = true;
 
   public static void main(String[] args) {
@@ -19,7 +18,6 @@ public class  TerminatedTread implements Runnable {
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
-
   }
 
   @Override

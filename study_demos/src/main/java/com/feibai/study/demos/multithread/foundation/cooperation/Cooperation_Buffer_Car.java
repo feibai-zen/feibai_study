@@ -80,7 +80,6 @@ class Buffer {
     carsArr[count++] = car;
     notifyAll();
     System.out.println("生产了" + car.getId() + "台车");
-
   }
 }
 

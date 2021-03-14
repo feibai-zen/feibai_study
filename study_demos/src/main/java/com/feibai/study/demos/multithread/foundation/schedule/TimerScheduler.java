@@ -19,6 +19,15 @@ public class TimerScheduler {
     // timer.schedule(new MyTask(), 1000,200); //执行多次
     Calendar cal = new GregorianCalendar(2019, 12, 31, 21, 53, 54);
     timer.schedule(new MyTask(), cal.getTime(), 2000); // 指定时间
+    timer.schedule(new TimerTask() {
+      @Override
+      public void run() {
+        for (int i = 0; i < 10; i++) {
+          System.out.println("放空大脑休息一会");
+        }
+        System.out.println("------end-------");
+      }
+    }, 100, 200);
   }
 
 }

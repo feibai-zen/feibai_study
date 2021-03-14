@@ -1,5 +1,6 @@
 package com.feibai.designpatterns.study.adapter;
 
 public interface Target {
-  void translateData();
+  void method1();
+  void method2();
 }

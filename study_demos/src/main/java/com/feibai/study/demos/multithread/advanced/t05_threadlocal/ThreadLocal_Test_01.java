@@ -17,7 +17,6 @@ package com.feibai.study.demos.multithread.advanced.t05_threadlocal;
  * <p>
  * ThreadLocal.remove();
  * <p>
- * <p>
  * 补充知识点：
  * <p>
  * 在操作系统中，线程和进程有数量上限，确认线程和进程唯一性的唯一条件就是线程ID或进程ID。

@@ -25,7 +25,7 @@ public class HappenBefore {
       Thread t2 = new Thread(() -> {
         if (flag) {
           a *= 1;
-          System.out.println(Thread.currentThread().getName() + "->happen before a->" + a);
+//          System.out.println(Thread.currentThread().getName() + "->happen before a->" + a);
         }
         // 指令重排
         if (a == 0) {

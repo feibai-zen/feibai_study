@@ -21,7 +21,7 @@ public class SingletonDoubleCheckedLock {
   // 3、提供公共的静态方法 --> 获取属性
   public static SingletonDoubleCheckedLock getInstance() {
     // 再次检测
-    if (null != instance) { // 避免不必要的同步 ，已经存在对象
+    if (null != instance) { // 避免不必要的同步，已经存在对象。是一个很常见也很好的优化点，可以显著提高性能。
       return instance;
     }
     synchronized (SingletonDoubleCheckedLock.class) {// getInstance()是静态方法

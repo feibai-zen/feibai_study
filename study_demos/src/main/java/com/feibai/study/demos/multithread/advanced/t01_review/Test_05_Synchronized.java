@@ -27,15 +27,17 @@ public class Test_05_Synchronized {
 		return this.d;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		final Test_05_Synchronized t = new Test_05_Synchronized();
 
-		new Thread(new Runnable() {
+		Thread thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
 				t.set_m1(100);
 			}
-		}).start();
+		});
+		thread.start();
+		thread.join();
 		System.out.println(t.get_m2());
 		try {
 			TimeUnit.SECONDS.sleep(3);

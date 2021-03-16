@@ -32,7 +32,6 @@ public class TestContainer01<E> {
 				e1.printStackTrace();
 			}
 		}
-
 		list.add(e);
 		count++;
 		this.notifyAll();

@@ -40,7 +40,6 @@ public class Test_11_AtomicInteger {
 			try {
 				thread.join();// 其他线程都执行完成后，main线程继续执行
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

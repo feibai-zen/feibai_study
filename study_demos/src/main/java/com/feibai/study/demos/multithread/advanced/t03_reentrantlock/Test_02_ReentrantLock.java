@@ -33,8 +33,7 @@ public class Test_02_ReentrantLock {
 
 			// 阻塞尝试锁，阻塞参数代表的时长，尝试获取锁标记。
 			// 如果超时，不等待。直接返回。
-			isLocked = lock.tryLock(5, TimeUnit.SECONDS);// 这里设置为5秒，获取不到锁标记----leeyuanlong
-
+			isLocked = lock.tryLock(5, TimeUnit.SECONDS);// 这里设置为5秒，获取不到锁标记----yuanlong.li
 			if (isLocked) {
 				System.out.println("m2() method synchronized");
 			} else {

@@ -14,9 +14,9 @@ import java.util.List;
  */
 public class Test_10_Volatile {
 
-	volatile int count = 0;
+	/*volatile*/ int count = 0;
 
-	/* synchronized */ void m() {
+	 synchronized void m() {
 		for (int i = 0; i < 10000; i++) {
 			count++;// 不是原子操作
 		}

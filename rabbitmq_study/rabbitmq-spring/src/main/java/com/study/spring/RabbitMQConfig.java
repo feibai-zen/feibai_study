@@ -47,7 +47,7 @@ public class RabbitMQConfig {
   }
 
   /**
-   * 自动声明Exchange、Queue、Binding
+   * 使用Spring AMQP方式自动声明Exchange、Queue、Binding
    * 针对消费者配置
    * 1. 设置交换机类型
    * 2. 将队列绑定到交换机

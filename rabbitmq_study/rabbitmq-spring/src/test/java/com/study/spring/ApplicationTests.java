@@ -37,6 +37,11 @@ public class ApplicationTests {
   @Autowired
   private RabbitAdmin rabbitAdmin;
 
+  /**
+   * 使用RabbitAdmin声明Exchange、Queue、Binding
+   *
+   * @throws Exception
+   */
   @Test
   public void testAdmin() throws Exception {
     //声明过一次之后，运行多次，也不会创建新的exchange、queue
@@ -59,9 +64,10 @@ public class ApplicationTests {
         BindingBuilder.bind(new Queue("test.topic.queue", false))    //直接创建队列
             .to(new TopicExchange("test.topic", false, false))  //直接创建交换机 建立关联关系
             .with("user.#"));  //指定路由Key
-    rabbitAdmin.declareBinding(
-        BindingBuilder.bind(new Queue("test.fanout.queue", false))
-            .to(new FanoutExchange("test.fanout", false, false)));//创建fanout类型的交换机，不需要指定路由key
+
+    rabbitAdmin.declareBinding(BindingBuilder.bind(new Queue("test.fanout.queue", false))
+        .to(new FanoutExchange("test.fanout", false, false)));//创建fanout类型的交换机，不需要指定路由key
+
     //清空队列数据
     rabbitAdmin.purgeQueue("test.topic.queue", false);
   }

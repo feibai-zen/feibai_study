@@ -9,7 +9,6 @@ import com.rabbitmq.client.ConnectionFactory;
 
 public class Producer {
 
-
   public static void main(String[] args) throws Exception {
 
     //1 创建ConnectionFactory
@@ -25,7 +24,6 @@ public class Producer {
 
     //3 通过Connection创建一个新的Channel
     Channel channel = connection.createChannel();
-
 
     //4 指定我们的消息投递模式: 消息的确认模式
     channel.confirmSelect();
@@ -49,7 +47,6 @@ public class Producer {
         System.err.println("-------ack!-----------");//成功的时候
       }
     });
-
 
   }
 }

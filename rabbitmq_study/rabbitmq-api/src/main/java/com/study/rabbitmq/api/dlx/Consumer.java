@@ -32,9 +32,10 @@ public class Consumer {
     channel.queueDeclare(queueName, true, false, false, agruments);
     channel.queueBind(queueName, exchangeName, routingKey);
 
-    // 
+    //死信队列与死信交换机绑定
     channel.exchangeDeclare("dlx.exchange", "topic", true, false, null);
     channel.queueDeclare("dlx.queue", true, false, false, null);
+    //routeKey="#"，所有的消息都会被路由到这个队列
     channel.queueBind("dlx.queue", "dlx.exchange", "#");
 
     channel.basicConsume(queueName, true, new MyConsumer(channel));

@@ -9,7 +9,6 @@ import com.rabbitmq.client.Envelope;
 
 public class MyConsumer extends DefaultConsumer {
 
-
   private Channel channel;
 
   public MyConsumer(Channel channel) {
@@ -25,9 +24,8 @@ public class MyConsumer extends DefaultConsumer {
     System.err.println("properties: " + properties);
     System.err.println("body: " + new String(body));
 
+    //手动签收
     channel.basicAck(envelope.getDeliveryTag(), false);
-
   }
-
 
 }

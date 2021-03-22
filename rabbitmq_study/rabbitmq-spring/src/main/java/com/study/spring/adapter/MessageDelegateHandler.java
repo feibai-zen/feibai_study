@@ -6,7 +6,6 @@ import java.util.Map;
 import com.study.spring.entity.Order;
 import com.study.spring.entity.Packaged;
 
-
 public class MessageDelegateHandler {
 
   public void handleMessage(byte[] messageBody) {
@@ -29,22 +28,20 @@ public class MessageDelegateHandler {
     System.err.println("method2 收到消息内容:" + new String(messageBody));
   }
 
-
   public void consumeMessage(Map messageBody) {
     System.err.println("map方法, 消息内容:" + messageBody);
   }
 
-
   public void consumeMessage(Order order) {
     System.err.println("order对象, 消息内容, id: " + order.getId() +
-            ", name: " + order.getName() +
-            ", content: " + order.getContent());
+        ", name: " + order.getName() +
+        ", content: " + order.getContent());
   }
 
   public void consumeMessage(Packaged pack) {
     System.err.println("package对象, 消息内容, id: " + pack.getId() +
-            ", name: " + pack.getName() +
-            ", content: " + pack.getDescription());
+        ", name: " + pack.getName() +
+        ", content: " + pack.getDescription());
   }
 
   public void consumeMessage(File file) {

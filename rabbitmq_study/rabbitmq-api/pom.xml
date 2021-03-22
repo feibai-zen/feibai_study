@@ -41,7 +41,13 @@
 			<artifactId>amqp-client</artifactId>
 			<version>4.8.0</version>
 		</dependency>
-	</dependencies>
+    <dependency>
+      <groupId>com.rabbitmq</groupId>
+      <artifactId>amqp-client</artifactId>
+      <version>4.0.3</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
 
 	<build>
 		<plugins>

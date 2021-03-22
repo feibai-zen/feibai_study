@@ -190,7 +190,6 @@ public class RabbitMQConfig {
     adapter.setMessageConverter(jackson2JsonMessageConverter);
     container.setMessageListener(adapter);*/
 
-
     //1.4 ext convert
     MessageListenerAdapter adapter = new MessageListenerAdapter(new MessageDelegateHandler());
     adapter.setDefaultListenerMethod("consumeMessage");

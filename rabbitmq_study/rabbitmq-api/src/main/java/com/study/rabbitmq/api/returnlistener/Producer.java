@@ -11,9 +11,7 @@ import com.rabbitmq.client.AMQP.BasicProperties;
 
 public class Producer {
 
-
   public static void main(String[] args) throws Exception {
-
 
     ConnectionFactory connectionFactory = new ConnectionFactory();
     connectionFactory.setHost("111.230.115.242");
@@ -31,12 +29,10 @@ public class Producer {
 
     String msg = "Hello RabbitMQ Return Message";
 
-
     channel.addReturnListener(new ReturnListener() {
       @Override
       public void handleReturn(int replyCode, String replyText, String exchange,
                                String routingKey, AMQP.BasicProperties properties, byte[] body) throws IOException {
-
         System.err.println("---------handle  return----------");
         System.err.println("replyCode: " + replyCode);
         System.err.println("replyText: " + replyText);
@@ -47,11 +43,7 @@ public class Producer {
       }
     });
 
-
     channel.basicPublish(exchange, routingKeyError, true, null, msg.getBytes());
-
     //channel.basicPublish(exchange, routingKeyError, true, null, msg.getBytes());
-
-
   }
 }

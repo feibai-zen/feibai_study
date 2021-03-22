@@ -8,7 +8,6 @@ import com.rabbitmq.client.QueueingConsumer.Delivery;
 
 public class Consumer {
 
-
   public static void main(String[] args) throws Exception {
 
     //1 创建ConnectionFactory
@@ -44,7 +43,6 @@ public class Consumer {
 
       System.err.println("消费端: " + msg);
     }
-
 
   }
 }

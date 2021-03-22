@@ -10,7 +10,6 @@ import com.rabbitmq.client.ConnectionFactory;
 
 public class Producer {
 
-
   public static void main(String[] args) throws Exception {
     ConnectionFactory connectionFactory = new ConnectionFactory();
     connectionFactory.setHost("111.230.115.242");
@@ -28,10 +27,10 @@ public class Producer {
       headers.put("num", i);
 
       AMQP.BasicProperties properties = new AMQP.BasicProperties.Builder()
-              .deliveryMode(2)
-              .contentEncoding("UTF-8")
-              .headers(headers)
-              .build();
+          .deliveryMode(2)
+          .contentEncoding("UTF-8")
+          .headers(headers)
+          .build();
       String msg = "Hello RabbitMQ ACK Message " + i;
       channel.basicPublish(exchange, routingKey, true, properties, msg.getBytes());
     }

@@ -6,7 +6,6 @@ import com.rabbitmq.client.ConnectionFactory;
 
 public class Consumer {
 
-
   public static void main(String[] args) throws Exception {
     ConnectionFactory connectionFactory = new ConnectionFactory();
     connectionFactory.setHost("111.230.115.242");

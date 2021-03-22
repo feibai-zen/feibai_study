@@ -6,7 +6,6 @@ import com.rabbitmq.client.ConnectionFactory;
 
 public class Producer {
 
-
   public static void main(String[] args) throws Exception {
 
     ConnectionFactory connectionFactory = new ConnectionFactory();

@@ -1,6 +1,5 @@
 package com.feibai.leetcode.study.solution;
 
-
 /**
  * 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
  * <p>
@@ -34,7 +33,14 @@ public class Lc_07_ReverseInteger {
     try {
       int result = 0;
       while (x != 0) {
-        result = 10 * result + x % 10;
+        int pop = x % 10;
+        if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && pop > 7)) {
+          return 0;
+        }
+        if (result < Integer.MIN_VALUE / 10 || (result == Integer.MIN_VALUE / 10 && pop < -8)) {
+          return 0;
+        }
+        result = 10 * result + pop;
         x = x / 10;
       }
       return result;

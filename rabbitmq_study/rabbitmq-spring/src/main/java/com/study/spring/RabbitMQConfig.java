@@ -1,9 +1,5 @@
 package com.study.spring;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
 import com.rabbitmq.client.Channel;
 import com.study.spring.adapter.MessageDelegateHandler;
 import com.study.spring.convert.ImageMessageConverter;
@@ -19,11 +15,12 @@ import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.amqp.support.ConsumerTagStrategy;
 import org.springframework.amqp.support.converter.ContentTypeDelegatingMessageConverter;
-import org.springframework.amqp.support.converter.DefaultJackson2JavaTypeMapper;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.UUID;
 
 @Configuration
 @ComponentScan({"com.study.spring.*"})
@@ -42,7 +39,7 @@ public class RabbitMQConfig {
   @Bean
   public RabbitAdmin rabbitAdmin(ConnectionFactory connectionFactory) {
     RabbitAdmin rabbitAdmin = new RabbitAdmin(connectionFactory);
-    rabbitAdmin.setAutoStartup(true);
+    rabbitAdmin.setAutoStartup(true);//必须设置为true，否则Spring容器不会加载RabbitAdmin类
     return rabbitAdmin;
   }
 

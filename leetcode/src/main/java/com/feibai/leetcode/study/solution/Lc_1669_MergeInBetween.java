@@ -8,16 +8,15 @@ public class Lc_1669_MergeInBetween {
     ListNode aIndexNode = null;
     ListNode bIndexNode = null;
     ListNode dummyNode = new ListNode(-1);
+    int i = 0;
     dummyNode.next = list1;
-    int i = 1;
     ListNode current = dummyNode;
     while (current.next != null) {
-      ListNode p = current.next;
       if (i == a) {
-        aIndexNode = p;
+        aIndexNode = current;
       }
       if (i == b) {
-        bIndexNode = p.next;
+        bIndexNode = current.next.next;
       }
       if (i > a && i > b) {
         break;
@@ -26,8 +25,14 @@ public class Lc_1669_MergeInBetween {
       current = current.next;
     }
 
-    ListNode l2LastNode = null;
-
-    return dummyNode.next;
+    aIndexNode.next = list2;
+    ListNode dummyNode2 = new ListNode(-1);
+    dummyNode2.next = list2;
+    ListNode current_l2 = dummyNode2;
+    while (current_l2.next != null) {
+      current_l2 = current_l2.next;
+    }
+    current_l2.next = bIndexNode;
+    return list1;
   }
 }

@@ -133,6 +133,7 @@ public class RabbitMQConfig {
       }
     });
 
+
      /*
      // 1 适配器方式. 默认是有自己的方法名字的：handleMessage
      // 可以自己指定一个方法的名字: consumeMessage

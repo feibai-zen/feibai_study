@@ -34,12 +34,6 @@ public class RabbitReceiver {
     channel.basicAck(deliveryTag, false);
   }
 
-  /**
-   * @param order
-   * @param channel
-   * @param headers
-   * @throws Exception
-   */
   @RabbitListener(bindings = @QueueBinding(
           value = @Queue(value = "${spring.rabbitmq.listener.order.queue.name}",
                   durable = "${spring.rabbitmq.listener.order.queue.durable}"),

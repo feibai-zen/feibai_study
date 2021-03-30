@@ -56,15 +56,15 @@ public class ApplicationTests {
     rabbitAdmin.declareQueue(new Queue("test.fanout.queue", false));
 
     rabbitAdmin.declareBinding(
-        new Binding("test.direct.queue", Binding.DestinationType.QUEUE, "test.direct", "direct", new HashMap<>()));
+            new Binding("test.direct.queue", Binding.DestinationType.QUEUE, "test.direct", "direct", new HashMap<>()));
 
     rabbitAdmin.declareBinding(
-        BindingBuilder.bind(new Queue("test.topic.queue", false))    //直接创建队列
-            .to(new TopicExchange("test.topic", false, false))  //直接创建交换机 建立关联关系
-            .with("user.#"));  //指定路由Key
+            BindingBuilder.bind(new Queue("test.topic.queue", false))    //直接创建队列
+                    .to(new TopicExchange("test.topic", false, false))  //直接创建交换机 建立关联关系
+                    .with("user.#"));  //指定路由Key
 
     rabbitAdmin.declareBinding(BindingBuilder.bind(new Queue("test.fanout.queue", false))
-        .to(new FanoutExchange("test.fanout", false, false)));//创建fanout类型的交换机，不需要指定路由key
+            .to(new FanoutExchange("test.fanout", false, false)));//创建fanout类型的交换机，不需要指定路由key
 
     //清空队列数据 noWait：false-马上删除
     rabbitAdmin.purgeQueue("test.topic.queue", false);
@@ -116,6 +116,9 @@ public class ApplicationTests {
     rabbitTemplate.send("topic002", "rabbit.abc", message);
   }
 
+  /**
+   * 测试 Jackson2JsonMessageConverter
+   */
   @Test
   public void testSendJsonMessage() throws Exception {
     Order order = new Order();
@@ -134,6 +137,9 @@ public class ApplicationTests {
     rabbitTemplate.send("topic001", "spring.order", message);
   }
 
+  /**
+   * 测试 DefaultJackson2JavaTypeMapper & Jackson2JsonMessageConverter 支持java对象转换
+   */
   @Test
   public void testSendJavaMessage() throws Exception {
     Order order = new Order();

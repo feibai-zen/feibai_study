@@ -133,6 +133,7 @@ public class RabbitMQConfig {
       }
     });
 
+
      /*
      // 1 适配器方式. 默认是有自己的方法名字的：handleMessage
      // 可以自己指定一个方法的名字: consumeMessage
@@ -143,7 +144,7 @@ public class RabbitMQConfig {
      container.setMessageListener(adapter);*/
 
      /*
-     //2 适配器方式: 我们的队列名称 和 方法名称 也可以进行一一的匹配
+     //2 适配器方式: 将队列名称 和 方法名称 进行一一的匹配
      MessageListenerAdapter adapter = new MessageListenerAdapter(new MessageDelegateHandler());
      adapter.setMessageConverter(new TextMessageConverter());
      Map<String, String> queueOrTagToMethodName = new HashMap<>();

@@ -145,7 +145,7 @@ public class RabbitMQConfig {
 
 
      /*
-     //2 适配器方式: 我们的队列名称 和 方法名称 也可以进行一一的匹配
+     //2 适配器方式: 将队列名称 和 方法名称 进行一一的匹配
      MessageListenerAdapter adapter = new MessageListenerAdapter(new MessageDelegateHandler());
      adapter.setMessageConverter(new TextMessageConverter());
      Map<String, String> queueOrTagToMethodName = new HashMap<>();

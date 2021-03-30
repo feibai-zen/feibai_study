@@ -24,7 +24,7 @@ public class RabbitSender {
   final ConfirmCallback confirmCallback = new RabbitTemplate.ConfirmCallback() {
     @Override
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
-			// correlationData:消息的ID,需要全局唯一
+      // correlationData:消息的ID,需要全局唯一
       System.err.println("correlationData: " + correlationData);
       System.err.println("ack: " + ack);
       if (!ack) {

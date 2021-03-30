@@ -112,7 +112,7 @@ public class RabbitMQConfig {
   @Bean
   public SimpleMessageListenerContainer messageContainer(ConnectionFactory connectionFactory) {
     SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);
-    container.setQueues(queue001(), queue002(), queue003(), queue_image(), queue_pdf());
+    container.setQueues(queue001(), queue002(), queue003(), queue_image(), queue_pdf());//设置多个监听的队列
     container.setConcurrentConsumers(1);//当前的消费者数量
     container.setMaxConcurrentConsumers(5);//最大消费者数量
     container.setDefaultRequeueRejected(false);//是否设置重回队列
@@ -141,7 +141,6 @@ public class RabbitMQConfig {
      adapter.setDefaultListenerMethod("consumeMessage");
      adapter.setMessageConverter(new TextMessageConverter());
      container.setMessageListener(adapter);*/
-
 
      /*
      //2 适配器方式: 我们的队列名称 和 方法名称 也可以进行一一的匹配

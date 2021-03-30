@@ -39,8 +39,6 @@ public class ApplicationTests {
 
   /**
    * 使用RabbitAdmin声明Exchange、Queue、Binding
-   *
-   * @throws Exception
    */
   @Test
   public void testAdmin() throws Exception {
@@ -68,7 +66,7 @@ public class ApplicationTests {
     rabbitAdmin.declareBinding(BindingBuilder.bind(new Queue("test.fanout.queue", false))
         .to(new FanoutExchange("test.fanout", false, false)));//创建fanout类型的交换机，不需要指定路由key
 
-    //清空队列数据
+    //清空队列数据 noWait：false-马上删除
     rabbitAdmin.purgeQueue("test.topic.queue", false);
   }
 

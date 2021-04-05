@@ -15,7 +15,7 @@ import java.util.Arrays;
  * <p>
  * 空间复杂度:o(1)；
  * <p>
- * 时间复杂度:建堆：o(n)，每次调整o(log n)，故最好、最坏、平均情况下：o(n*logn);
+ * 时间复杂度:建堆：O(n)，每次调整O(logn)，故最好、最坏、平均情况下：O(n*logn);
  * <p>
  * 稳定性：不稳定
  *
@@ -32,36 +32,45 @@ public class HeapSort {
   /**
    * 堆排序
    */
-  public static void headSort(int[] list) {
+  public static void headSort(int[] array) {
     // 构造初始堆,从第一个非叶子节点开始调整,左右孩子节点中较大的交换到父节点中
-    for (int i = (list.length) / 2 - 1; i >= 0; i--) {
-      headAdjust(list, list.length, i);
+    for (int i = (array.length) / 2 - 1; i >= 0; i--) {
+      headAdjust(array, i, array.length);
     }
-    // 排序，将最大的节点放在堆尾，然后从根节点重新调整
-    for (int i = list.length - 1; i >= 1; i--) {
-      int temp = list[0];
-      list[0] = list[i];
-      list[i] = temp;
-      headAdjust(list, i, 0);
+
+    // 排序，将最大的节点放在数组最后，然后从根节点重新调整
+    for (int i = array.length - 1; i >= 1; i--) {
+      swap(array, 0, i);
+      headAdjust(array, 0, i);
     }
   }
 
-  private static void headAdjust(int[] list, int len, int i) {
-    int k = i, temp = list[i], index = 2 * k + 1;// index是左孩子
+  private static void headAdjust(int[] array, int i, int len) {
+    //index是左孩子
+    int k = i, temp = array[i], index = 2 * k + 1;
     while (index < len) {
-      if (index + 1 < len) {// 如果存在右孩子
-        if (list[index] < list[index + 1]) {// 如果左孩子小于右孩子
-          index = index + 1;
-        }
+      // 如果存在右孩子
+      if (index + 1 < len && array[index] < array[index + 1]) {
+        // 如果左孩子小于右孩子
+        index = index + 1;
       }
-      if (list[index] > temp) {// 如果孩子节点大于父节点
-        list[k] = list[index];// 将孩子节点与父节点交换
+
+      if (array[index] > temp) {
+        // 如果孩子节点大于父节点
+        array[k] = array[index];
+        // 将孩子节点与父节点交换
         k = index;
         index = 2 * k + 1;
       } else {
         break;
       }
     }
-    list[k] = temp;
+    array[k] = temp;
+  }
+
+  private static void swap(int[] array, int a, int b) {
+    int tmp = array[a];
+    array[a] = array[b];
+    array[b] = tmp;
   }
 }

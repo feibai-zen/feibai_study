@@ -1,8 +1,8 @@
-package com.feibai.study.demos.multithread.advanced.t08_threadpool;
+package com.feibai.study.demos.multithread.advanced.t09_semaphore;
 
 import java.util.concurrent.Semaphore;
 
-import com.feibai.study.demos.good_practice.ThreadPool;
+import com.feibai.study.demos.multithread.advanced.t08_threadpool.ThreadPool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,7 +29,6 @@ public class ThreadPoolWithSemaphore {
 	private void acquireSemaphore(Semaphore semaphore) {
 		try {
 			semaphore.acquire();
-
 		} catch (Exception e) {
 			LOGGER.error("acquire semaphore fail.");
 		}

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.good_practice;
+package com.feibai.study.demos.multithread.advanced.t08_threadpool;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -1,4 +1,4 @@
-package com.feibai.study.demos.foundation;
+package com.feibai.study.demos.localtest;
 
 /**
  * 测试java.lang.Math类接口

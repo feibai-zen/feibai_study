@@ -1,4 +1,4 @@
-package com.feibai.study.demos.foundation;
+package com.feibai.study.demos.localtest;
 
 import java.util.Scanner;
 

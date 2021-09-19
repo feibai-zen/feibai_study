@@ -15,7 +15,7 @@ public class CompletableFutureTest {
    * 创建异步任务
    */
   @Test
-  public void test3() throws Exception {
+  public void test1() throws Exception {
     ExecutorService executorService = Executors.newSingleThreadExecutor();
     Future<Double> cf = executorService.submit(() -> {
       System.out.println(Thread.currentThread() + "start, time->" + System.currentTimeMillis());
@@ -63,7 +63,7 @@ public class CompletableFutureTest {
    * 创建异步执行任务，无返回值
    */
   @Test
-  public void test4() throws Exception {
+  public void test3() throws Exception {
     CompletableFuture<Void> cf = CompletableFuture.runAsync(() -> {
       System.out.println(Thread.currentThread() + " start, time->" + System.currentTimeMillis());
       try {
@@ -86,7 +86,7 @@ public class CompletableFutureTest {
 
 
   @Test
-  public void test2_override() throws Exception {
+  public void test4() throws Exception {
     ForkJoinPool pool = new ForkJoinPool();
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
@@ -109,7 +109,7 @@ public class CompletableFutureTest {
   }
 
   @Test
-  public void test4_override() throws Exception {
+  public void test5() throws Exception {
     ExecutorService executorService = Executors.newSingleThreadExecutor();
     // 创建异步执行任务:
     CompletableFuture cf = CompletableFuture.runAsync(() -> {
@@ -139,7 +139,7 @@ public class CompletableFutureTest {
    * 后者是由执行job1的线程立即执行job2，即两个job都是同一个线程执行的
    */
   @Test
-  public void test5() throws Exception {
+  public void test6() throws Exception {
     ForkJoinPool pool = new ForkJoinPool();
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
@@ -174,7 +174,7 @@ public class CompletableFutureTest {
    * thenAccept 同 thenApply 接收上一个任务的返回值作为参数，但是无返回值；thenRun 的方法没有入参，也没有返回值
    */
   @Test
-  public void test6() throws Exception {
+  public void test7() throws Exception {
     ForkJoinPool pool = new ForkJoinPool();
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
@@ -226,7 +226,7 @@ public class CompletableFutureTest {
    * exceptionally 方法返回的CompletionStage的result就是该任务正常执行的结果
    */
   @Test
-  public void test7() throws Exception {
+  public void test8() throws Exception {
     ForkJoinPool pool = new ForkJoinPool();
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
@@ -277,7 +277,7 @@ public class CompletableFutureTest {
    * 常，则get方法抛出异常。
    */
   @Test
-  public void test10() throws Exception {
+  public void test9() throws Exception {
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
       System.out.println(Thread.currentThread() + "job1 start,time->" + System.currentTimeMillis());
@@ -320,7 +320,7 @@ public class CompletableFutureTest {
    * 结果或者回调方法执行期间抛出的异常，与原始CompletableFuture的result无关了
    */
   @Test
-  public void test11() throws Exception {
+  public void test10() throws Exception {
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
       System.out.println(Thread.currentThread() + "job1 start,time->" + System.currentTimeMillis());
@@ -340,7 +340,7 @@ public class CompletableFutureTest {
       System.out.println(Thread.currentThread() + "job2 start,time->" + System.currentTimeMillis());
       try {
         Thread.sleep(2000);
-      } catch (InterruptedException e) {
+      } catch (InterruptedException ignored) {
       }
       if (b != null) {
         System.out.println("error stack trace->");
@@ -370,7 +370,7 @@ public class CompletableFutureTest {
    * 无返回值；runAfterBoth没有入参，也没有返回值。注意两个任务中只要有一个执行异常，则将该异常信息作为指定任务的执行结果
    */
   @Test
-  public void test12() throws Exception {
+  public void test11() throws Exception {
     ForkJoinPool pool = new ForkJoinPool();
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
@@ -441,7 +441,7 @@ public class CompletableFutureTest {
    * 返回值；runAfterEither没有方法入参，也没有返回值。注意两个任务中只要有一个执行异常，则将该异常信息作为指定任务的执行结果
    */
   @Test
-  public void test13() throws Exception {
+  public void test12() throws Exception {
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
       System.out.println(Thread.currentThread() + " start job1,time->" + System.currentTimeMillis());
@@ -512,7 +512,7 @@ public class CompletableFutureTest {
    * 实例为null，则执行这个新任务
    */
   @Test
-  public void test14() throws Exception {
+  public void test13() throws Exception {
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
       System.out.println(Thread.currentThread() + " start job1,time->" + System.currentTimeMillis());
@@ -554,12 +554,12 @@ public class CompletableFutureTest {
    * <p>
    * allOf 返回的CompletableFuture是多个任务都执行完成后才会执行，只要有一个任务执行异常，则返回的CompletableFuture执行get方法时
    * 会抛出异常，如果都是正常执行，则get返回null
-   *
+   * <p>
    * anyOf返回的CompletableFuture是多个任务只要其中一个执行完成就会执行，其get返回的是已经执行完成的任务的执行结果，如果该任务执行异
    * 常，则抛出异常。
    */
   @Test
-  public void test15() throws Exception {
+  public void test14() throws Exception {
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
       System.out.println(Thread.currentThread() + " start job1,time->" + System.currentTimeMillis());

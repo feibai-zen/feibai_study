@@ -1,5 +1,7 @@
 package com.feibai.spring.study;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,7 +19,11 @@ public class FeibaiStudyStartup extends SpringBootServletInitializer implements 
   @Autowired
   private ApplicationContext appContext;
 
+  private static final Logger logger = LoggerFactory.getLogger(FeibaiStudyStartup.class);
+
   public static void main(String[] args) {
+    logger.info("===============start spring-boot application.");
+    logger.trace("=============trace");
     SpringApplication.run(FeibaiStudyStartup.class, args);
   }
 

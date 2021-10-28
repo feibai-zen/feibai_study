@@ -8,7 +8,7 @@
         <relativePath/>
     </parent>
     <groupId>com.feibai.study</groupId>
-    <artifactId>feibai-study</artifactId>
+    <artifactId>spring-study</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>

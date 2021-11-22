@@ -27,6 +27,7 @@ public class ThreadLocalTest01 {
 
   public static class MyRun implements Runnable {
     public void run() {
+      System.out.println(Thread.currentThread().getName() + "-->" + threadLocal.get());
       threadLocal.set((int) (Math.random() * 99));
       System.out.println(Thread.currentThread().getName() + "-->" + threadLocal.get());
     }

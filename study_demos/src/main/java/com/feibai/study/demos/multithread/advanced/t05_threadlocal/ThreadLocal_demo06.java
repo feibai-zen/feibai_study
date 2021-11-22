@@ -8,7 +8,7 @@ import java.util.Map;
  *
  * @author feibai
  */
-public class ThreadLocalTestObject {
+public class ThreadLocal_demo06 {
   // 让ThreadLocal里面有一个默认的类即在初始化时 new 出来
   protected final static ThreadLocal<Map<Object, Object>> threadContext = new MapThreadLocal();
 

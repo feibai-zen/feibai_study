@@ -1,6 +1,7 @@
 package com.feibai.study.demos.demos.datastructure.map;
 
 import java.util.WeakHashMap;
+import java.util.concurrent.TimeUnit;
 
 public class WeakHashMap_Test {
 
@@ -11,6 +12,8 @@ public class WeakHashMap_Test {
     }
 
     while (true) {
+      byte[] alloc = new byte[1024*1024*100];
+      TimeUnit.MILLISECONDS.sleep(100);
       System.out.println(cache.size());
     }
 

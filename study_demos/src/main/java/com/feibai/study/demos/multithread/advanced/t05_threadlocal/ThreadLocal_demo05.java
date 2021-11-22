@@ -1,28 +1,29 @@
 package com.feibai.study.demos.multithread.advanced.t05_threadlocal;
 
 /**
- * InheritableThreadLocal:继承上下文环境的数据 ，拷贝一份给子线程，之后子线程修改数据之后对主线程没有影响
+ * InheritableThreadLocal
+ * 继承上下文环境的数据 ，拷贝一份给子线程，之后子线程修改数据之后对主线程没有影响
  *
  * @author feibai
  */
-public class ThreadLocalTest04 {
-  private static ThreadLocal<Integer> threadLocal = new InheritableThreadLocal<>();
+public class ThreadLocal_demo05 {
+  private static ThreadLocal<Integer> inheritableTl = new InheritableThreadLocal<>();
 
   public static void main(String[] args) throws InterruptedException {
-    threadLocal.set(2);
-    System.out.println(Thread.currentThread().getName() + "-->" + threadLocal.get());
+    inheritableTl.set(2);
+    System.out.println(Thread.currentThread().getName() + "-->" + inheritableTl.get());
 
     // 线程由main线程开辟
     Thread t = new Thread(() -> {
-      System.out.println(Thread.currentThread().getName() + "-->" + threadLocal.get());
-      threadLocal.set(200);
-      System.out.println(Thread.currentThread().getName() + "-->" + threadLocal.get());
+      System.out.println(Thread.currentThread().getName() + "-->" + inheritableTl.get());
+      inheritableTl.set(200);
+      System.out.println(Thread.currentThread().getName() + "-->" + inheritableTl.get());
     });
 
     t.start();
     t.join();
 
-    System.out.println(Thread.currentThread().getName() + "-->" + threadLocal.get());
+    System.out.println(Thread.currentThread().getName() + "-->" + inheritableTl.get());
   }
 
 }

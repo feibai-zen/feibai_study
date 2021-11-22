@@ -6,6 +6,8 @@ import java.io.IOException;
  * 强引用
  *
  * 测试强引用
+ *
+ * 总结引用: 他强任他强，缓存软引挤一旁。弱引若无哈希key，内存漏洞全补上，虚幻似鬼魅，队列来帮忙，身形缥缈何处觅？生死此中藏。
  */
 public class NormalReferenceTest {
   public static void main(String[] args) throws IOException {

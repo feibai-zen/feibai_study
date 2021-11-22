@@ -1,14 +1,10 @@
 package com.feibai.study.demos.multithread.advanced.t05_threadlocal;
 
 /**
- * ThreadLocal:每个线程自身的数据，更改不会影响其他线程
- * <p>
- * 底层实现原理：
- *
  * @author feibai
  */
-public class ThreadLocalTest02 {
-  private static ThreadLocal<Integer> threadLocal = ThreadLocal.withInitial(() -> 1);
+public class ThreadLocal_demo03 {
+  private static ThreadLocal<Integer> tl = ThreadLocal.withInitial(() -> 1);
 
   public static void main(String[] args) {
     for (int i = 0; i < 5; i++) {
@@ -18,10 +14,10 @@ public class ThreadLocalTest02 {
 
   public static class MyRun implements Runnable {
     public void run() {
-      Integer left = threadLocal.get();
+      Integer left = tl.get();
       System.out.println(Thread.currentThread().getName() + "得到了-->" + left);
-      threadLocal.set(left - 1);
-      System.out.println(Thread.currentThread().getName() + "还剩下-->" + threadLocal.get());
+      tl.set(left - 1);
+      System.out.println(Thread.currentThread().getName() + "还剩下-->" + tl.get());
     }
   }
 

@@ -20,7 +20,7 @@ public enum RedisKeySpaceEnum implements IRedisKeySpace {
       date = date.minusDays((long) (date.getDayOfWeek().getValue() - 1));
       StringBuilder sb = new StringBuilder();
       return sb.append("springboot_study_week_").append(String.format("%4d%02d", date.getYear(), date.get(weekBasedYear)))
-              .append("_").append(majorKey).toString();
+          .append("_").append(majorKey).toString();
     }
 
     @Override
@@ -28,7 +28,7 @@ public enum RedisKeySpaceEnum implements IRedisKeySpace {
       LocalDateTime dateTime = LocalDateTime.now().plusHours(offset);
       StringBuilder sb = new StringBuilder();
       sb.append("springboot_study_hour_").append(dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE)).append("_").append(
-              dateTime.getHour());
+          dateTime.getHour());
       return sb.toString();
     }
 
@@ -36,7 +36,7 @@ public enum RedisKeySpaceEnum implements IRedisKeySpace {
     public String buildStarRankStarHourKey(LocalDateTime dateTime) {
       StringBuilder sb = new StringBuilder();
       sb.append("springboot_study_hour_").append(dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE)).append("_").append(
-              dateTime.getHour());
+          dateTime.getHour());
       return sb.toString();
     }
 
@@ -63,7 +63,7 @@ public enum RedisKeySpaceEnum implements IRedisKeySpace {
     public String buildStarRankStarWeekKey(int year, int weekOfYear) {
       StringBuilder sb = new StringBuilder();
       return sb.append("springboot_study_week_").append(String.format("%4d%02d", year, weekOfYear)).append("_")
-              .toString();
+          .toString();
     }
 
     @Override

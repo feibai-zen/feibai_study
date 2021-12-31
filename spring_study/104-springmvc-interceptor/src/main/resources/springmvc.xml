@@ -35,7 +35,7 @@
             <mvc:exclude-mapping path=""/>
             -->
             <!--配置拦截器对象-->
-            <bean class="com.feibai.spring.study.interceptor.MyInterceptor1" />
+            <bean class="com.feibai.spring.study.interceptor.MyInterceptor1"/>
         </mvc:interceptor>
 
         <!--配置第二个拦截器-->
@@ -46,11 +46,11 @@
             <mvc:exclude-mapping path=""/>
             -->
             <!--配置拦截器对象-->
-            <bean class="com.feibai.spring.study.interceptor.MyInterceptor2" />
+            <bean class="com.feibai.spring.study.interceptor.MyInterceptor2"/>
         </mvc:interceptor>
     </mvc:interceptors>
 
     <!-- 开启SpringMVC框架注解的支持 -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
 
 </beans>

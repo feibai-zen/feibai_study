@@ -8,22 +8,21 @@ import org.springframework.context.annotation.Bean;
 
 /**
  * SpringBoot整合Listener方式二
- *
- *
  */
 @SpringBootApplication
 public class App2 {
 
-	public static void main(String[] args) {
-		SpringApplication.run(App2.class, args);
+  public static void main(String[] args) {
+    SpringApplication.run(App2.class, args);
 
-	}
-	/**
-	 * 注册listener
-	 */
-	@Bean
-	public ServletListenerRegistrationBean<SecondListener> getServletListenerRegistrationBean(){
-		ServletListenerRegistrationBean<SecondListener> bean= new ServletListenerRegistrationBean<SecondListener>(new SecondListener());
-		return bean;
-	}
+  }
+
+  /**
+   * 注册listener
+   */
+  @Bean
+  public ServletListenerRegistrationBean<SecondListener> getServletListenerRegistrationBean() {
+    ServletListenerRegistrationBean<SecondListener> bean = new ServletListenerRegistrationBean<SecondListener>(new SecondListener());
+    return bean;
+  }
 }

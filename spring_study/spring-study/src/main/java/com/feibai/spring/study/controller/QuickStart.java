@@ -14,13 +14,13 @@ public class QuickStart {
 
 
   @GetMapping("/test")
-  public String test01(){
+  public String test01() {
 
     return "test01";
   }
 
   @PostMapping("/test")
-  public String test02(){
+  public String test02() {
 
     return "test02";
   }

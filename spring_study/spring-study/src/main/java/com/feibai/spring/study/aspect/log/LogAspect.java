@@ -37,8 +37,8 @@ public class LogAspect {
     LogObject logObject = getLogObject(joinPoint);
     Object[] args = joinPoint.getArgs();
     LOG.info("【AuditLog-{}-{}】方法名：{} 运行开始 . params: {}", logObject.getBusinessStr(),
-            logObject.getOpsId(), logObject.getMethodName(),
-            Arrays.asList(args));
+        logObject.getOpsId(), logObject.getMethodName(),
+        Arrays.asList(args));
   }
 
 
@@ -50,8 +50,8 @@ public class LogAspect {
     LogObject logObject = getLogObject(joinPoint);
     Object[] args = joinPoint.getArgs();
     LOG.info("【AuditLog-{}-{}】方法名：{} 发生异常 . params: {}", logObject.getBusinessStr(),
-            logObject.getOpsId(), logObject.getMethodName(),
-            Arrays.asList(args), e);
+        logObject.getOpsId(), logObject.getMethodName(),
+        Arrays.asList(args), e);
   }
 
   /**
@@ -62,8 +62,8 @@ public class LogAspect {
     LogObject logObject = getLogObject(joinPoint);
     Object[] args = joinPoint.getArgs();
     LOG.info("【AuditLog-{}-{}】方法名：{} 运行结束 . params: {}", logObject.getBusinessStr(),
-            logObject.getOpsId(), logObject.getMethodName(),
-            Arrays.asList(args));
+        logObject.getOpsId(), logObject.getMethodName(),
+        Arrays.asList(args));
   }
 
 

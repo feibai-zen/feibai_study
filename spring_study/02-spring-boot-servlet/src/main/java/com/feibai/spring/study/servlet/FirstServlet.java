@@ -120,7 +120,7 @@ public class FirstServlet extends HttpServlet {
   public class ResponseServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
       //获取请求信息
       //获取请求头
       //获取请求行

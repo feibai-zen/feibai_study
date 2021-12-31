@@ -11,27 +11,27 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-  <!-- 开启注解扫描 -->
-  <context:component-scan base-package="com.feibai.spring.study"/>
+    <!-- 开启注解扫描 -->
+    <context:component-scan base-package="com.feibai.spring.study"/>
 
-  <!-- 视图解析器对象 -->
-  <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="prefix" value="/WEB-INF/pages/"/>
-    <property name="suffix" value=".jsp"/>
-  </bean>
+    <!-- 视图解析器对象 -->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
 
-  <!--配置自定义类型转换器-->
-  <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
-    <property name="converters">
-      <set>
-        <bean class="com.feibai.spring.study.utils.StringToDateConverter"/>
-      </set>
-    </property>
-  </bean>
+    <!--配置自定义类型转换器-->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.feibai.spring.study.utils.StringToDateConverter"/>
+            </set>
+        </property>
+    </bean>
 
 
-  <!-- 开启SpringMVC框架注解的支持 -->
-  <!-- 开启自定义类型转换器-->
-  <mvc:annotation-driven conversion-service="conversionService"/>
+    <!-- 开启SpringMVC框架注解的支持 -->
+    <!-- 开启自定义类型转换器-->
+    <mvc:annotation-driven conversion-service="conversionService"/>
 
 </beans>

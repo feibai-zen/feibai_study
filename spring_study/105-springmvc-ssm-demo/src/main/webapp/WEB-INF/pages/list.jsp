@@ -13,11 +13,11 @@
 </head>
 <body>
 
-    <h3>查询所有的帐户</h3>
+<h3>查询所有的帐户</h3>
 
-    <c:forEach items="${list}" var="account">
-        ${account.name}
-    </c:forEach>
+<c:forEach items="${list}" var="account">
+    ${account.name}
+</c:forEach>
 
 
 </body>

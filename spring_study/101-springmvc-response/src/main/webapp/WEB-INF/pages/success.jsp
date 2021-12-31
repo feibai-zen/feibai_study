@@ -12,10 +12,10 @@
 </head>
 <body>
 
-    <h3>执行成功</h3>
+<h3>执行成功</h3>
 
-    ${user.username}
-    ${user.password}
+${user.username}
+${user.password}
 
 </body>
 </html>

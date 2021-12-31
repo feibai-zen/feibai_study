@@ -15,6 +15,7 @@ import java.util.Arrays;
 public class LogAspect {
 
   private static final Logger LOG = LoggerFactory.getLogger(LogAspect.class);
+
   /**
    * 切入点表达式： execution(<修饰符模式>?<返回类型模式><方法名模式>(<参数模式>)<异常模式>?) 抽取可重用的切入点表达式;
    * 定义一个可重用的切入点表达式，以后的表达式直接引用;
@@ -36,7 +37,7 @@ public class LogAspect {
     LogObject logObject = getLogObject(joinPoint);
     Object[] args = joinPoint.getArgs();
     LOG.info("【AuditLog-{}】方法名：{} 运行开始 . params: {}", logObject.getBusinessStr(), logObject.getMethodName(),
-            Arrays.asList(args));
+        Arrays.asList(args));
   }
 
 
@@ -48,7 +49,7 @@ public class LogAspect {
     LogObject logObject = getLogObject(joinPoint);
     Object[] args = joinPoint.getArgs();
     LOG.info("【AuditLog-{}】方法名：{} 发生异常 . params: {}", logObject.getBusinessStr(), logObject.getMethodName(),
-            Arrays.asList(args), e);
+        Arrays.asList(args), e);
   }
 
   /**
@@ -59,7 +60,7 @@ public class LogAspect {
     LogObject logObject = getLogObject(joinPoint);
     Object[] args = joinPoint.getArgs();
     LOG.info("【AuditLog-{}】方法名：{} 运行结束 . params: {}", logObject.getBusinessStr(), logObject.getMethodName(),
-            Arrays.asList(args));
+        Arrays.asList(args));
   }
 
 

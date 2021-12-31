@@ -14,9 +14,9 @@
 	http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!--开启注解的扫描，希望处理service和dao，controller不需要Spring框架去处理-->
-    <context:component-scan base-package="cn.itcast" >
+    <context:component-scan base-package="cn.itcast">
         <!--配置哪些注解不扫描-->
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
     <!--Spring整合MyBatis框架-->
@@ -30,7 +30,7 @@
 
     <!--配置SqlSessionFactory工厂-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <!--配置AccountDao接口所在包-->
@@ -41,7 +41,7 @@
     <!--配置Spring框架声明式事务管理-->
     <!--配置事务管理器-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <!--配置事务通知-->

@@ -28,7 +28,7 @@ public class ExecuteOnceRedisLockInterceptor {
       success = redisTemplate.opsForValue().setIfAbsent(executeOnceRedisLock.key(), "");
     } else {
       success = redisTemplate.opsForValue()
-              .setIfAbsent(executeOnceRedisLock.key(), "", executeOnceRedisLock.timeout(), TimeUnit.MILLISECONDS);
+          .setIfAbsent(executeOnceRedisLock.key(), "", executeOnceRedisLock.timeout(), TimeUnit.MILLISECONDS);
     }
     Object res = null;
     try {

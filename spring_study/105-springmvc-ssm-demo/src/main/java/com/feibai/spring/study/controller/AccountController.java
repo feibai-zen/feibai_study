@@ -19,27 +19,28 @@ import java.util.List;
 @RequestMapping("/account")
 public class AccountController {
 
-    @Autowired
-    private AccountService accountService;
+  @Autowired
+  private AccountService accountService;
 
-    @RequestMapping("/findAll")
-    public String findAll(Model model){
-        System.out.println("表现层：查询所有账户...");
-        // 调用service的方法
-        List<Account> list = accountService.findAll();
-        model.addAttribute("list",list);
-        return "list";
-    }
+  @RequestMapping("/findAll")
+  public String findAll(Model model) {
+    System.out.println("表现层：查询所有账户...");
+    // 调用service的方法
+    List<Account> list = accountService.findAll();
+    model.addAttribute("list", list);
+    return "list";
+  }
 
-    /**
-     * 保存
-     * @return
-     */
-    @RequestMapping("/save")
-    public void save(Account account, HttpServletRequest request, HttpServletResponse response) throws IOException {
-        accountService.saveAccount(account);
-        response.sendRedirect(request.getContextPath()+"/account/findAll");
-        return;
-    }
+  /**
+   * 保存
+   *
+   * @return
+   */
+  @RequestMapping("/save")
+  public void save(Account account, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    accountService.saveAccount(account);
+    response.sendRedirect(request.getContextPath() + "/account/findAll");
+    return;
+  }
 
 }

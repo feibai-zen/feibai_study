@@ -26,6 +26,6 @@
     <mvc:resources location="/js/" mapping="/js/**"/>
 
     <!-- 开启SpringMVC框架注解的支持 -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
 
 </beans>

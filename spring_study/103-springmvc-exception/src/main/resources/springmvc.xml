@@ -29,6 +29,6 @@
     <bean id="sysExceptionResolver" class="com.feibai.spring.study.exception.SysExceptionResolver"/>
 
     <!-- 开启SpringMVC框架注解的支持 -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
 
 </beans>

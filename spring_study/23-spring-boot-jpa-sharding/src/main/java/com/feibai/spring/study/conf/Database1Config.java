@@ -11,18 +11,18 @@ import javax.sql.DataSource;
 @ConfigurationProperties(prefix = "database1")
 @Component
 public class Database1Config {
-    private String url;
-    private String username;
-    private String password;
-    private String driverClassName;
-    private String databaseName;
+  private String url;
+  private String username;
+  private String password;
+  private String driverClassName;
+  private String databaseName;
 
-    public DataSource createDataSource() {
-        DruidDataSource result = new DruidDataSource();
-        result.setDriverClassName(getDriverClassName());
-        result.setUrl(getUrl());
-        result.setUsername(getUsername());
-        result.setPassword(getPassword());
-        return result;
-    }
+  public DataSource createDataSource() {
+    DruidDataSource result = new DruidDataSource();
+    result.setDriverClassName(getDriverClassName());
+    result.setUrl(getUrl());
+    result.setUsername(getUsername());
+    result.setPassword(getPassword());
+    return result;
+  }
 }

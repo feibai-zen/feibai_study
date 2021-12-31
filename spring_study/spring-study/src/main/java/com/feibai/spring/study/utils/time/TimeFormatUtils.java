@@ -27,7 +27,7 @@ public final class TimeFormatUtils {
       return origin;
     }
     return combineSuffix(origin, suffixEnum,
-            Instant.ofEpochMilli(timeMills).atZone(ZoneOffset.ofHours(8)).toLocalDateTime());
+        Instant.ofEpochMilli(timeMills).atZone(ZoneOffset.ofHours(8)).toLocalDateTime());
   }
 
   public static String combineSuffix(String origin, TimeSuffixEnum suffixEnum, LocalDateTime dateTime) {
@@ -44,15 +44,15 @@ public final class TimeFormatUtils {
         return "";
       case SECONDS:
         return String
-                .format("%4d%02d%02d%02d%02d%02d", dateTime.getYear(), dateTime.getMonthValue(), dateTime.getDayOfMonth(),
-                        dateTime.getHour(), dateTime.getMinute(), dateTime.getSecond());
+            .format("%4d%02d%02d%02d%02d%02d", dateTime.getYear(), dateTime.getMonthValue(), dateTime.getDayOfMonth(),
+                dateTime.getHour(), dateTime.getMinute(), dateTime.getSecond());
       case MINUTES:
         return String
-                .format("%4d%02d%02d%02d%02d", dateTime.getYear(), dateTime.getMonthValue(), dateTime.getDayOfMonth(),
-                        dateTime.getHour(), dateTime.getMinute());
+            .format("%4d%02d%02d%02d%02d", dateTime.getYear(), dateTime.getMonthValue(), dateTime.getDayOfMonth(),
+                dateTime.getHour(), dateTime.getMinute());
       case HOURS:
         return String.format("%4d%02d%02d%02d", dateTime.getYear(), dateTime.getMonthValue(), dateTime.getDayOfMonth(),
-                dateTime.getHour());
+            dateTime.getHour());
       case DAYS:
         return String.format("%4d%02d%02d", dateTime.getYear(), dateTime.getMonthValue(), dateTime.getDayOfMonth());
       case DAYS_LINE:

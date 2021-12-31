@@ -217,7 +217,7 @@ public class Jdk8TimeTest {
 
     Period periodToNextJavaRelease = Period.between(today, java8Release);
     System.out.println("Months left between today and Java 8 release : "
-            + periodToNextJavaRelease.getMonths());
+        + periodToNextJavaRelease.getMonths());
   }
 
   // 获取当前的时间戳

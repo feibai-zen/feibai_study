@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    ${errorMsg}
+${errorMsg}
 
 </body>
 </html>

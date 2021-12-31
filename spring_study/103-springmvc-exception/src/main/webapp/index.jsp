@@ -12,9 +12,9 @@
 </head>
 <body>
 
-    <h3>异常处理</h3>
+<h3>异常处理</h3>
 
-    <a href="user/testException" >异常处理</a>
+<a href="user/testException">异常处理</a>
 
 </body>
 </html>

@@ -14,7 +14,7 @@
 
 <h3>拦截器</h3>
 
-<a href="user/testInterceptor" >拦截器</a>
+<a href="user/testInterceptor">拦截器</a>
 
 </body>
 </html>

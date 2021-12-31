@@ -1,136 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.1</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.feibai.study</groupId>
+    <artifactId>caffeine-demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>32-caffeine-demo</name>
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.2.10.RELEASE</version>
-    <relativePath/>
-  </parent>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-  <groupId>com.feibai.study</groupId>
-  <artifactId>spring-study</artifactId>
-  <version>0.0.1</version>
-  <packaging>pom</packaging>
-  <name>spring-study</name>
-
-  <properties>
-    <springboot-thymeleaf.version>3.0.9.RELEASE</springboot-thymeleaf.version>
-    <thymeleaf-layout-dialect.version>2.3.28</thymeleaf-layout-dialect.version>
-    <jedis.version>2.9.0</jedis.version>
-  </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.6</version>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.60</version>
-    </dependency>
-    <!-- DevTools的坐标 -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-devtools</artifactId>
-      <scope>runtime</scope>
-      <optional>true</optional>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <sourceDirectory>src/main/java</sourceDirectory>
-    <testSourceDirectory>src/test/java</testSourceDirectory>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-    </resources>
-    <testResources>
-      <testResource>
-        <directory>src/test/resources</directory>
-      </testResource>
-    </testResources>
-    <outputDirectory>target/classes</outputDirectory>
-    <testOutputDirectory>target/test-classes</testOutputDirectory>
-    <directory>target</directory>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>3.7.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.0.0</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-
-  <modules>
-    <module>spring-boot-study</module>
-    <module>01-spring-boot-hello</module>
-    <module>02-spring-boot-servlet</module>
-    <module>03-spring-boot-filter</module>
-    <module>04-spring-boot-Listener</module>
-    <module>06-spring-boot-static-resources2</module>
-    <module>12-spring-boot-springmvc-mybatis</module>
-    <module>13-spring-boot-validate</module>
-    <module>14-spring-boot-exception1</module>
-    <module>15-spring-boot-exception2</module>
-    <module>16-spring-boot-exception3</module>
-    <module>17-spring-boot-exception4</module>
-    <module>18-spring-boot-exception5</module>
-    <module>20-spring-boot-springloader</module>
-    <module>22-spring-boot-jpa</module>
-    <module>23-spring-boot-jpa-sharding</module>
-    <module>24-spring-boot-ehcache</module>
-
-    <module>27-quartz-demo</module>
-    <module>28-spring-boot-quartz</module>
-    <module>29-spring-boot-aspect-log</module>
-    <module>30-spring-boot-transaction-jpa</module>
-    <module>31-spring-boot-transaction-jms</module>
-
-    <module>100-springmvc-quickstart</module>
-    <module>101-springmvc-response</module>
-    <module>102-springmvc-fileupload</module>
-    <module>103-springmvc-exception</module>
-    <module>104-springmvc-interceptor</module>
-    <module>105-springmvc-ssm-demo</module>
-
-  </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

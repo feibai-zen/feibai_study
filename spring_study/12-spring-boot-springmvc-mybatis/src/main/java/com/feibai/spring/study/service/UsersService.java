@@ -6,13 +6,13 @@ import com.feibai.spring.study.pojo.Users;
 
 public interface UsersService {
 
-	void addUser(Users users);
+  void addUser(Users users);
 
-	List<Users> findUserAll();
+  List<Users> findUserAll();
 
-	Users findUserById(Integer id);
+  Users findUserById(Integer id);
 
-	void updateUser(Users users);
+  void updateUser(Users users);
 
-	void deleteUserById(Integer id);
+  void deleteUserById(Integer id);
 }

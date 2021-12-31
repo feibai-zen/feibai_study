@@ -37,9 +37,9 @@ public class User implements Serializable {
   @Override
   public String toString() {
     return "User{" +
-            "uname='" + uname + '\'' +
-            ", age=" + age +
-            ", date=" + date +
-            '}';
+        "uname='" + uname + '\'' +
+        ", age=" + age +
+        ", date=" + date +
+        '}';
   }
 }

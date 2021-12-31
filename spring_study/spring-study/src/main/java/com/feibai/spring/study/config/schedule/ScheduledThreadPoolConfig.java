@@ -16,6 +16,6 @@ public class ScheduledThreadPoolConfig implements SchedulingConfigurer {
   @Override
   public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
     taskRegistrar.setScheduler(
-            new ScheduledThreadPoolExecutor(4, new BasicThreadFactory.Builder().namingPattern("crab-scheduled-%d").daemon(true).build()));
+        new ScheduledThreadPoolExecutor(4, new BasicThreadFactory.Builder().namingPattern("crab-scheduled-%d").daemon(true).build()));
   }
 }

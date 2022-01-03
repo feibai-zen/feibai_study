@@ -1,0 +1,121 @@
+# 索引管理
+
+## 查看全部索引
+GET _cat/indices?v
+
+## 删除索引
+DELETE shopping
+
+# 文档管理
+
+## 新增文档
+POST shopping/_doc
+{
+  "title":"小米手机",
+  "category":"小米", "images":"http://www.gulixueyuan.com/xm.jpg", 
+  "price":4000.00
+}
+
+## 查看文档
+GET shopping/_doc/10086
+
+## 查看全部文档
+GET shopping/_search
+
+## 删除文档
+DELETE shopping/_doc/10086
+
+## 按照查询条件删除文档
+POST shopping/_delete_by_query
+{
+  "query":{
+    "match":{
+      "price":4000.00
+    }
+  }
+}
+
+#映射
+## 查看索引详情中的映射(mapping)
+GET shopping
+
+## 1 创建索引
+PUT student
+
+## 2 创建索引映射
+PUT student/_mapping
+{
+  "properties": {
+   "name":{
+     "type": "text",
+     "index": true
+  }, 
+  "sex":{
+     "type": "keyword",
+     "index": false
+   },
+   "age":{
+     "type": "long",
+     "index": false
+    } 
+  }
+}
+
+## 3. 查看索引详情
+GET student
+
+
+## 创建索引时之间设置映射
+PUT student1
+{
+  "settings": {},
+  "mappings": {
+      "properties": {
+        "name":{
+          "type": "text",
+          "index": true
+        }, 
+        "sex":{
+          "type": "text",
+          "index": false
+        },
+        "age":{
+          "type": "long",
+          "index": false
+        }
+    }
+  }
+}
+
+## 查看创建的索引详情
+GET student1
+
+
+# 查询
+## 数据准备
+POST student/_doc
+{"name":"zhangsan","nickname":"zhangsan", "sex":"男","age":30}
+
+POST student/_doc
+{"name":"lisi", "nickname":"lisi", "sex":"男", "age":20}
+
+POST /student/_doc/1003
+{"name":"wangwu", "nickname":"wangwu", "sex":"女","age":40}
+
+ POST /student/_doc/1004
+{"name":"zhangsan1", "nickname":"zhangsan1", "sex":"女","age":50}
+
+POST /student/_doc/1005
+{"name":"zhangsan2", "nickname":"zhangsan2", "sex":"女","age":30}
+
+
+# 查询所有
+GET student/_search
+{
+  "query":{
+    "match_all":{ //查询类型 match_all(代表查询所有)/match/term/range 等等
+      //查询条件
+    }
+  }
+}
+

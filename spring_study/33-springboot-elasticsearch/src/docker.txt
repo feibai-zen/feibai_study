@@ -1,0 +1,21 @@
+sudo curl -X GET "localhost:9200/_cluster/health"
+
+106.55.55.156   wp   RYrQRDElFzHeen7P
+
+
+
+elasticsearch.hosts: ["http://106.55.55.156:9200"]
+
+sudo docker run --link es01 --net 972c78e5ae71 -d -p 5601:5601 --name kibana  df0a0da46dd1 -e elasticsearch.hosts=http://106.55.55.156:9200
+
+
+docker run -d \
+  --name=kibana \
+  --restart=always \
+  -p 5601:5601 \
+  kibana:7.8.0
+
+
+
+.kibana_1
+.kibana_task_manager_1

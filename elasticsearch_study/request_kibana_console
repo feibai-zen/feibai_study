@@ -69,7 +69,7 @@ PUT student/_mapping
 GET student
 
 
-## 创建索引时之间设置映射
+## 创建索引时同时设置映射
 PUT student1
 {
   "settings": {},

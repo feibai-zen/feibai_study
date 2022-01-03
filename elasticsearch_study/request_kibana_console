@@ -39,8 +39,12 @@ POST shopping/_delete_by_query
 ## 查看索引详情中的映射(mapping)
 GET shopping
 
+## 0 删除索引
+DELETE student
+
 ## 1 创建索引
 PUT student
+
 
 ## 2 创建索引映射
 PUT student/_mapping
@@ -52,11 +56,11 @@ PUT student/_mapping
   }, 
   "sex":{
      "type": "keyword",
-     "index": false
+     "index": true
    },
    "age":{
      "type": "long",
-     "index": false
+     "index": true
     } 
   }
 }
@@ -108,8 +112,11 @@ POST /student/_doc/1003
 POST /student/_doc/1005
 {"name":"zhangsan2", "nickname":"zhangsan2", "sex":"女","age":30}
 
+POST /student/_doc/1006
+{"name":"zhangsan2", "nickname":"zhangsan", "sex":"女","age":30}
 
-# 查询所有
+
+## 查询所有
 GET student/_search
 {
   "query":{
@@ -118,4 +125,133 @@ GET student/_search
     }
   }
 }
+
+## 匹配查询
+GET student/_search
+{
+  "query":{
+    "match":{// match 匹配类型查询，会把查询条件进行分词，然后进行查询，多个词条之间是 or 的关系
+      "name":"zhangsan lisi"// zhangsan 和 lisi 是两个词条，查询结果name为zhangsan 或 lisi均可以被查询到
+    }
+  }
+}
+
+
+## 字段匹配查询
+GET student/_search
+{
+"query": {
+   "multi_match": {// multi_match 与 match 类似，不同的是它可以在多个字段中查询
+       "query": "zhangsan",
+       "fields": ["name","nickname"]
+    } 
+  }
+}
+
+## 关键字精确查询
+GET student/_search
+{
+  "query":{
+    "term": {
+      "name": {
+        "value": "zhangsan"
+      }
+    }
+  }
+}
+
+## 多关键字精确查询
+GET student/_search
+{
+  "query":{
+    "terms": {
+      "name": [
+        "zhangsan",
+        "lisi"
+      ]
+    }
+  }
+}
+
+
+## 指定查询返回的字段
+GET student/_search
+{
+  "_source":["name","", "nickname"],// 默认情况下，Elasticsearch 在搜索的结果中，会把文档中保存在_source 的所有字段都返回。 如果我们只想获取其中的部分字段，我们可以添加_source 的过滤
+  "query":{
+    "terms": {
+      "nickname": [
+        "zhangsan",
+        "lis"
+      ]
+    }
+  }
+}
+
+## 过滤字段
+GET student/_search
+{
+  "_source": {
+    "includes":["name","nickname"],// 来指定想要显示的字段
+    "excludes":["nickname"] // 来指定不想要显示的字段
+  }, 
+  "query": {
+    "terms": {
+      "name": [
+        "zhangsan",
+        "lisi"
+      ]
+    }
+  }
+}
+
+## 组合查询
+GET student/_search
+{
+  "query": {
+    "bool": {// `bool`把各种其它查询通过`must`(必须 )、`must_not`(必须不)、`should`(应该)的方式进行组合
+      "must": [
+        {
+          "match": {
+            "name": "zhangsan"
+          }
+        } 
+      ],
+     "must_not": [
+        {
+          "match": {
+            "age": 40
+          } 
+        }
+     ],
+     "should": [
+        {
+          "match": {
+            "sex": "男" 
+          }
+        } 
+      ]
+    } 
+  }
+}
+
+## 范围查询
+GET student/_search
+{
+  "query":{
+    "range": {
+      "age": {
+        "gte": 10,
+        "lte": 90
+      }
+    }
+  },
+  "_source": {
+    "includes":["name","nickname"]
+  }
+}
+
+
+
+
 

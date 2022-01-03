@@ -238,6 +238,9 @@ GET student/_search
 ## 范围查询
 GET student/_search
 {
+    "_source": {
+    "includes":["name","nickname"]
+  },
   "query":{
     "range": {
       "age": {
@@ -245,13 +248,240 @@ GET student/_search
         "lte": 90
       }
     }
-  },
-  "_source": {
-    "includes":["name","nickname"]
   }
 }
 
 
+## 模糊查询1
+GET student/_search
+{
+  "query":{
+    "fuzzy": {
+      "name": {
+        "value":"zhangsan"
+      }
+    }
+  }
+}
+
+## 增加文档，验证模糊查询
+POST /student/_doc/1007
+{"name":"zhangsnn", "nickname":"wangwu", "sex":"女","age":40}
+## 增加文档，验证模糊查询
+POST /student/_doc/1008
+{"name":"zhangnnn", "nickname":"wangwu", "sex":"女","age":40}
+## 增加文档，验证模糊查询
+POST /student/_doc/1009
+{"name":"zhangnnnnn", "nickname":"wangwu", "sex":"女","age":40}
 
 
+## 模糊查询2
+## id为1007、1008的文档边查询出来了,但是1009的文档没有被查询出来
+GET student/_search
+{
+  "query":{
+    "fuzzy":{
+      "name":{
+        "value":"zhangsan",
+        "fuzziness":3 //通过 fuzziness 修改编辑距离。一般使用默认值 AUTO，根据术语的长度生成编辑距离。编辑距离是将一个术语转换为另一个术语所需的一个字符更改的次数
+      }
+    }
+  }
+}
 
+
+## 增加文档，验证排序
+POST /student/_doc/1010
+{"name":"zhangnnnnn", "nickname":"zhangsan", "sex":"女","age":17}
+POST /student/_doc/1011
+{"name":"zhangzhangzhang", "nickname":"zhangsan", "sex":"男","age":10}
+
+## 排序--按照单字段对查询结果进行排序
+GET student/_search
+{
+  "query":{
+    "match":{
+      "nickname":"zhangsan"
+    }
+  },
+  "sort": [
+    {
+      "age": {
+        "order": "asc"//, "desc"
+      }
+    }
+  ]
+}
+
+## 排序--按照多字段对查询结果进行排序
+GET student/_search
+{
+  "query":{
+    "match": {
+      "nickname": "zhangsan"
+    }
+  },
+  "sort":[
+    {
+      "age":{
+      "order":"asc"
+      }
+    },
+    {
+      "sex": {
+        "order": "desc"
+      }
+    }
+  ]
+}
+
+
+## 高亮查询
+GET student/_search
+{
+  "query":{
+    "match": {
+      "nickname": "zhangsan"
+    }
+  },
+  "highlight": {
+    "pre_tags": "<font color='red'>",
+    "post_tags": "</font>",
+    "fields": {
+      "name": {} 
+    }
+  },
+  "sort": [
+    {
+      "_score": {
+        "order": "desc"
+      }
+    }
+  ]
+}
+
+## 分页查询
+GET student/_search
+{
+  "query":{
+    "match": {
+      "nickname": "zhangsan"
+    }
+  },
+  "from": 1,
+  "size": 2,
+  "sort": [
+    {
+      "age": {
+        "order": "desc"
+      }
+    }
+  ]
+}
+
+
+## 聚合查询1 --最大值
+GET student/_search
+{
+  "query":{
+    "match": {
+      "nickname": "zhangsan"
+    }
+  },
+  "aggs": {
+    "max_age": {
+      "max": {
+        "field": "age"
+      }
+    }
+  },
+  "size":0
+}
+
+## 聚合查询2 --最小值
+GET student/_search
+{
+  "aggs": {
+    "min_age": {
+      "min": {
+        "field": "age"
+      }
+    }
+  },
+  "size":0
+}
+
+## 聚合查询3 --平均值
+GET student/_search
+{
+  "aggs": {
+    "avg_age": {
+      "avg": {
+        "field": "age"
+      }
+    }
+  },
+  "size":0
+}
+
+## 聚合查询4 --对某一字段的值去重之后再取文档总数
+GET student/_search
+{
+  "aggs": {
+    "distinct_age": {
+      "cardinality": {
+        "field": "age"
+      }
+    }
+  },
+  "size":0
+}
+
+## 聚合查询5 --State聚合(stats 聚合，对某个字段一次性返回 count，max，min，avg 和 sum 五个指标)
+GET student/_search
+{
+  "aggs": {
+    "state_agg": {
+      "stats": {
+        "field": "age"
+      }
+    }
+  },
+  "size":0
+}
+
+
+## 聚合查询6 --桶聚合查询 --terms聚合，分组统计
+GET student/_search
+{
+ "aggs": {
+   "age_groupby": {
+     "terms": {
+       "field": "age",
+       "size": 10
+     }
+   }
+ } ,
+ "size":0
+}
+
+## 聚合查询7 --桶聚合查询 --在 terms分组下再进行聚合--非常好用
+GET student/_search
+{
+  "aggs": {
+    "age_groupby": {
+      "terms": {
+        "field": "age",
+        "size": 10
+      },
+      "aggs": {
+        "sum_age": {
+          "sum": {
+            "field": "age"
+          }
+        }
+      }
+    }
+  },
+  "size":0
+}

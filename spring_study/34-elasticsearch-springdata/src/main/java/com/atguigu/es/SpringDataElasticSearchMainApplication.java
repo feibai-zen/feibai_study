@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringDataElasticSearchMainApplication {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        SpringApplication.run(SpringDataElasticSearchMainApplication.class,args);
+    SpringApplication.run(SpringDataElasticSearchMainApplication.class, args);
 
-    }
+  }
 }

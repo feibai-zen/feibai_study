@@ -1,9 +1,9 @@
-server: 
-  port: 3344 
-  
+server:
+  port: 3344
+
 spring:
   application:
-    name:  microservicecloud-config
+    name: microservicecloud-config
   cloud:
     config:
       server:

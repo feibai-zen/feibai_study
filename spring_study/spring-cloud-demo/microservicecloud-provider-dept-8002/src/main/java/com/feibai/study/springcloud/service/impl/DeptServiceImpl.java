@@ -10,27 +10,23 @@ import org.springframework.stereotype.Service;
 import com.feibai.study.springcloud.dao.DeptDao;
 
 @Service
-public class DeptServiceImpl implements DeptService
-{
-	@Autowired
-	private DeptDao dao;
-	
-	@Override
-	public boolean add(Dept dept)
-	{
-		return dao.addDept(dept);
-	}
+public class DeptServiceImpl implements DeptService {
+  @Autowired
+  private DeptDao dao;
 
-	@Override
-	public Dept get(Long id)
-	{
-		return dao.findById(id);
-	}
+  @Override
+  public boolean add(Dept dept) {
+    return dao.addDept(dept);
+  }
 
-	@Override
-	public List<Dept> list()
-	{
-		return dao.findAll();
-	}
+  @Override
+  public Dept get(Long id) {
+    return dao.findById(id);
+  }
+
+  @Override
+  public List<Dept> list() {
+    return dao.findAll();
+  }
 
 }

@@ -22,6 +22,7 @@
 
     <modules>
         <module>01-actuator</module>
-    </modules>>
+    </modules>
+    >
 
 </project>

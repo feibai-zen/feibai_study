@@ -13,14 +13,14 @@ import org.springframework.data.elasticsearch.config.AbstractElasticsearchConfig
 @Configuration
 @Data
 public class ElasticsearchConfig extends AbstractElasticsearchConfiguration {
-    private String host ;
-    private Integer port ;
+  private String host;
+  private Integer port;
 
-    //重写父类方法
-    @Override
-    public RestHighLevelClient elasticsearchClient() {
-        RestClientBuilder builder = RestClient.builder(new HttpHost(host, port));
-        RestHighLevelClient restHighLevelClient = new RestHighLevelClient(builder);
-        return restHighLevelClient;
-    }
+  //重写父类方法
+  @Override
+  public RestHighLevelClient elasticsearchClient() {
+    RestClientBuilder builder = RestClient.builder(new HttpHost(host, port));
+    RestHighLevelClient restHighLevelClient = new RestHighLevelClient(builder);
+    return restHighLevelClient;
+  }
 }

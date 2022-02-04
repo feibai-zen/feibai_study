@@ -4,11 +4,10 @@ import java.util.List;
 
 import com.feibai.study.springcloud.entities.Dept;
 
-public interface DeptService
-{
-	public boolean add(Dept dept);
+public interface DeptService {
+  public boolean add(Dept dept);
 
-	public Dept get(Long id);
+  public Dept get(Long id);
 
-	public List<Dept> list();
+  public List<Dept> list();
 }

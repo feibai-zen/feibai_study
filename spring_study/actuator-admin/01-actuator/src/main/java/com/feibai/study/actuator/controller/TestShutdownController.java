@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestShutdownController {
 
   @RequestMapping(value = "/shutdown", method = RequestMethod.GET)
-  public String testShutdown(){
+  public String testShutdown() {
     return "success";
   }
 }

@@ -17,7 +17,6 @@ class LuxuryEngine implements Engine {
 	public void start() {
 		System.out.println("启动快!可以自动启停！");
 	}
-
 }
 
 class LowEngine implements Engine {
@@ -31,5 +30,4 @@ class LowEngine implements Engine {
 	public void start() {
 		System.out.println("启动慢!");
 	}
-
 }

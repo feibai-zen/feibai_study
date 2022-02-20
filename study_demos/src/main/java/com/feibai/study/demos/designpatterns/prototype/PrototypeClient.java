@@ -90,7 +90,8 @@ public class PrototypeClient {
     System.out.println(s2.getBirthday());
   }
 
-  // 测试普通new方式创建对象和clone方式创建对象的效率差异！ 如果需要短时间创建大量对象，并且new的过程比较耗时。则可以考虑使用原型模式
+  // 测试普通new方式创建对象和clone方式创建对象的效率差异，如果需要短时间创建大量对象，
+  // 并且new的过程比较耗时。则可以考虑使用原型模式
   public static void compareEfficient() throws Exception {
     testNew(1000);
     testClone(1000);

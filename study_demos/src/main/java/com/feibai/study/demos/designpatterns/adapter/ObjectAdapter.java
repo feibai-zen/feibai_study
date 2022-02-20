@@ -1,12 +1,5 @@
 package com.feibai.study.demos.designpatterns.adapter;
 
-/**
- * @Author: yuanlong.li
- * @Date: Created in 3:05 下午 2021/3/1
- * @Description: 对象适配器模式
- * @Company: xmly
- */
-
 public class ObjectAdapter implements Target {
 
   private Adaptee adaptee;

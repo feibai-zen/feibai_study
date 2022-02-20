@@ -6,9 +6,9 @@ import java.io.Serializable;
 /**
  * 饿汉式
  * <p>
- * 1.static变量会在类装载时初始化，此时不会涉及多个线程对象访问该对象的问题，虚拟机保证只会装载一次该类，肯定
- * 不会发生并发访问的问题，因此不需要synchronized关键字；
- *
+ * 1.static变量会在类装载时初始化，此时不会涉及多个线程对象访问该对象的问题，虚拟机保证只会
+ * 装载一次该类，肯定不会发生并发访问的问题，因此不需要synchronized关键字；
+ * <p>
  * 2.调用效率高
  * <p>
  * 3.缺点：如果只是加载本类，而不是要调用getInstance()，甚至永远没有调用，则会造成资源浪费。
@@ -32,7 +32,7 @@ public class SingletonHunger implements Serializable {
   }
 
   // 静态获取方法，方法没有同步，调用效率高
-  public static /* synchronized */SingletonHunger getInstance() {
+  public static SingletonHunger getInstance() {
     return instance;
   }
 

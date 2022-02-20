@@ -25,6 +25,5 @@ public class BuilderClient {
     System.out.println(ship.getEngine().getName());
 
     ship.launch();
-
   }
 }

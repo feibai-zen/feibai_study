@@ -13,7 +13,7 @@ public class SingletonLazy {
 
   }
 
-  // 静态获取方法，
+  // 静态获取方法
   public static synchronized SingletonLazy getInstance() {
     if (null == instance) {
       instance = new SingletonLazy();

@@ -9,5 +9,4 @@ public class BenziFactory implements CarFactory {
 	public Car createCar() {
 		return new Benzi();
 	}
-
 }

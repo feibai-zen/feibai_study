@@ -12,7 +12,6 @@ package com.feibai.study.demos.designpatterns.singleton;
 public enum SingletonEnum {
 
   INSTANCE;
-
   // 添加其他方法...
   public void init() {
   }
@@ -23,7 +22,5 @@ public enum SingletonEnum {
     SingletonEnum instancEnum2 = SingletonEnum.INSTANCE;
     System.out.println(instancEnum == instancEnum1);
     System.out.println(instancEnum1 == instancEnum2);
-
   }
-
 }

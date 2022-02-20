@@ -1,11 +1,5 @@
 package com.feibai.study.demos.designpatterns.adapter;
 
-/**
- * @Author: yuanlong.li
- * @Date: Created in 2:39 下午 2021/3/1
- * @Description: 类适配器模式
- */
-
 public class ClassAdapter extends Adaptee implements Target {
   @Override
   public void method2() {

@@ -19,7 +19,9 @@ public class Client {
 		WaterCar waterCar2 = new WaterCar(new FlyCar(car));
 		waterCar2.move();
 
-		Reader r = new BufferedReader(new InputStreamReader(new FileInputStream(new File("d:/a.txt"))));
+		Reader r = new BufferedReader(new InputStreamReader(
+				new FileInputStream(new File("d:/a.txt"))
+		));
 
 	}
 }

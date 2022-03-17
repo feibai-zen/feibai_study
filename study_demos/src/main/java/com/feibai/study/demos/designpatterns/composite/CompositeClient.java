@@ -5,7 +5,7 @@ public class CompositeClient {
 		AbstractFile f2, f3, f4, f5;
 		Folder f1 = new Folder("我的收藏");
 
-		f2 = new ImageFile("老高的大头像.jpg");
+		f2 = new ImageFile("大头像.jpg");
 		f3 = new TextFile("Hello.txt");
 		f1.add(f2);
 		f1.add(f3);
@@ -18,8 +18,6 @@ public class CompositeClient {
 		f1.add(f11);
 
 //		f2.killVirus();
-
 		f1.killVirus();
-
 	}
 }

@@ -11,6 +11,8 @@ import java.util.concurrent.*;
  */
 public class CompletableFutureTest {
 
+  private static final String TEST_EXCEPTION_STR = "******test Exception******";
+
   /**
    * 创建异步任务
    */
@@ -21,12 +23,13 @@ public class CompletableFutureTest {
       System.out.println(Thread.currentThread() + "start, time->" + System.currentTimeMillis());
       Thread.sleep(2000);
       if (false) {
-        throw new RuntimeException("test");
+        throw new RuntimeException(TEST_EXCEPTION_STR);
       } else {
         System.out.println(Thread.currentThread() + "exit, time->" + System.currentTimeMillis());
         return 1.2;
       }
     });
+
     System.out.println("main thread start,time->" + System.currentTimeMillis());
     //等待子任务执行完成,如果已完成则直接返回结果
     //如果执行任务异常，则get方法会把之前捕获的异常重新抛出
@@ -46,7 +49,7 @@ public class CompletableFutureTest {
       } catch (InterruptedException e) {
       }
       if (true) {
-        throw new RuntimeException("test");
+        throw new RuntimeException(TEST_EXCEPTION_STR);
       } else {
         System.out.println(Thread.currentThread() + " exit,time->" + System.currentTimeMillis());
         return 1.2;
@@ -57,7 +60,6 @@ public class CompletableFutureTest {
     System.out.println("run result->" + cf.get());
     System.out.println("main thread exit,time->" + System.currentTimeMillis());
   }
-
 
   /**
    * 创建异步执行任务，无返回值
@@ -73,11 +75,12 @@ public class CompletableFutureTest {
       }
 
       if (false) {
-        throw new RuntimeException("test");
+        throw new RuntimeException(TEST_EXCEPTION_STR);
       } else {
         System.out.println(Thread.currentThread() + "exit, time->" + System.currentTimeMillis());
       }
     });
+
     System.out.println("main thread start,time->" + System.currentTimeMillis());
     //等待子任务执行完成，get的结果是Null
     System.out.println("run result->" + cf.get());
@@ -96,7 +99,7 @@ public class CompletableFutureTest {
       } catch (InterruptedException e) {
       }
       if (true) {
-        throw new RuntimeException("test");
+        throw new RuntimeException(TEST_EXCEPTION_STR);
       } else {
         System.out.println(Thread.currentThread() + " exit,time->" + System.currentTimeMillis());
         return 1.2;
@@ -119,7 +122,7 @@ public class CompletableFutureTest {
       } catch (InterruptedException e) {
       }
       if (false) {
-        throw new RuntimeException("test");
+        throw new RuntimeException(TEST_EXCEPTION_STR);
       } else {
         System.out.println(Thread.currentThread() + " exit,time->" + System.currentTimeMillis());
       }
@@ -230,54 +233,57 @@ public class CompletableFutureTest {
     ForkJoinPool pool = new ForkJoinPool();
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
-      System.out.println(Thread.currentThread() + "job1 start,time->" + System.currentTimeMillis());
+      System.out.println(Thread.currentThread() + "-->job1 start, time->" + System.currentTimeMillis());
       try {
         Thread.sleep(2000);
       } catch (InterruptedException e) {
       }
-      if (true) {
-        throw new RuntimeException("test");
+      if (false) {
+        throw new RuntimeException(TEST_EXCEPTION_STR);
       } else {
-        System.out.println(Thread.currentThread() + "job1 exit,time->" + System.currentTimeMillis());
+        System.out.println(Thread.currentThread() + "-->job1 end, time->" + System.currentTimeMillis());
         return 1.2;
       }
     }, pool);
+
     //cf执行异常时，将抛出的异常作为入参传递给回调方法
     CompletableFuture<Double> cf2 = cf.exceptionally((param) -> {
-      System.out.println(Thread.currentThread() + " start,time->" + System.currentTimeMillis());
+      System.out.println(Thread.currentThread() + "-->handle exception start, time->" + System.currentTimeMillis());
       try {
         Thread.sleep(2000);
       } catch (InterruptedException e) {
       }
-      System.out.println("error stack trace->");
+      System.out.println("error stack trace-> ");
       param.printStackTrace();
-      System.out.println(Thread.currentThread() + " exit,time->" + System.currentTimeMillis());
+      System.out.println(Thread.currentThread() + "-->handle exception end, time->" + System.currentTimeMillis());
       return -1.1;
     });
     //cf正常执行时执行的逻辑，如果执行异常则不调用此逻辑
     CompletableFuture<Void> cf3 = cf.thenAccept((param) -> {
-      System.out.println(Thread.currentThread() + "job2 start,time->" + System.currentTimeMillis());
+      System.out.println(Thread.currentThread() + "-->job2 start, time->" + System.currentTimeMillis());
       try {
         Thread.sleep(2000);
       } catch (InterruptedException e) {
       }
-      System.out.println("param->" + param);
-      System.out.println(Thread.currentThread() + "job2 exit,time->" + System.currentTimeMillis());
+      System.out.println("param-->" + param);
+      System.out.println(Thread.currentThread() + "-->job2 exit,time->" + System.currentTimeMillis());
     });
-    System.out.println("main thread start,time->" + System.currentTimeMillis());
+    System.out.println("main thread start,time-->" + System.currentTimeMillis());
     //等待子任务执行完成,此处无论是job2和job3都可以实现job2退出，主线程才退出，如果是cf，则主线程不会等待job2执行完成自动退出了
     //cf2.get时，没有异常，但是依然有返回值，就是cf的返回值
-    System.out.println("run result->" + cf2.get());
-    System.out.println("main thread exit,time->" + System.currentTimeMillis());
+    System.out.println("run result-->" + cf2.get());
+    System.out.println("main thread exit,time-->" + System.currentTimeMillis());
   }
 
   /**
+   * 无论有没有异常，whenComplete都会被调用
+   * <p>
    * whenComplete 是当某个任务执行完成后执行的回调方法，会将执行结果或者执行期间抛出的异常传递给回调方法，如果是正常执行则异常
    * 为null，回调方法对应的CompletableFuture的result和该任务一致，如果该任务正常执行，则get方法返回执行结果，如果是执行异
    * 常，则get方法抛出异常。
    */
   @Test
-  public void test9() throws Exception {
+  public void test_whenComplete() throws Exception {
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
       System.out.println(Thread.currentThread() + "job1 start,time->" + System.currentTimeMillis());
@@ -286,7 +292,7 @@ public class CompletableFutureTest {
       } catch (InterruptedException e) {
       }
       if (false) {
-        throw new RuntimeException("test");
+        throw new RuntimeException(TEST_EXCEPTION_STR);
       } else {
         System.out.println(Thread.currentThread() + "job1 exit,time->" + System.currentTimeMillis());
         return 1.2;
@@ -320,7 +326,7 @@ public class CompletableFutureTest {
    * 结果或者回调方法执行期间抛出的异常，与原始CompletableFuture的result无关了
    */
   @Test
-  public void test10() throws Exception {
+  public void test_handle() throws Exception {
     // 创建异步执行任务:
     CompletableFuture<Double> cf = CompletableFuture.supplyAsync(() -> {
       System.out.println(Thread.currentThread() + "job1 start,time->" + System.currentTimeMillis());
@@ -336,23 +342,23 @@ public class CompletableFutureTest {
       }
     });
     //cf执行完成后会将执行结果和执行过程中抛出的异常传入回调方法，如果是正常执行的则传入的异常为null
-    CompletableFuture<String> cf2 = cf.handle((a, b) -> {
+    CompletableFuture<String> cf2 = cf.handle((result, ex) -> {
       System.out.println(Thread.currentThread() + "job2 start,time->" + System.currentTimeMillis());
       try {
         Thread.sleep(2000);
       } catch (InterruptedException ignored) {
       }
-      if (b != null) {
+      if (ex != null) {
         System.out.println("error stack trace->");
-        b.printStackTrace();
+        ex.printStackTrace();
       } else {
-        System.out.println("run succ,result->" + a);
+        System.out.println("run success,result->" + result);
       }
       System.out.println(Thread.currentThread() + "job2 exit,time->" + System.currentTimeMillis());
-      if (b != null) {
+      if (ex != null) {
         return "run error";
       } else {
-        return "run succ";
+        return "run success";
       }
     });
     //等待子任务执行完成
@@ -591,12 +597,12 @@ public class CompletableFutureTest {
     });
     //allof等待所有任务执行完成才执行cf4，如果有一个任务异常终止，则cf4.get时会抛出异常，都是正常执行，cf4.get返回null
     //anyOf是只有一个任务执行完成，无论是正常执行或者执行异常，都会执行cf4，cf4.get的结果就是已执行完成的任务的执行结果
-    CompletableFuture cf4 = CompletableFuture.allOf(cf, cf2, cf3).whenComplete((a, b) -> {
-      if (b != null) {
+    CompletableFuture cf4 = CompletableFuture.allOf(cf, cf2, cf3).whenComplete((result, ex) -> {
+      if (ex != null) {
         System.out.println("error stack trace->");
-        b.printStackTrace();
+        ex.printStackTrace();
       } else {
-        System.out.println("run succ,result->" + a);
+        System.out.println("run succ,result->" + result);
       }
     });
 

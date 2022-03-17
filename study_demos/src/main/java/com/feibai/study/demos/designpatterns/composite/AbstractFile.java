@@ -5,7 +5,8 @@ import java.util.List;
 
 //抽象构建
 public interface AbstractFile {
-	void killVirus(); // 杀毒
+	// 杀毒
+	void killVirus();
 }
 
 class ImageFile implements AbstractFile {

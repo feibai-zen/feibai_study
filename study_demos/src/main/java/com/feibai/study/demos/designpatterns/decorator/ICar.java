@@ -1,11 +1,5 @@
 package com.feibai.study.demos.designpatterns.decorator;
 
-/**
- * 抽象构建
- * 
- * @author Administrator
- *
- */
 public interface ICar {
 	void move();
 }
@@ -49,7 +43,6 @@ class FlyCar extends SuperCar {
 		super.move();
 		fly();
 	}
-
 }
 
 //ConcreteDecorator具体装饰角色

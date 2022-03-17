@@ -27,5 +27,7 @@
         <module>03-springmvc-fileupload</module>
         <module>04-springmvc-exception</module>
         <module>05-springmvc-interceptor</module>
+        <module>06-spring-annotation</module>
+        <module>07-springmvc-annotation</module>
     </modules>
 </project>

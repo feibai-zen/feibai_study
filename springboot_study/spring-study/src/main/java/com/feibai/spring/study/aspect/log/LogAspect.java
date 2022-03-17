@@ -26,7 +26,6 @@ public class LogAspect {
   public void logPoint() {
   }
 
-
   /**
    * 前置通知
    *

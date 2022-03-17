@@ -1,11 +1,5 @@
 package com.feibai.study.demos.designpatterns.composite;
 
-/**
- * 抽象组件
- * 
- * @author feibai
- *
- */
 public interface Component {
 	void operation();
 }

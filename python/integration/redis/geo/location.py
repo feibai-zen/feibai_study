@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/opt/homebrew/bin/python3
 # encoding=utf-8
 from redis import Redis
 import random

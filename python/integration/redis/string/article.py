@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/opt/homebrew/bin/python3
 # encoding=utf-8
 
 from time import time  # time()函数用于获取当前UNIX时间戳  

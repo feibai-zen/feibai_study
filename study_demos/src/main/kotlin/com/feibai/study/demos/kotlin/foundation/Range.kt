@@ -1,22 +1,24 @@
 package com.feibai.study.demos.kotlin.foundation
 
+//编译型常量
+private const val PI = 3.1415926
 class Range {
 
     fun range_test() {
         for (x in 0..5) {
-            print("$x, ")   // ��������䣬����0��5
+            print("$x, ")
         }
 
         for (x in 0 until 5) {
-            print("$x, ")   // ����뿪���䣬����0������5
+            print("$x, ")
         }
 
         for (x in 'A'..'E') {
-            print("$x, ")   // ��������䣬����A��E
+            print("$x, ")
         }
 
         for (x in 'A' until 'E') {
-            print("$x, ")   // ����뿪���䣬����A������E
+            print("$x, ")
         }
 
     }

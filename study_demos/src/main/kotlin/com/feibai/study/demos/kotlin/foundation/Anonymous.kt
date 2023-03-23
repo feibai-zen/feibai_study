@@ -1,5 +1,8 @@
 package com.feibai.study.demos.kotlin.foundation
 
+/**
+ * 匿名函数
+ */
 class Anonymous {
 
     fun demo01() {

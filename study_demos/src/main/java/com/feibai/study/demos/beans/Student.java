@@ -12,10 +12,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Student {
 
-  private Long id;
-  private String name;
-  private int age;
-  private String address;
-
+    private Long id;
+    private String name;
+    private int age;
+    private String address;
 
 }

@@ -1,7 +1,7 @@
 package com.feibai.study.demos.kotlin.foundation
 
 /**
- * 匿名函数等价与Lambda表达式
+ * 匿名函数等价于Lambda表达式
  */
 class FunctionImplicitDeclaration {
 
@@ -9,7 +9,7 @@ class FunctionImplicitDeclaration {
         //1. 函数输入输出的声明
         val methodAction: () -> String
 
-        // 2. 对上面声明的函数进行实现
+        //2. 对上面声明的函数进行实现
         methodAction = {
             val inputValue = 9999
             "$inputValue Feibai"
@@ -21,13 +21,13 @@ class FunctionImplicitDeclaration {
 
     fun demo02() {
         //1. 函数输入输出的声明
-        // 2. 对上面声明的函数进行实现
+        //2. 对上面声明的函数进行实现
         val methodAction: (Int, Int, Int) -> String = { number1, number2, number3 ->
             val inputValue = 9999
             "$inputValue, $number1, $number2, $number3"
             // 匿名函数不要写return, 最后一行就是返回值
         }
-        // 3. 调用函数
+        //3. 调用函数
         println(methodAction(1, 2, 3))
     }
 

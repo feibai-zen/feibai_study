@@ -17,8 +17,10 @@ public class BubbleSort {
 
   private static int[] bubbleSort(int[] arr) {
     int len = arr.length;
+    // 外层循环控制的是次数，比数组的长度少1次
     for (int i = 0; i < len; i++) {
-      //优化点：如果一轮循环下来发现没有交换过位置，说明已经有序了，就可以结束循环了
+      // 内层循环就是实际循环比较的
+      // 优化点：如果一轮循环下来发现没有交换过位置，说明已经有序了，就可以结束循环了
       boolean flag = false;
       for (int j = 1; j < len - i; j++) {
         if (arr[j - 1] > arr[j]) {

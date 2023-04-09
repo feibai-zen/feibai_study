@@ -11,18 +11,18 @@ import java.util.concurrent.Callable;
  */
 public class CallableThread implements Callable<Boolean> {
 
-  private String url;
-  private String name;
+    private String url;
+    private String name;
 
-  public CallableThread(String url, String name) {
-    this.url = url;
-    this.name = name;
-  }
+    public CallableThread(String url, String name) {
+        this.url = url;
+        this.name = name;
+    }
 
-  @Override
-  public Boolean call() throws Exception {//实现call()方法，该方法可以有返回值，可以抛出异常
-    WebDownloader webDownloader = new WebDownloader();
-    webDownloader.download(this.url, this.name);
-    return true;
-  }
+    @Override
+    public Boolean call() throws Exception {//实现call()方法，该方法可以有返回值，可以抛出异常
+        WebDownloader webDownloader = new WebDownloader();
+        webDownloader.download(this.url, this.name);
+        return true;
+    }
 }

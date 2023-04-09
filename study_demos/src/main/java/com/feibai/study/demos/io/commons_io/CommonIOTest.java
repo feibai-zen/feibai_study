@@ -94,7 +94,6 @@ public class CommonIOTest {
     System.out.println(msg);
     byte[] datas = FileUtils.readFileToByteArray(new File("emp.txt"));
     System.out.println(datas.length);
-
     // 逐行读取
     List<String> msgs = FileUtils.readLines(new File("emp.txt"), "UTF-8");
     for (String string : msgs) {

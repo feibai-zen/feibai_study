@@ -24,47 +24,47 @@ import java.util.Map;
  */
 
 public class Lc_01_TwoSum {
-  public static void main(String[] args) {
-    int[] arr = new int[]{2, 7, 11, 15, 20, 1};
+    public static void main(String[] args) {
+        int[] arr = new int[]{2, 7, 11, 15, 20, 1};
 
-    System.out.println(Arrays.toString(twoSum(arr, 9)));
+        System.out.println(Arrays.toString(twoSum(arr, 9)));
 
-    System.out.println(Arrays.toString(solution_by_violence(arr, 9)));
-  }
-
-  /**
-   * O(n) 用空间换时间
-   */
-  public static int[] twoSum(int[] nums, int target) {
-    int[] ret = new int[2];
-    // Map中的key--num[i]; value--索引
-    Map<Integer, Integer> numMap = new HashMap<>();
-    for (int i = 0; i < nums.length; i++) {
-      int tmp = target - nums[i];
-      if (numMap.containsKey(tmp)) {
-        ret[0] = numMap.get(tmp);
-        ret[1] = i;
-        return ret;
-      }
-      numMap.put(nums[i], i);
+        System.out.println(Arrays.toString(solution_by_violence(arr, 9)));
     }
-    throw new IllegalArgumentException("No two sum solution");
-  }
 
-  /**
-   * O(n^2)
-   */
-  public static int[] solution_by_violence(int[] num, int target) {
-    int[] ret = new int[2];
-    for (int i = 0; i < num.length; i++) {
-      for (int j = i + 1; j < num.length; j++) {
-        if (num[i] + num[j] == target) {
-          ret[0] = i;
-          ret[1] = j;
+    /**
+     * O(n) 用空间换时间
+     */
+    public static int[] twoSum(int[] nums, int target) {
+        int[] ret = new int[2];
+        // Map中的key--num[i]; value--索引
+        Map<Integer, Integer> numMap = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int tmp = target - nums[i];
+            if (numMap.containsKey(tmp)) {
+                ret[0] = numMap.get(tmp);
+                ret[1] = i;
+                return ret;
+            }
+            numMap.put(nums[i], i);
         }
-      }
+        throw new IllegalArgumentException("No two sum solution");
     }
 
-    return ret;
-  }
+    /**
+     * O(n^2)
+     */
+    public static int[] solution_by_violence(int[] num, int target) {
+        int[] ret = new int[2];
+        for (int i = 0; i < num.length; i++) {
+            for (int j = i + 1; j < num.length; j++) {
+                if (num[i] + num[j] == target) {
+                    ret[0] = i;
+                    ret[1] = j;
+                }
+            }
+        }
+
+        return ret;
+    }
 }

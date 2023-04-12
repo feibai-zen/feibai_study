@@ -20,7 +20,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class TokenWebSecurityConfig
+        extends WebSecurityConfigurerAdapter {
 
     private TokenManager tokenManager;
     private RedisTemplate redisTemplate;
@@ -28,20 +29,16 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
 
     @Autowired
-    public TokenWebSecurityConfig(UserDetailsService userDetailsService, DefaultPasswordEncoder defaultPasswordEncoder,
-                                  TokenManager tokenManager, RedisTemplate redisTemplate) {
+    public TokenWebSecurityConfig(UserDetailsService userDetailsService,
+                                  DefaultPasswordEncoder defaultPasswordEncoder,
+                                  TokenManager tokenManager,
+                                  RedisTemplate redisTemplate) {
         this.userDetailsService = userDetailsService;
         this.defaultPasswordEncoder = defaultPasswordEncoder;
         this.tokenManager = tokenManager;
         this.redisTemplate = redisTemplate;
     }
 
-    /**
-     * 配置设置
-     *
-     * @param http
-     * @throws Exception
-     */
     //设置退出的地址和token，redis操作地址
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -51,7 +48,8 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .anyRequest().authenticated()
                 .and().logout().logoutUrl("/admin/acl/index/logout")//退出路径
-                .addLogoutHandler(new TokenLogoutHandler(tokenManager, redisTemplate)).and()
+                .addLogoutHandler(new TokenLogoutHandler(tokenManager, redisTemplate))
+                .and()
                 .addFilter(new TokenLoginFilter(authenticationManager(), tokenManager, redisTemplate))
                 .addFilter(new TokenAuthFilter(authenticationManager(), tokenManager, redisTemplate)).httpBasic();
     }
@@ -67,4 +65,5 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/api/**");
     }
+
 }

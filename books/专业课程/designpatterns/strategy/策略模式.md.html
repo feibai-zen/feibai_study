@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>策略模式.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d55fde;}
+.s1 { color: #bbbbbb;}
+.s2 { color: #bbbbbb;}
+.s3 { color: #5c6370;}
+.ln { color: #495162; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#282c34">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+策略模式.md</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0"># </span><span class="s2">策略模式</span>
+<a name="l2"><span class="ln">2    </span></a>
+<a name="l3"><span class="ln">3    </span></a><span class="s0">#### </span><span class="s2">概要</span>
+<a name="l4"><span class="ln">4    </span></a>    <span class="s3">负责和具体的策略类交互。这样的话，具体的算法和直接的客户端调用分离了，使得算法可以独立于客户端独立的变化。如果使用spring的依赖注入功能，</span>
+<a name="l5"><span class="ln">5    </span></a>    <span class="s3">还可以通过配置文件，动态的注入不同策略对象，动态的切换不同的算法.解决if-else比较多的场景。</span>
+<a name="l6"><span class="ln">6    </span></a>
+<a name="l7"><span class="ln">7    </span></a><span class="s0">#### </span><span class="s2">UML类图   </span>
+<a name="l8"><span class="ln">8    </span></a>    <span class="s3">描述：Context执行打印价格，不同的策略打印不同的价格。在Context对象中注入startegy对象，打印价格，实际上是调用strategy对象进行打印。</span>
+<a name="l9"><span class="ln">9    </span></a><span class="s1">![</span><span class="s2">策略模式</span><span class="s1">](https://github.com/Leeyuanlong/pict_bank/raw/master/design_pattern/strategy.jpg)</span>
+<a name="l10"><span class="ln">10   </span></a>    
+<a name="l11"><span class="ln">11   </span></a>    </pre>
+</body>
+</html>

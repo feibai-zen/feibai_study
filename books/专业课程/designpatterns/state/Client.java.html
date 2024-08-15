@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Client.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d55fde;}
+.s1 { color: #bbbbbb;}
+.ln { color: #495162; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#282c34">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Client.java</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">com.feibai.study.demos.designpatterns.state;</span>
+<a name="l2"><span class="ln">2    </span></a>
+<a name="l3"><span class="ln">3    </span></a><span class="s0">public class </span><span class="s1">Client {</span>
+<a name="l4"><span class="ln">4    </span></a>	<span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+<a name="l5"><span class="ln">5    </span></a>		<a href="HomeContext.java.html">HomeContext</a> <span class="s1">ctx = </span><span class="s0">new <a href="HomeContext.java.html">HomeContext</a></span><span class="s1">();</span>
+<a name="l6"><span class="ln">6    </span></a>
+<a name="l7"><span class="ln">7    </span></a>		<span class="s1">ctx.setState(</span><span class="s0">new <a href="FreeState.java.html">FreeState</a></span><span class="s1">());</span>
+<a name="l8"><span class="ln">8    </span></a>		<span class="s1">ctx.setState(</span><span class="s0">new <a href="BookedState.java.html">BookedState</a></span><span class="s1">());</span>
+<a name="l9"><span class="ln">9    </span></a>
+<a name="l10"><span class="ln">10   </span></a>	<span class="s1">}</span>
+<a name="l11"><span class="ln">11   </span></a><span class="s1">}</span>
+<a name="l12"><span class="ln">12   </span></a></pre>
+</body>
+</html>

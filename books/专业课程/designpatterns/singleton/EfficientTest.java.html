@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>EfficientTest.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d55fde;}
+.s1 { color: #bbbbbb;}
+.s2 { color: #5c6370;}
+.s3 { color: #77b767;}
+.s4 { color: #d19a66;}
+.s5 { color: #89ca78;}
+.ln { color: #495162; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#282c34">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EfficientTest.java</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">com.feibai.study.demos.designpatterns.singleton;</span>
+<a name="l2"><span class="ln">2    </span></a>
+<a name="l3"><span class="ln">3    </span></a><span class="s0">import </span><span class="s1">java.time.Instant;</span>
+<a name="l4"><span class="ln">4    </span></a><span class="s0">import </span><span class="s1">java.util.concurrent.CountDownLatch;</span>
+<a name="l5"><span class="ln">5    </span></a>
+<a name="l6"><span class="ln">6    </span></a><span class="s2">/**</span>
+<a name="l7"><span class="ln">7    </span></a> <span class="s2">* 测试多线程环境下五种创建单例模式的效率。</span>
+<a name="l8"><span class="ln">8    </span></a> <span class="s2">* </span><span class="s3">&lt;p&gt;</span>
+<a name="l9"><span class="ln">9    </span></a> <span class="s2">* 效率测试结果：饿汉式 &gt; 静态内部类 &gt; 枚举单例 &gt; 双重检查锁式 &gt; 懒汉式</span>
+<a name="l10"><span class="ln">10   </span></a> <span class="s2">*</span>
+<a name="l11"><span class="ln">11   </span></a> <span class="s2">* </span><span class="s0">@author </span><span class="s2">feibai</span>
+<a name="l12"><span class="ln">12   </span></a> <span class="s2">*/</span>
+<a name="l13"><span class="ln">13   </span></a><span class="s0">public class </span><span class="s1">EfficientTest {</span>
+<a name="l14"><span class="ln">14   </span></a>
+<a name="l15"><span class="ln">15   </span></a>  <span class="s0">public static void </span><span class="s1">main(String[] args) </span><span class="s0">throws </span><span class="s1">Exception {</span>
+<a name="l16"><span class="ln">16   </span></a>
+<a name="l17"><span class="ln">17   </span></a>    <span class="s0">long </span><span class="s1">start = Instant.now().toEpochMilli();</span>
+<a name="l18"><span class="ln">18   </span></a>    <span class="s0">int </span><span class="s1">threadNum = </span><span class="s4">10</span><span class="s1">;</span>
+<a name="l19"><span class="ln">19   </span></a>    <span class="s0">final </span><span class="s1">CountDownLatch countDownLatch = </span><span class="s0">new </span><span class="s1">CountDownLatch(threadNum);</span>
+<a name="l20"><span class="ln">20   </span></a>
+<a name="l21"><span class="ln">21   </span></a>    <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s1">; i &lt; threadNum; i++) {</span>
+<a name="l22"><span class="ln">22   </span></a>      <span class="s0">new </span><span class="s1">Thread(</span><span class="s0">new </span><span class="s1">Runnable() {</span>
+<a name="l23"><span class="ln">23   </span></a>        <span class="s1">@Override</span>
+<a name="l24"><span class="ln">24   </span></a>        <span class="s0">public void </span><span class="s1">run() {</span>
+<a name="l25"><span class="ln">25   </span></a>          <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s1">; i &lt; </span><span class="s4">100000000</span><span class="s1">; i++) {</span>
+<a name="l26"><span class="ln">26   </span></a>            <span class="s1">Object o = <a href="SingletonEnum.java.html">SingletonEnum</a>.INSTANCE;</span>
+<a name="l27"><span class="ln">27   </span></a>          <span class="s1">}</span>
+<a name="l28"><span class="ln">28   </span></a>          <span class="s1">countDownLatch.countDown();</span>
+<a name="l29"><span class="ln">29   </span></a>        <span class="s1">}</span>
+<a name="l30"><span class="ln">30   </span></a>      <span class="s1">}).start();</span>
+<a name="l31"><span class="ln">31   </span></a>    <span class="s1">}</span>
+<a name="l32"><span class="ln">32   </span></a>    <span class="s2">// main线程阻塞，直到计数器变为0，才会继续往下执行</span>
+<a name="l33"><span class="ln">33   </span></a>    <span class="s1">countDownLatch.await();</span>
+<a name="l34"><span class="ln">34   </span></a>
+<a name="l35"><span class="ln">35   </span></a>    <span class="s0">long </span><span class="s1">end = Instant.now().toEpochMilli();</span>
+<a name="l36"><span class="ln">36   </span></a>    <span class="s1">System.out.println(</span><span class="s5">&quot;total time: &quot; </span><span class="s1">+ (end - start) + </span><span class="s5">&quot; ms.&quot;</span><span class="s1">);</span>
+<a name="l37"><span class="ln">37   </span></a>  <span class="s1">}</span>
+<a name="l38"><span class="ln">38   </span></a><span class="s1">}</span>
+<a name="l39"><span class="ln">39   </span></a></pre>
+</body>
+</html>

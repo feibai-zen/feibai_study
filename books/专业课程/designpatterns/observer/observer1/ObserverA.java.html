@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>ObserverA.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d55fde;}
+.s1 { color: #bbbbbb;}
+.s2 { color: #5c6370;}
+.ln { color: #495162; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#282c34">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ObserverA.java</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">com.feibai.study.demos.designpatterns.observer.observer1;</span>
+<a name="l2"><span class="ln">2    </span></a>
+<a name="l3"><span class="ln">3    </span></a><span class="s0">public class </span><span class="s1">ObserverA </span><span class="s0">implements <a href="Observer.java.html">Observer</a> </span><span class="s1">{</span>
+<a name="l4"><span class="ln">4    </span></a>
+<a name="l5"><span class="ln">5    </span></a>  <span class="s0">private int </span><span class="s1">myState; </span><span class="s2">// myState需要跟目标对象的state值保持一致！</span>
+<a name="l6"><span class="ln">6    </span></a>
+<a name="l7"><span class="ln">7    </span></a>  <span class="s1">@Override</span>
+<a name="l8"><span class="ln">8    </span></a>  <span class="s0">public void </span><span class="s1">update(<a href="Subject.java.html">Subject</a> subject) {</span>
+<a name="l9"><span class="ln">9    </span></a>    <span class="s1">myState = ((<a href="ConcreteSubject.java.html">ConcreteSubject</a>) subject).getState();</span>
+<a name="l10"><span class="ln">10   </span></a>  <span class="s1">}</span>
+<a name="l11"><span class="ln">11   </span></a>
+<a name="l12"><span class="ln">12   </span></a>  <span class="s0">public int </span><span class="s1">getMyState() {</span>
+<a name="l13"><span class="ln">13   </span></a>    <span class="s0">return </span><span class="s1">myState;</span>
+<a name="l14"><span class="ln">14   </span></a>  <span class="s1">}</span>
+<a name="l15"><span class="ln">15   </span></a>
+<a name="l16"><span class="ln">16   </span></a>  <span class="s0">public void </span><span class="s1">setMyState(</span><span class="s0">int </span><span class="s1">myState) {</span>
+<a name="l17"><span class="ln">17   </span></a>    <span class="s0">this</span><span class="s1">.myState = myState;</span>
+<a name="l18"><span class="ln">18   </span></a>  <span class="s1">}</span>
+<a name="l19"><span class="ln">19   </span></a>
+<a name="l20"><span class="ln">20   </span></a><span class="s1">}</span>
+<a name="l21"><span class="ln">21   </span></a></pre>
+</body>
+</html>

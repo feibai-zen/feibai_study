@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>观察者模式.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d55fde;}
+.s1 { color: #bbbbbb;}
+.s2 { color: #bbbbbb;}
+.s3 { color: #5c6370;}
+.ln { color: #495162; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#282c34">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+观察者模式.md</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0"># </span><span class="s2">观察者模式：</span>
+<a name="l2"><span class="ln">2    </span></a>
+<a name="l3"><span class="ln">3    </span></a> <span class="s0">#### </span><span class="s2">概要</span>
+<a name="l4"><span class="ln">4    </span></a>    <span class="s3">观察者模式定义了对象之间的一对多依赖，这样一来，当一个对象改变状态时，它的所有依赖者都会收到通知并自动更新。观察者模式作用：可以用来解耦</span>
+<a name="l5"><span class="ln">5    </span></a> 
+<a name="l6"><span class="ln">6    </span></a> <span class="s0">#### </span><span class="s2">应用举例：</span>
+<a name="l7"><span class="ln">7    </span></a> <span class="s3">```text</span>
+<a name="l8"><span class="ln">8    </span></a><span class="s3">举一个生活中的例子：比如用户从报社订阅报纸，报社和用户之间是一对多依赖，用户可以在报社订阅（register）报纸，报社可以把最新的报纸发给用户</span>
+<a name="l9"><span class="ln">9    </span></a><span class="s3">（notify），用户自动收到更新。在用户不需要的时候还可以取消注册（remove）。再比如Android中的EventBus，Rxjava的实现都是基于观察者模式的</span>
+<a name="l10"><span class="ln">10   </span></a><span class="s3">思想。再比如回调函数：Android中对Button的点击监听等等。</span>
+<a name="l11"><span class="ln">11   </span></a><span class="s3">```</span>
+<a name="l12"><span class="ln">12   </span></a>
+<a name="l13"><span class="ln">13   </span></a><span class="s0">#### </span><span class="s2">关键字</span>
+<a name="l14"><span class="ln">14   </span></a><span class="s0">- </span><span class="s2">Observable</span>
+<a name="l15"><span class="ln">15   </span></a>    <span class="s2">即被观察者，也可以被叫做主题（Subject）是被观察的对象。通常有注册方法（register），取消注册方法</span><span class="s1">(</span><span class="s2">remove</span><span class="s1">)</span><span class="s2">和通知方法</span><span class="s1">(</span><span class="s2">notify</span><span class="s1">)</span><span class="s2">。</span>
+<a name="l16"><span class="ln">16   </span></a>
+<a name="l17"><span class="ln">17   </span></a><span class="s0">- </span><span class="s2">Observer</span><span class="s1">**</span>
+<a name="l18"><span class="ln">18   </span></a>    <span class="s2">即观察者，可以接收到主题的更新。当对某个主题感兴趣的时候需要注册自己，在不需要接收更新时进行注销操作。  </span>
+<a name="l19"><span class="ln">19   </span></a>    
+<a name="l20"><span class="ln">20   </span></a><span class="s0">#### </span><span class="s2">回调函数</span>
+<a name="l21"><span class="ln">21   </span></a>    <span class="s3">举例：你到一个商店买东西，刚好你要的东西没有货，于是你在店员那里留下了你的电话，过了几天店里有货了，店员就打了你的电话，然后你接到电话后</span>
+<a name="l22"><span class="ln">22   </span></a>    <span class="s3">就到店里去取了货。在这个例子里，你的电话号码就叫回调函数，你把电话留给店员就叫登记回调函数，店里后来有货了叫做触发了回调关联的事件，店员</span>
+<a name="l23"><span class="ln">23   </span></a>    <span class="s3">给你打电话叫做调用回调函数，你到店里去取货叫做响应回调事件。回答完毕。</span></pre>
+</body>
+</html>

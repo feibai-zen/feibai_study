@@ -1,6 +1,8 @@
 package com.feibai.study.demos.designpatterns.templatemethod;
 
 /**
+ * 模版方法模式
+ * <p>
  * 比较好的一个例子-https://www.jianshu.com/p/800a44c1d9dd
  * <p>
  * 定义一个操作算法中的框架，而将这些步骤延迟加载到子类中。
@@ -22,23 +24,24 @@ package com.feibai.study.demos.designpatterns.templatemethod;
  */
 
 public abstract class BankTemplateMethod {
-  // 具体方法
-  public void takeNumber() {
-    System.out.println("取号排队");
-  }
 
-  public abstract void transact(); // 办理具体的业务 //钩子方法
+    public abstract void transact(); // 办理具体的业务 //钩子方法
 
-  public void evaluate() {
-    System.out.println("反馈评分");
-  }
+    // 具体方法
+    public void takeNumber() {
+        System.out.println("取号排队");
+    }
 
-  public final void process() { // 模板方法. 控制了子类方法的调用顺序
-    this.takeNumber();
+    public void evaluate() {
+        System.out.println("反馈评分");
+    }
 
-    this.transact();
+    public final void process() { // 模板方法. 控制了子类方法的调用顺序
+        this.takeNumber();
 
-    this.evaluate();
-  }
+        this.transact();
+
+        this.evaluate();
+    }
 
 }
